@@ -1,0 +1,59 @@
+{
+    "name": "Clínica Podológica Carrera",
+    "address": "C. de la Carrera, 7, 28931 Móstoles, Madrid",
+    "coords": {
+        "lat": 40.3264923,
+        "lng": -3.8614242
+    },
+    "phone": "+34 912 26 88 58",
+    "whatsapp": "+34 682 15 81 58",
+    "website": "https://podologiacarrera.com",
+    "maps_url": "https://goo.gl/maps/yB9gMJqHqM6VBGen9",
+    "reviews_section_url": "https://www.google.com/maps/place/Cl%C3%ADnica+Podol%C3%B3gica+Carrera/@40.3264923,-3.8614242,17z/data=!3m1!4b1!4m5!3m4!1s0xd4192fb8b4d6c05:0x96dc6799db1f541c!8m2!3d40.3264923!4d-3.8592355?entry=ttu",
+    "hours": {
+        "monday": [
+            "09:30-14:00",
+            "17:00-20:00"
+        ],
+        "tuesday": [
+            "09:30-14:00",
+            "17:00-20:00"
+        ],
+        "wednesday": [
+            "09:30-14:00",
+            "17:00-20:00"
+        ],
+        "thursday": [
+            "09:30-14:00",
+            "17:00-20:00"
+        ],
+        "friday": [
+            "09:30-14:00",
+            "17:00-20:00"
+        ],
+        "saturday": [
+            "Cerrado"
+        ],
+        "sunday": [
+            "Cerrado"
+        ]
+    },
+    "rating": 4.8,
+    "reviews_top": [
+        {
+            "author": "María Valcárcel",
+            "rating": 5,
+            "comment": "Llevo yendo ya varios años y no cambio yo a mi Isabel por nada del mundo. Es la única que ha conseguido quitarme los hongos por completo!"
+        },
+        {
+            "author": "Miguel Angel Rodriguez Trobo",
+            "rating": 5,
+            "comment": "Excelente profesional y muy atenta, gracias a ella he descartado una operación que, al menos, por el momento, no era necesaria. Es la podóloga de referencia en nuestra familia."
+        },
+        {
+            "author": "Miguel Angel Somoza",
+            "rating": 5,
+            "comment": "Muy profesionales. A mi me atendió Cristina e hizo un trabajo perfecto. No me dolió nada y fue superdelicada. Lo recomiendo cien por cien y además muy bien de precio. Ya tengo podologa. Volveré seguro."
+        }
+    ]
+}
