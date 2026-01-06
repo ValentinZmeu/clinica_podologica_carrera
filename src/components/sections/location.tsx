@@ -32,8 +32,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Horario',
-    content: `L-V: ${siteConfig.schedule.weekdays}`,
-    subContent: `S-D: ${siteConfig.schedule.weekend}`,
+    content: siteConfig.schedule.weekdays,
+    subContent: `${siteConfig.schedule.friday} | S-D: ${siteConfig.schedule.weekend}`,
     gradient: 'from-amber-500 to-orange-500',
   },
 ];

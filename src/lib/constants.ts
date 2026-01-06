@@ -12,13 +12,14 @@ export const siteConfig = {
   postalCode: '28931',
   province: 'Madrid',
   fullAddress: 'C. de la Carrera, 7, 28931 Móstoles, Madrid',
-  googleMapsUrl: 'https://goo.gl/maps/yB9gMJqHqM6VBGen9',
+  googleMapsUrl: 'https://www.google.com/maps/dir//Clinica+Podol%C3%B3gica+Carrera,+C.+de+la+Carrera,+7,+28931+M%C3%B3stoles,+Madrid/@40.3266811,-3.8639111,17z',
   coordinates: {
-    lat: 40.3264923,
-    lng: -3.8614242,
+    lat: 40.326677,
+    lng: -3.8613362,
   },
   schedule: {
-    weekdays: '09:30 - 14:00 y 17:00 - 20:00',
+    weekdays: 'L-J 09:30 - 14:30 y 17:00 - 19:30',
+    friday: 'V 09:30 - 14:30',
     weekend: 'Cerrado',
   },
   rating: 4.8,
