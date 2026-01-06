@@ -1,0 +1,19 @@
+{
+  "versions": [
+    {
+      "version": "0.0.1",
+      "date": "2026-01-06",
+      "title": "Inicio del proyecto",
+      "changes": [
+        {
+          "type": "added",
+          "description": "Configuración inicial del proyecto"
+        },
+        {
+          "type": "added",
+          "description": "Plan de desarrollo para la landing page"
+        }
+      ]
+    }
+  ]
+}
