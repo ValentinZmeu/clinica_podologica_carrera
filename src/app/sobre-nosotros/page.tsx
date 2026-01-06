@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     'podóloga móstoles',
     'clínica podológica móstoles',
     'equipo podología',
+    'podóloga colegiada móstoles',
+    'Isabel Carrera podóloga',
+    'Cristina López podóloga',
+    'Miriam Casas podóloga',
+    'zona sur madrid podología',
   ],
   openGraph: {
     title: 'Sobre Nosotros - Clínica Podológica Carrera',
@@ -184,7 +189,7 @@ export default async function SobreNosotrosPage() {
             </p>
           </div>
 
-          <div className="mx-auto grid max-w-3xl gap-8 md:grid-cols-2">
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
             {teamMembers.map((member, index) => {
               const specialties = JSON.parse(member.specialties) as string[];
               const initials = member.name
@@ -209,6 +214,11 @@ export default async function SobreNosotrosPage() {
                       <div>
                         <h3 className="text-xl font-semibold">{member.name}</h3>
                         <p className="text-primary">{member.role}</p>
+                        {member.collegiateNum && (
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Nº Colegiado: {member.collegiateNum}
+                          </p>
+                        )}
                       </div>
                     </div>
                     <p className="mt-4 text-muted-foreground">{member.bio}</p>

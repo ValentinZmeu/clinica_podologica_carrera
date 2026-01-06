@@ -117,7 +117,7 @@ export function Hero() {
             </div>
             <div className="flex items-center gap-2 text-sm text-white/70">
               <CheckCircle2 className="h-5 w-5 text-accent-400" />
-              <span>Cita en 24-48h</span>
+              <span>Respuesta en menos de 24h</span>
             </div>
           </div>
         </div>

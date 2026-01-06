@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/constants';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
 const benefits = [
-  'Primera consulta de valoración gratuita',
+  'Respuesta en menos de 24 horas',
   'Profesionales colegiados',
   'Tecnología de última generación',
   'Resultados garantizados',
