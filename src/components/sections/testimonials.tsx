@@ -1,6 +1,7 @@
-import { Star } from 'lucide-react';
+import { Star, MessageSquareQuote, ExternalLink } from 'lucide-react';
 
 import { TestimonialCard } from '@/components/cards/testimonial-card';
+import { Button } from '@/components/ui/button';
 import prisma from '@/lib/prisma';
 import { siteConfig } from '@/lib/constants';
 
@@ -22,32 +23,54 @@ export async function Testimonials() {
 
   return (
     <section
-      className="bg-muted/30 py-16 md:py-24"
+      className="relative py-24 md:py-32 overflow-hidden"
       data-testid="testimonials-section"
     >
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-muted/30 to-background" />
+
+      {/* Decorative blobs */}
+      <div className="absolute left-1/4 top-0 -z-10 h-96 w-96 rounded-full bg-primary-100/40 blur-3xl" />
+      <div className="absolute right-1/4 bottom-0 -z-10 h-96 w-96 rounded-full bg-accent-100/40 blur-3xl" />
+
       <div className="container">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <div className="mb-4 flex items-center justify-center gap-1">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                className="h-6 w-6 fill-yellow-400 text-yellow-400"
-              />
-            ))}
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          {/* Rating badge */}
+          <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-amber-50 px-4 py-2 ring-1 ring-amber-200">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  className="h-5 w-5 fill-amber-400 text-amber-400"
+                />
+              ))}
+            </div>
+            <span className="text-sm font-semibold text-amber-700">
+              {siteConfig.rating} en Google
+            </span>
           </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Lo Que Dicen Nuestros Pacientes
+
+          <div className="mb-4 inline-flex items-center gap-2">
+            <MessageSquareQuote className="h-5 w-5 text-primary-500" />
+            <span className="text-sm font-medium text-primary-600">
+              Testimonios Reales
+            </span>
+          </div>
+
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+            Lo Que Dicen{' '}
+            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+              Nuestros Pacientes
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            <span className="font-semibold text-foreground">
-              {siteConfig.rating} estrellas
-            </span>{' '}
-            de valoración en Google. La opinión de nuestros pacientes es
-            nuestra mejor carta de presentación.
+            La opinión de quienes confían en nosotros es nuestra mejor carta de
+            presentación. Más de 15 años cuidando la salud de los pies de
+            nuestros pacientes.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             <TestimonialCard
               key={testimonial.id}
@@ -61,15 +84,17 @@ export async function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
-          <a
-            href="https://www.google.com/maps/place/Cl%C3%ADnica+Podol%C3%B3gica+Carrera"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-          >
-            Ver todas las reseñas en Google Maps
-          </a>
+        <div className="mt-12 text-center">
+          <Button variant="outline" size="lg" className="group" asChild>
+            <a
+              href="https://www.google.com/maps/place/Cl%C3%ADnica+Podol%C3%B3gica+Carrera"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver todas las reseñas en Google
+              <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

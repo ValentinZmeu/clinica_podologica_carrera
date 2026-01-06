@@ -1,30 +1,74 @@
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, Clock, CheckCircle } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
+const benefits = [
+  'Primera consulta de valoración gratuita',
+  'Profesionales colegiados',
+  'Tecnología de última generación',
+  'Resultados garantizados',
+];
+
 export function CTASection() {
   return (
     <section
-      className="bg-primary py-16 text-primary-foreground md:py-24"
+      className="relative overflow-hidden py-24 md:py-32"
       data-testid="cta-section"
     >
+      {/* Gradient background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900" />
+
+      {/* Animated gradient orbs */}
+      <div className="absolute left-1/4 top-0 -z-10 h-96 w-96 animate-pulse rounded-full bg-primary-500/20 blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 animate-pulse rounded-full bg-accent-500/20 blur-3xl" />
+
+      {/* Grid pattern */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]" />
+
       <div className="container">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
-            ¿Listo para cuidar de tus pies?
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Badge */}
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
+            <span className="relative flex h-3 w-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span>
+            </span>
+            <span className="text-sm font-medium text-white/90">
+              Aceptando citas ahora
+            </span>
+          </div>
+
+          <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            ¿Listo para cuidar{' '}
+            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+              de tus pies?
+            </span>
           </h2>
-          <p className="mb-8 text-lg text-primary-foreground/80">
+          <p className="mx-auto mb-10 max-w-2xl text-xl text-white/70">
             Pide tu cita hoy y empieza a disfrutar de unos pies sanos y sin
-            molestias. Estamos aquí para ayudarte.
+            molestias. Más de 15 años de experiencia nos avalan.
           </p>
 
+          {/* Benefits */}
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-4">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur-sm"
+              >
+                <CheckCircle className="h-4 w-4 text-emerald-400" />
+                {benefit}
+              </div>
+            ))}
+          </div>
+
+          {/* CTAs */}
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               size="lg"
-              variant="secondary"
-              className="w-full sm:w-auto"
+              className="h-14 w-full bg-gradient-to-r from-emerald-500 to-teal-500 px-8 text-lg font-semibold text-white shadow-xl transition-all hover:shadow-emerald-500/25 hover:scale-105 sm:w-auto"
               asChild
             >
               <a
@@ -37,13 +81,13 @@ export function CTASection() {
                 data-testid="cta-whatsapp-button"
               >
                 <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp
+                Pide tu Cita por WhatsApp
               </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="w-full border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 sm:w-auto"
+              className="h-14 w-full border-white/20 bg-white/5 px-8 text-lg text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:scale-105 sm:w-auto"
               asChild
             >
               <a
@@ -56,9 +100,13 @@ export function CTASection() {
             </Button>
           </div>
 
-          <p className="mt-6 text-sm text-primary-foreground/60">
-            Horario de atención: {siteConfig.schedule.weekdays}
-          </p>
+          {/* Schedule */}
+          <div className="mt-8 inline-flex items-center gap-2 text-white/60">
+            <Clock className="h-4 w-4" />
+            <span className="text-sm">
+              Horario de atención: {siteConfig.schedule.weekdays}
+            </span>
+          </div>
         </div>
       </div>
     </section>
