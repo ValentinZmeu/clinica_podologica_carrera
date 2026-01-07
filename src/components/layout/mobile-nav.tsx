@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, X, Menu } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -61,7 +62,16 @@ export function MobileNav() {
           >
             {/* Header */}
             <div className="flex items-center justify-between">
-              <span className="text-lg font-semibold">{siteConfig.name}</span>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/images/logo.png"
+                  alt={`Logo de ${siteConfig.name}`}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
+                <span className="text-lg font-semibold">{siteConfig.name}</span>
+              </div>
               <button
                 className="rounded-sm p-1 opacity-70 transition-opacity hover:opacity-100"
                 onClick={handleClose}

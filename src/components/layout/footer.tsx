@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
@@ -14,7 +15,16 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">{siteConfig.name}</h3>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/logo.png"
+                alt={`Logo de ${siteConfig.name}`}
+                width={48}
+                height={48}
+                className="h-12 w-12"
+              />
+              <h3 className="text-lg font-semibold">{siteConfig.name}</h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               Tu clínica de podología de confianza en Móstoles. Cuidamos de la
               salud de tus pies con profesionalidad y cercanía.

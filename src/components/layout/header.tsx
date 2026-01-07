@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { Phone } from 'lucide-react';
 
@@ -15,16 +16,24 @@ const MobileNav = dynamic(
 export function Header() {
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full border-b bg-background/10 backdrop-blur supports-[backdrop-filter]:bg-background/85"
       data-testid="header"
     >
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center space-x-2"
+          className="flex items-center gap-2"
           data-testid="nav-home-link"
         >
+          <Image
+            src="/images/logo.png"
+            alt={`Logo de ${siteConfig.name}`}
+            width={40}
+            height={40}
+            className="h-10 w-10"
+            priority
+          />
           <span className="text-xl font-bold text-primary-600">
             {siteConfig.name}
           </span>
