@@ -1,11 +1,9 @@
 import { HelpCircle, MessageCircle } from 'lucide-react';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+  NativeAccordion,
+  NativeAccordionItem,
+} from '@/components/ui/native-accordion';
 import { Button } from '@/components/ui/button';
 import prisma from '@/lib/prisma';
 import { siteConfig } from '@/lib/constants';
@@ -75,26 +73,25 @@ export async function FAQ() {
 
         <div className="mx-auto max-w-3xl">
           <div className="rounded-2xl border bg-card p-2 shadow-lg">
-            <Accordion type="single" collapsible className="w-full">
+            <NativeAccordion>
               {faqs.map((faq, index) => (
-                <AccordionItem
+                <NativeAccordionItem
                   key={faq.id}
                   value={faq.id}
-                  className="border-b-0 px-4"
+                  trigger={
+                    <span className="flex items-center text-left">
+                      <span className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-sm font-bold text-white">
+                        {index + 1}
+                      </span>
+                      {faq.question}
+                    </span>
+                  }
                   data-testid={`faq-item-${index}`}
                 >
-                  <AccordionTrigger className="py-5 text-left font-semibold hover:text-primary hover:no-underline [&[data-state=open]]:text-primary">
-                    <span className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-sm font-bold text-white">
-                      {index + 1}
-                    </span>
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="pb-5 pl-12 text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  {faq.answer}
+                </NativeAccordionItem>
               ))}
-            </Accordion>
+            </NativeAccordion>
           </div>
 
           {/* CTA */}

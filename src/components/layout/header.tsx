@@ -1,23 +1,18 @@
-'use client';
-
-import * as React from 'react';
 import Link from 'next/link';
-import { Menu, Phone } from 'lucide-react';
+import dynamic from 'next/dynamic';
+import { Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
 import { siteConfig, navLinks } from '@/lib/constants';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
-export function Header() {
-  const [isOpen, setIsOpen] = React.useState(false);
+// Lazy load mobile nav - only loads JavaScript when needed on mobile
+const MobileNav = dynamic(
+  () => import('./mobile-nav').then((mod) => mod.MobileNav),
+  { ssr: false }
+);
 
+export function Header() {
   return (
     <header
       className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
@@ -78,57 +73,8 @@ export function Header() {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              data-testid="nav-mobile-menu-button"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Abrir menú</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" data-testid="nav-mobile-menu">
-            <SheetHeader>
-              <SheetTitle>{siteConfig.name}</SheetTitle>
-            </SheetHeader>
-            <nav className="mt-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-lg font-medium transition-colors hover:text-primary"
-                  onClick={() => setIsOpen(false)}
-                  data-testid={`nav-mobile-${link.label.toLowerCase().replace(' ', '-')}-link`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="mt-4 flex flex-col gap-2">
-                <Button variant="outline" asChild>
-                  <a href={`tel:${siteConfig.phone}`}>
-                    <Phone className="mr-2 h-4 w-4" />
-                    {siteConfig.phone}
-                  </a>
-                </Button>
-                <Button asChild>
-                  <a
-                    href={formatWhatsAppUrl(
-                      siteConfig.whatsapp,
-                      'Hola, me gustaría pedir una cita'
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Pedir Cita por WhatsApp
-                  </a>
-                </Button>
-              </div>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        {/* Mobile Menu - Lazy loaded */}
+        <MobileNav />
       </div>
     </header>
   );

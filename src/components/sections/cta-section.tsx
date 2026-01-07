@@ -101,7 +101,7 @@ export function CTASection() {
           <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 text-white/60">
             <Clock className="h-4 w-4" />
             <span className="text-sm">
-              {siteConfig.schedule.weekdays} | {siteConfig.schedule.friday}
+              L-J: {siteConfig.schedule.weekdays} | V: {siteConfig.schedule.friday}
             </span>
           </div>
         </div>

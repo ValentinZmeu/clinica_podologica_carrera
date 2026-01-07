@@ -77,8 +77,15 @@ export function Footer() {
               <div className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
-                  <p className="font-medium text-foreground">Lunes a Viernes</p>
+                  <p className="font-medium text-foreground">Lunes a Jueves</p>
                   <p>{siteConfig.schedule.weekdays}</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-2">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-0" />
+                <div>
+                  <p className="font-medium text-foreground">Viernes</p>
+                  <p>{siteConfig.schedule.friday}</p>
                 </div>
               </div>
               <div className="flex items-start gap-2">

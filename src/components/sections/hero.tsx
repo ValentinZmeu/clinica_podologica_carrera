@@ -115,7 +115,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-2 left-0 right-0 flex justify-center animate-bounce">
           <div className="flex flex-col items-center gap-2 text-white/40">
             <span className="text-xs uppercase tracking-wider">Descubre más</span>
             <svg

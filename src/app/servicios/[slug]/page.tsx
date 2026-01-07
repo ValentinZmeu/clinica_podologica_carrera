@@ -4,11 +4,9 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Check, Phone, MessageCircle } from 'lucide-react';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+  NativeAccordion,
+  NativeAccordionItem,
+} from '@/components/ui/native-accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -281,22 +279,20 @@ export default async function ServicePage({ params }: ServicePageProps) {
               {service.faqs.length > 0 && (
                 <div className="mt-12">
                   <h2 className="mb-6 text-2xl font-bold">Preguntas frecuentes</h2>
-                  <Accordion type="single" collapsible className="w-full">
-                    {service.faqs.map((faq, index) => (
-                      <AccordionItem
-                        key={faq.id}
-                        value={faq.id}
-                        data-testid={`service-faq-${index}`}
-                      >
-                        <AccordionTrigger className="text-left">
-                          {faq.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground">
+                  <div className="rounded-lg border">
+                    <NativeAccordion>
+                      {service.faqs.map((faq, index) => (
+                        <NativeAccordionItem
+                          key={faq.id}
+                          value={faq.id}
+                          trigger={faq.question}
+                          data-testid={`service-faq-${index}`}
+                        >
                           {faq.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
+                        </NativeAccordionItem>
+                      ))}
+                    </NativeAccordion>
+                  </div>
                 </div>
               )}
             </div>

@@ -18,8 +18,8 @@ export const siteConfig = {
     lng: -3.8613362,
   },
   schedule: {
-    weekdays: 'L-J 09:30 - 14:30 y 17:00 - 19:30',
-    friday: 'V 09:30 - 14:30',
+    weekdays: '09:30 - 14:30 y 17:00 - 19:30',
+    friday: '09:30 - 14:30',
     weekend: 'Cerrado',
   },
   rating: 4.8,

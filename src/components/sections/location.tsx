@@ -32,8 +32,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Horario',
-    content: siteConfig.schedule.weekdays,
-    subContent: `${siteConfig.schedule.friday} | S-D: ${siteConfig.schedule.weekend}`,
+    content: `L-J: ${siteConfig.schedule.weekdays}`,
+    subContent: `V: ${siteConfig.schedule.friday} | S-D: ${siteConfig.schedule.weekend}`,
     gradient: 'from-amber-500 to-orange-500',
   },
 ];
@@ -69,12 +69,12 @@ export function Location() {
         <div className="grid gap-8 lg:grid-cols-5">
           {/* Map */}
           <div className="lg:col-span-3">
-            <div className="group relative overflow-hidden rounded-2xl border shadow-lg">
+            <div className="group relative h-full min-h-[400px] overflow-hidden rounded-2xl border shadow-lg">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.8!2d${siteConfig.coordinates.lng}!3d${siteConfig.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4192fb8b4d6c05%3A0x96dc6799db1f541c!2sCl%C3%ADnica%20Podol%C3%B3gica%20Carrera!5e0!3m2!1ses!2ses!4v1704067200000!5m2!1ses!2ses`}
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.8!2d${siteConfig.coordinates.lng}!3d${siteConfig.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418e81e5d565c3%3A0x8f1c87dfcd45852b!2sClinica%20Podol%C3%B3gica%20Carrera!5e0!3m2!1ses!2ses!4v1704067200000!5m2!1ses!2ses`}
                 width="100%"
-                height="450"
-                style={{ border: 0 }}
+                height="100%"
+                style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
