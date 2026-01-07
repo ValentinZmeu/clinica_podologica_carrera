@@ -1,0 +1,50 @@
+[
+  {
+    "id": "faq-1",
+    "question": "¿Con qué frecuencia debo visitar al podólogo?",
+    "answer": "Recomendamos una visita cada 4-6 semanas para mantener los pies en óptimas condiciones. En casos de pie diabético o problemas específicos, la frecuencia puede ser mayor.",
+    "category": "general",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "id": "faq-2",
+    "question": "¿Cuánto dura una sesión de quiropodia?",
+    "answer": "Una sesión de quiropodia completa dura entre 30 y 45 minutos, dependiendo del estado de los pies y los tratamientos necesarios.",
+    "category": "servicios",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "id": "faq-3",
+    "question": "¿Las plantillas personalizadas están cubiertas por el seguro?",
+    "answer": "Algunas mutuas y seguros privados cubren parte del coste de las plantillas. Consulta con tu aseguradora o pregúntanos y te ayudamos a gestionarlo.",
+    "category": "pagos",
+    "order": 3,
+    "isActive": true
+  },
+  {
+    "id": "faq-4",
+    "question": "¿Necesito cita previa?",
+    "answer": "Sí, trabajamos con cita previa para poder ofrecerte la atención que mereces sin esperas. Puedes pedir cita llamando por teléfono o enviándonos un WhatsApp.",
+    "category": "citas",
+    "order": 4,
+    "isActive": true
+  },
+  {
+    "id": "faq-5",
+    "question": "¿Tratáis a niños?",
+    "answer": "Sí, atendemos a pacientes de todas las edades. En niños es especialmente importante detectar y tratar a tiempo cualquier alteración del pie para evitar problemas en el futuro.",
+    "category": "general",
+    "order": 5,
+    "isActive": true
+  },
+  {
+    "id": "faq-6",
+    "question": "¿Qué debo llevar a mi primera consulta?",
+    "answer": "Te recomendamos traer el calzado que uses habitualmente y, si los tienes, informes médicos previos relacionados con problemas en los pies o la marcha.",
+    "category": "citas",
+    "order": 6,
+    "isActive": true
+  }
+]

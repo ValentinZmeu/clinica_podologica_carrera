@@ -3,23 +3,10 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { ServiceCard } from '@/components/cards/service-card';
-import prisma from '@/lib/prisma';
+import { getFeaturedServices } from '@/lib/data';
 
-async function getFeaturedServices() {
-  return prisma.service.findMany({
-    where: {
-      isActive: true,
-      isFeatured: true,
-    },
-    orderBy: {
-      order: 'asc',
-    },
-    take: 3,
-  });
-}
-
-export async function ServicesPreview() {
-  const services = await getFeaturedServices();
+export function ServicesPreview() {
+  const services = getFeaturedServices();
 
   return (
     <section

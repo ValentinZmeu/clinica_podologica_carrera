@@ -5,7 +5,7 @@ import { ServiceCard } from '@/components/cards/service-card';
 import { PageHero } from '@/components/layout/page-hero';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
-import prisma from '@/lib/prisma';
+import { getActiveServices } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Servicios de Podología en Móstoles | Clínica Podológica Carrera',
@@ -27,17 +27,6 @@ export const metadata: Metadata = {
   },
 };
 
-async function getServices() {
-  return prisma.service.findMany({
-    where: {
-      isActive: true,
-    },
-    orderBy: {
-      order: 'asc',
-    },
-  });
-}
-
 // JSON-LD Schema para MedicalWebPage
 const servicesPageSchema = {
   '@context': 'https://schema.org',
@@ -53,8 +42,8 @@ const servicesPageSchema = {
   },
 };
 
-export default async function ServiciosPage() {
-  const services = await getServices();
+export default function ServiciosPage() {
+  const services = getActiveServices();
 
   return (
     <>

@@ -5,23 +5,12 @@ import {
   NativeAccordionItem,
 } from '@/components/ui/native-accordion';
 import { Button } from '@/components/ui/button';
-import prisma from '@/lib/prisma';
 import { siteConfig } from '@/lib/constants';
+import { getActiveFAQs } from '@/lib/data';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
-async function getFAQs() {
-  return prisma.fAQ.findMany({
-    where: {
-      isActive: true,
-    },
-    orderBy: {
-      order: 'asc',
-    },
-  });
-}
-
-export async function FAQ() {
-  const faqs = await getFAQs();
+export function FAQ() {
+  const faqs = getActiveFAQs();
 
   // Schema JSON-LD para FAQPage
   const faqSchema = {

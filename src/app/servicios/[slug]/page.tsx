@@ -11,7 +11,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { siteConfig } from '@/lib/constants';
-import prisma from '@/lib/prisma';
+import {
+  getServiceBySlug,
+  getOtherServices,
+  getServiceSlugs,
+} from '@/lib/data';
 
 interface ServicePageProps {
   params: Promise<{
@@ -19,44 +23,16 @@ interface ServicePageProps {
   }>;
 }
 
-async function getService(slug: string) {
-  return prisma.service.findUnique({
-    where: { slug },
-    include: {
-      faqs: {
-        orderBy: { order: 'asc' },
-      },
-    },
-  });
-}
-
-async function getOtherServices(currentSlug: string) {
-  return prisma.service.findMany({
-    where: {
-      isActive: true,
-      slug: { not: currentSlug },
-    },
-    orderBy: { order: 'asc' },
-    take: 3,
-  });
-}
-
-export async function generateStaticParams() {
-  const services = await prisma.service.findMany({
-    where: { isActive: true },
-    select: { slug: true },
-  });
-
-  return services.map((service) => ({
-    slug: service.slug,
-  }));
+export function generateStaticParams() {
+  const slugs = getServiceSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const service = await getService(slug);
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     return {
@@ -75,25 +51,19 @@ export async function generateMetadata({
       description: service.shortDesc,
       url: `${siteConfig.url}/servicios/${service.slug}`,
       type: 'article',
-      images: service.image
-        ? [{ url: service.image, alt: service.name }]
-        : undefined,
     },
   };
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
-  const [service, otherServices] = await Promise.all([
-    getService(slug),
-    getOtherServices(slug),
-  ]);
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     notFound();
   }
 
-  const benefits = JSON.parse(service.benefits) as string[];
+  const otherServices = getOtherServices(slug);
 
   // JSON-LD Schema para el servicio
   const serviceSchema = {
@@ -255,13 +225,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </div>
 
               {/* Benefits */}
-              {benefits.length > 0 && (
+              {service.benefits.length > 0 && (
                 <div className="mt-10">
                   <h2 className="mb-6 text-2xl font-bold">
                     Beneficios del tratamiento
                   </h2>
                   <ul className="space-y-3">
-                    {benefits.map((benefit, index) => (
+                    {service.benefits.map((benefit, index) => (
                       <li
                         key={index}
                         className="flex items-start gap-3"

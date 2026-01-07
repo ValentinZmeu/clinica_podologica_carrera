@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, ExternalLink, Navigation } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -68,31 +67,9 @@ export function Location() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-5">
-          {/* Clinic Image + Map */}
-          <div className="lg:col-span-3 flex flex-col gap-6">
-            {/* Clinic Entrance Image */}
-            <div className="group relative overflow-hidden rounded-2xl border shadow-lg">
-              <div className="relative aspect-[16/9]">
-                <Image
-                  src="/images/Entrada de Clínica Podológica Carrera.png"
-                  alt="Fachada de Clínica Podológica Carrera en Móstoles"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 60vw"
-                />
-                {/* Overlay with clinic name */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-sm font-medium text-white/80">Nuestra clínica</p>
-                  <p className="text-lg font-bold text-white">
-                    {siteConfig.fullAddress}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Map */}
-            <div className="group relative min-h-[300px] flex-1 overflow-hidden rounded-2xl border shadow-lg">
+          {/* Map */}
+          <div className="lg:col-span-3">
+            <div className="group relative h-full min-h-[400px] overflow-hidden rounded-2xl border shadow-lg">
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.8!2d${siteConfig.coordinates.lng}!3d${siteConfig.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418e81e5d565c3%3A0x8f1c87dfcd45852b!2sClinica%20Podol%C3%B3gica%20Carrera!5e0!3m2!1ses!2ses!4v1704067200000!5m2!1ses!2ses`}
                 width="100%"

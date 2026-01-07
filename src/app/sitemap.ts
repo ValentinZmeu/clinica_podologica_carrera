@@ -1,16 +1,11 @@
 import { MetadataRoute } from 'next';
 
 import { siteConfig } from '@/lib/constants';
-import prisma from '@/lib/prisma';
+import { getActiveServices } from '@/lib/data';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
-
-  // Get all active services
-  const services = await prisma.service.findMany({
-    where: { isActive: true },
-    select: { slug: true, updatedAt: true },
-  });
+  const services = getActiveServices();
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
@@ -43,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Service pages
   const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
     url: `${baseUrl}/servicios/${service.slug}`,
-    lastModified: service.updatedAt,
+    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }));

@@ -2,24 +2,11 @@ import { Star, MessageSquareQuote, ExternalLink } from 'lucide-react';
 
 import { TestimonialCard } from '@/components/cards/testimonial-card';
 import { Button } from '@/components/ui/button';
-import prisma from '@/lib/prisma';
 import { siteConfig } from '@/lib/constants';
+import { getFeaturedTestimonials } from '@/lib/data';
 
-async function getFeaturedTestimonials() {
-  return prisma.testimonial.findMany({
-    where: {
-      isActive: true,
-      isFeatured: true,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-    take: 3,
-  });
-}
-
-export async function Testimonials() {
-  const testimonials = await getFeaturedTestimonials();
+export function Testimonials() {
+  const testimonials = getFeaturedTestimonials();
 
   return (
     <section

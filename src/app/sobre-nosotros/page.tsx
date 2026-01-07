@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { PageHero } from '@/components/layout/page-hero';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
-import prisma from '@/lib/prisma';
+import { getActiveTeamMembers } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Sobre Nosotros | Clínica Podológica Carrera - Móstoles',
@@ -32,13 +32,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-async function getTeamMembers() {
-  return prisma.teamMember.findMany({
-    where: { isActive: true },
-    orderBy: { order: 'asc' },
-  });
-}
 
 const values = [
   {
@@ -83,8 +76,8 @@ const aboutPageSchema = {
   },
 };
 
-export default async function SobreNosotrosPage() {
-  const teamMembers = await getTeamMembers();
+export default function SobreNosotrosPage() {
+  const teamMembers = getActiveTeamMembers();
 
   return (
     <>
@@ -182,7 +175,6 @@ export default async function SobreNosotrosPage() {
 
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
             {teamMembers.map((member, index) => {
-              const specialties = JSON.parse(member.specialties) as string[];
               const initials = member.name
                 .split(' ')
                 .map((n) => n[0])
@@ -214,7 +206,7 @@ export default async function SobreNosotrosPage() {
                     </div>
                     <p className="mt-4 text-muted-foreground">{member.bio}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {specialties.map((specialty, i) => (
+                      {member.specialties.map((specialty, i) => (
                         <Badge key={i} variant="secondary">
                           {specialty}
                         </Badge>
