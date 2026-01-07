@@ -1,0 +1,47 @@
+[
+  {
+    "id": "isabel-carrera",
+    "name": "Isabel Carrera",
+    "role": "Podóloga Colegiada - Directora",
+    "bio": "Podóloga titulada y colegiada con más de 15 años de experiencia en Móstoles. Fundadora y directora de la clínica, Isabel es especialista en el tratamiento de onicomicosis (hongos en uñas) y pie diabético. Su dedicación y profesionalidad la han convertido en la podóloga de referencia para cientos de familias de la zona sur de Madrid.",
+    "specialties": [
+      "Onicomicosis",
+      "Pie diabético",
+      "Quiropodia avanzada",
+      "Tratamiento ungueal"
+    ],
+    "collegiateNum": "COPOMA XXXX",
+    "order": 1,
+    "isActive": true
+  },
+  {
+    "id": "cristina-lopez",
+    "name": "Cristina López",
+    "role": "Podóloga Colegiada",
+    "bio": "Podóloga colegiada especializada en biomecánica del pie y podología deportiva. Cristina destaca por su trato cercano y su habilidad para realizar tratamientos delicados sin dolor. Experta en el diseño de plantillas ortopédicas personalizadas y en el tratamiento de lesiones deportivas como fascitis plantar y metatarsalgias.",
+    "specialties": [
+      "Estudio biomecánico",
+      "Plantillas personalizadas",
+      "Podología deportiva",
+      "Fascitis plantar"
+    ],
+    "collegiateNum": "COPOMA XXXX",
+    "order": 2,
+    "isActive": true
+  },
+  {
+    "id": "miriam-casas",
+    "name": "Miriam Casas",
+    "role": "Podóloga Colegiada",
+    "bio": "Podóloga colegiada con formación especializada en podología pediátrica y tratamiento de uñas encarnadas. Miriam aporta frescura y las técnicas más innovadoras al equipo. Su paciencia y delicadeza la hacen ideal para el tratamiento de niños y pacientes que requieren especial cuidado. Especialista en onicocriptosis y papilomas plantares.",
+    "specialties": [
+      "Podología infantil",
+      "Uñas encarnadas",
+      "Papilomas plantares",
+      "Quiropodia"
+    ],
+    "collegiateNum": "COPOMA XXXX",
+    "order": 3,
+    "isActive": true
+  }
+]

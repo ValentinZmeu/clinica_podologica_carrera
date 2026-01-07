@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 175 84% 32%;
+    --primary-foreground: 166 100% 98%;
+    --secondary: 175 20% 96%;
+    --secondary-foreground: 175 84% 15%;
+    --muted: 175 15% 95%;
+    --muted-foreground: 175 10% 45%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 38 100% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 175 20% 90%;
+    --input: 175 20% 90%;
+    --ring: 175 84% 32%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2;
+}
+
+/* Fade-in animation for hero elements */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Legal pages typography */
+.legal-content {
+  @apply text-muted-foreground leading-relaxed;
+}
+
+.legal-content h2 {
+  @apply mt-10 mb-4 text-xl font-bold text-foreground first:mt-0;
+}
+
+.legal-content h3 {
+  @apply mt-8 mb-3 text-lg font-semibold text-foreground;
+}
+
+.legal-content p {
+  @apply mb-4;
+}
+
+.legal-content ul {
+  @apply mb-4 ml-6 list-disc space-y-2;
+}
+
+.legal-content li {
+  @apply pl-1;
+}
+
+.legal-content strong {
+  @apply font-semibold text-foreground;
+}
+
+.legal-content a {
+  @apply text-primary underline underline-offset-2 hover:text-primary-600;
+}
+
+.legal-content table {
+  @apply w-full mb-6 text-sm border-collapse overflow-hidden rounded-lg border;
+}
+
+.legal-content thead {
+  @apply bg-muted;
+}
+
+.legal-content th {
+  @apply px-4 py-3 text-left font-semibold text-foreground border-b;
+}
+
+.legal-content td {
+  @apply px-4 py-3 border-b;
+}
+
+.legal-content tbody tr:last-child td {
+  @apply border-b-0;
+}
+
+.legal-content tbody tr:hover {
+  @apply bg-muted/50;
+}
