@@ -10,20 +10,12 @@ export function Hero() {
       className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900"
       data-testid="hero-section"
     >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient orbs */}
-        <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-primary-500/30 blur-[100px] animate-pulse-soft" />
-        <div className="absolute -right-40 top-1/2 h-96 w-96 rounded-full bg-accent-500/20 blur-[120px] animate-pulse-soft delay-300" />
-        <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-primary-400/20 blur-[80px] animate-pulse-soft delay-500" />
-
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
+      {/* Background elements - optimized for performance */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        {/* Gradient orbs - reduced blur for better performance */}
+        <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-primary-500/30 blur-3xl" />
+        <div className="absolute -right-40 top-1/2 h-96 w-96 rounded-full bg-accent-500/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-primary-400/20 blur-3xl" />
       </div>
 
       <div className="container relative z-10 flex min-h-[90vh] flex-col items-center justify-center py-20">
@@ -42,8 +34,8 @@ export function Hero() {
             <span className="text-white/60">en Google</span>
           </div>
 
-          {/* Main Heading - H1 optimizado para SEO */}
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up opacity-0 delay-100">
+          {/* Main Heading - H1 optimizado para SEO y LCP */}
+          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Tu{' '}
             <span className="relative">
               <span className="relative z-10 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
@@ -60,7 +52,7 @@ export function Hero() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/70 sm:text-xl animate-fade-in-up opacity-0 delay-200">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/70 sm:text-xl">
             Especialistas en el cuidado integral de tus pies. Quiropodia,
             plantillas personalizadas, estudio biomecánico y más.
             <span className="block mt-2 font-medium text-white/90">
@@ -69,7 +61,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in-up opacity-0 delay-300">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               size="lg"
               className="group h-14 w-full bg-primary-500 px-8 text-base font-semibold hover:bg-primary-600 sm:w-auto"
@@ -106,7 +98,7 @@ export function Hero() {
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 animate-fade-in-up opacity-0 delay-400">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
             <div className="flex items-center gap-2 text-sm text-white/70">
               <CheckCircle2 className="h-5 w-5 text-accent-400" />
               <span>Primera consulta sin compromiso</span>

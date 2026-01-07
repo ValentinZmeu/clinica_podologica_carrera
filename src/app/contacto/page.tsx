@@ -11,6 +11,7 @@ import {
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { PageHero } from '@/components/layout/page-hero';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -65,35 +66,13 @@ export default function ContactoPage() {
       />
 
       {/* Hero Section */}
-      <section
-        className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28"
-        data-testid="contact-hero"
-      >
-        {/* Background elements */}
-        <div className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-primary-500/20 blur-[100px]" />
-        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-accent-500/20 blur-[120px]" />
-
-        <div className="container relative z-10">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
-              <Navigation className="h-4 w-4 text-primary-400" />
-              <span className="text-sm font-medium text-white/90">
-                Contacto
-              </span>
-            </div>
-            <h1 className="mb-4 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-              ¿Cómo podemos{' '}
-              <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
-                ayudarte?
-              </span>
-            </h1>
-            <p className="text-lg text-white/70 md:text-xl">
-              Estamos a tu disposición. Elige la forma de contacto que prefieras
-              y te atenderemos en menos de 24 horas.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge="Contacto"
+        badgeIcon={Navigation}
+        title="¿Cómo podemos"
+        titleHighlight="ayudarte?"
+        description="Estamos a tu disposición. Elige la forma de contacto que prefieras y te atenderemos en menos de 24 horas."
+      />
 
       {/* Contact Methods */}
       <section className="py-16 md:py-24" data-testid="contact-methods">

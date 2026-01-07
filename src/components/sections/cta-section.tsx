@@ -20,12 +20,9 @@ export function CTASection() {
       {/* Gradient background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900" />
 
-      {/* Animated gradient orbs */}
-      <div className="absolute left-1/4 top-0 -z-10 h-96 w-96 animate-pulse rounded-full bg-primary-500/20 blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 animate-pulse rounded-full bg-accent-500/20 blur-3xl" />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px]" />
+      {/* Gradient orbs - optimized for performance */}
+      <div className="absolute left-1/4 top-0 -z-10 h-96 w-96 rounded-full bg-primary-500/20 blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-accent-500/20 blur-3xl" aria-hidden="true" />
 
       <div className="container">
         <div className="mx-auto max-w-4xl text-center">

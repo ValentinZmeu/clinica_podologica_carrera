@@ -1,12 +1,15 @@
+import dynamic from 'next/dynamic';
 import { Hero } from '@/components/sections/hero';
 import { Benefits } from '@/components/sections/benefits';
-import { ServicesPreview } from '@/components/sections/services-preview';
-import { Process } from '@/components/sections/process';
-import { Testimonials } from '@/components/sections/testimonials';
-import { Location } from '@/components/sections/location';
-import { FAQ } from '@/components/sections/faq';
-import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
+
+// Dynamic imports for below-the-fold components to reduce initial bundle
+const ServicesPreview = dynamic(() => import('@/components/sections/services-preview').then(mod => ({ default: mod.ServicesPreview })));
+const Process = dynamic(() => import('@/components/sections/process').then(mod => ({ default: mod.Process })));
+const Testimonials = dynamic(() => import('@/components/sections/testimonials').then(mod => ({ default: mod.Testimonials })));
+const Location = dynamic(() => import('@/components/sections/location').then(mod => ({ default: mod.Location })));
+const FAQ = dynamic(() => import('@/components/sections/faq').then(mod => ({ default: mod.FAQ })));
+const CTASection = dynamic(() => import('@/components/sections/cta-section').then(mod => ({ default: mod.CTASection })));
 
 // JSON-LD Schema para LocalBusiness
 const localBusinessSchema = {

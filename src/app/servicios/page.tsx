@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
+import { Stethoscope } from 'lucide-react';
 
 import { ServiceCard } from '@/components/cards/service-card';
+import { PageHero } from '@/components/layout/page-hero';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
 import prisma from '@/lib/prisma';
@@ -63,20 +65,13 @@ export default async function ServiciosPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-muted/30 py-16 md:py-24" data-testid="services-hero">
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Nuestros Servicios de Podología
-            </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Tratamientos especializados para todas las necesidades de tus pies.
-              Desde quiropodía general hasta soluciones avanzadas para problemas
-              específicos.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge="Servicios"
+        badgeIcon={Stethoscope}
+        title="Nuestros Servicios de"
+        titleHighlight="Podología"
+        description="Tratamientos especializados para todas las necesidades de tus pies. Desde quiropodía general hasta soluciones avanzadas para problemas específicos."
+      />
 
       {/* Services Grid */}
       <section className="py-16 md:py-24" data-testid="services-grid">

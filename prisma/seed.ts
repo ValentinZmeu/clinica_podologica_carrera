@@ -133,7 +133,7 @@ async function main() {
       shortDesc:
         'Tratamiento definitivo para uñas encarnadas con técnicas mínimamente invasivas.',
       fullDesc:
-        'Las uñas encarnadas (onicocriptosis) causan dolor e infección cuando el borde de la uña penetra en la piel. Ofrecemos tratamientos conservadores y, cuando es necesario, cirugía menor con anestesia local para solucionar el problema de forma definitiva.',
+        'Las uñas encarnadas (onicocriptosis) causan dolor e infección cuando el borde de la uña penetra en la piel. Ofrecemos tratamientos conservadores y técnicas especializadas para solucionar el problema de forma efectiva y duradera.',
       benefits: JSON.stringify([
         'Alivio inmediato del dolor',
         'Técnicas mínimamente invasivas',
@@ -143,7 +143,7 @@ async function main() {
       duration: '30-60 minutos',
       icon: 'Scissors',
       keywords:
-        'uñas encarnadas móstoles, onicocriptosis tratamiento, cirugía uña encarnada',
+        'uñas encarnadas móstoles, onicocriptosis tratamiento, tratamiento uña encarnada',
       order: 5,
       isActive: true,
       isFeatured: false,
@@ -175,7 +175,7 @@ async function main() {
       shortDesc:
         'Eliminación de verrugas plantares con tratamientos efectivos y seguros.',
       fullDesc:
-        'Los papilomas o verrugas plantares son lesiones causadas por el virus del papiloma humano (VPH). Ofrecemos diferentes tratamientos según el tipo y extensión de la lesión: crioterapia, ácidos, láser o cirugía menor.',
+        'Los papilomas o verrugas plantares son lesiones causadas por el virus del papiloma humano (VPH). Ofrecemos diferentes tratamientos según el tipo y extensión de la lesión, utilizando técnicas especializadas y efectivas.',
       benefits: JSON.stringify([
         'Diagnóstico diferencial preciso',
         'Múltiples opciones de tratamiento',
@@ -257,16 +257,16 @@ async function main() {
     // Uñas encarnadas FAQs
     {
       serviceSlug: 'unas-encarnadas',
-      question: '¿La cirugía de uña encarnada es definitiva?',
+      question: '¿El tratamiento de uña encarnada es doloroso?',
       answer:
-        'Sí, la cirugía menor que realizamos elimina definitivamente la matriz de la uña en la zona afectada, evitando que vuelva a encarnarse.',
+        'No, utilizamos técnicas cuidadosas y profesionales que minimizan las molestias. Nuestro objetivo es que el tratamiento sea lo más cómodo posible.',
       order: 1,
     },
     {
       serviceSlug: 'unas-encarnadas',
-      question: '¿Cuánto tarda en recuperarse tras la cirugía?',
+      question: '¿Cuánto tarda en mejorar una uña encarnada?',
       answer:
-        'La recuperación suele ser de 2-3 semanas. Podrás caminar desde el primer día, aunque te daremos instrucciones específicas para las curas.',
+        'La mejoría suele notarse desde la primera sesión. El tiempo total de tratamiento depende de la gravedad, pero normalmente en pocas semanas el problema está resuelto.',
       order: 2,
     },
     // Hongos FAQs
@@ -449,9 +449,9 @@ async function main() {
         'Onicomicosis',
         'Pie diabético',
         'Quiropodia avanzada',
-        'Cirugía ungueal',
+        'Tratamiento ungueal',
       ]),
-      collegiateNum: 'COPOMA 1234',
+      collegiateNum: 'COPOMA XXXX',
       order: 1,
       isActive: true,
     },
@@ -465,7 +465,7 @@ async function main() {
         'Podología deportiva',
         'Fascitis plantar',
       ]),
-      collegiateNum: 'COPOMA 2345',
+      collegiateNum: 'COPOMA XXXX',
       order: 2,
       isActive: true,
     },
@@ -479,7 +479,7 @@ async function main() {
         'Papilomas plantares',
         'Quiropodia',
       ]),
-      collegiateNum: 'COPOMA 3456',
+      collegiateNum: 'COPOMA XXXX',
       order: 3,
       isActive: true,
     },

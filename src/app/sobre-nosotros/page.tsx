@@ -4,6 +4,7 @@ import { Award, Heart, Users, Clock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
+import { PageHero } from '@/components/layout/page-hero';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
 import prisma from '@/lib/prisma';
@@ -94,23 +95,13 @@ export default async function SobreNosotrosPage() {
       />
 
       {/* Hero Section */}
-      <section
-        className="bg-muted/30 py-16 md:py-24"
-        data-testid="about-hero"
-      >
-        <div className="container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Conoce a Nuestro Equipo
-            </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Más de 15 años cuidando la salud de los pies de las familias de
-              Móstoles y alrededores. Profesionalidad, cercanía y pasión por lo
-              que hacemos.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge="Sobre Nosotros"
+        badgeIcon={Users}
+        title="Conoce a Nuestro"
+        titleHighlight="Equipo"
+        description="Más de 15 años cuidando la salud de los pies de las familias de Móstoles y alrededores. Profesionalidad, cercanía y pasión por lo que hacemos."
+      />
 
       {/* Story Section */}
       <section className="py-16 md:py-24" data-testid="about-story">
