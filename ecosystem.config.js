@@ -7,13 +7,8 @@ module.exports = {
       cwd: '/var/www/clinica-podologica',
       instances: 'max',
       exec_mode: 'cluster',
-      env: {
-        NODE_ENV: 'production',
-        PORT: 3000,
-      },
       env_production: {
         NODE_ENV: 'production',
-        PORT: 3000,
       },
       // Logs
       error_file: '/var/log/pm2/clinica-error.log',
