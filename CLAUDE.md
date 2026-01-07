@@ -19,6 +19,27 @@ Aplica las reglas de:
 
 ---
 
+## Flujo de Trabajo
+
+### Acciones bajo demanda
+
+Las siguientes acciones **solo se ejecutan cuando el usuario lo pide explícitamente**:
+
+| Acción | Comando | Cuándo ejecutar |
+|--------|---------|-----------------|
+| Build | `npm run build` | Solo si el usuario dice "build", "compila", etc. |
+| Commit | `git commit` | Solo si el usuario dice "commit", "commitea", etc. |
+| Push | `git push` | Solo si el usuario lo pide explícitamente |
+| Deploy | Cualquier deploy | Solo si el usuario lo pide explícitamente |
+
+### Flujo por defecto
+
+1. Realizar los cambios solicitados en los archivos
+2. Informar al usuario de los cambios realizados
+3. **Esperar** a que el usuario decida si quiere build/commit/push
+
+---
+
 ## Gestión de Planes
 
 ### Estructura de carpetas
