@@ -88,7 +88,7 @@ export function Hero() {
               asChild
             >
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={`tel:${siteConfig.phoneLink}`}
                 data-testid="hero-call-button"
               >
                 <Phone className="mr-2 h-5 w-5" />

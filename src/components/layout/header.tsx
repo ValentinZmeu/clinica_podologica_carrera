@@ -60,7 +60,7 @@ export function Header() {
         <div className="hidden md:flex md:items-center md:gap-2">
           <Button variant="outline" size="sm" asChild>
             <a
-              href={`tel:${siteConfig.phone}`}
+              href={`tel:${siteConfig.phoneLink}`}
               data-testid="nav-call-button"
             >
               <Phone className="mr-2 h-4 w-4" />

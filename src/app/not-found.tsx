@@ -31,7 +31,7 @@ export default function NotFound() {
             </Link>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>
+            <a href={`tel:${siteConfig.phoneLink}`}>
               <Phone className="mr-2 h-4 w-4" />
               Llamar Ahora
             </a>

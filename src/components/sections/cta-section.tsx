@@ -88,7 +88,7 @@ export function CTASection() {
               asChild
             >
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={`tel:${siteConfig.phoneLink}`}
                 data-testid="cta-call-button"
               >
                 <Phone className="mr-2 h-5 w-5" />

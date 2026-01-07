@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import {
   Phone,
   Mail,
@@ -137,7 +138,7 @@ export default function ContactoPage() {
                         asChild
                       >
                         <a
-                          href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                          href={`tel:${siteConfig.phoneLink}`}
                           data-testid="contact-phone-btn"
                         >
                           Llamar ahora
@@ -268,6 +269,28 @@ export default function ContactoPage() {
                 En pleno centro, junto al Mercado de la Constitución
               </p>
             </div>
+
+            {/* Clinic Entrance Image */}
+            <div className="mb-6 group relative overflow-hidden rounded-2xl border shadow-lg">
+              <div className="relative aspect-[16/9]">
+                <Image
+                  src="/images/Entrada de Clínica Podológica Carrera.png"
+                  alt="Fachada de Clínica Podológica Carrera en Móstoles"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 800px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-sm font-medium text-white/80">Nuestra clínica</p>
+                  <p className="text-lg font-bold text-white">
+                    {siteConfig.fullAddress}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Map */}
             <div className="overflow-hidden rounded-2xl border shadow-lg">
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.8!2d${siteConfig.coordinates.lng}!3d${siteConfig.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd418e81e5d565c3%3A0x8f1c87dfcd45852b!2sClinica%20Podol%C3%B3gica%20Carrera!5e0!3m2!1ses!2ses!4v1704067200000!5m2!1ses!2ses`}

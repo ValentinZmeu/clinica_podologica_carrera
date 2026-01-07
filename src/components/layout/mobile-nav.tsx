@@ -97,7 +97,7 @@ export function MobileNav() {
 
               <div className="mt-4 flex flex-col gap-2">
                 <Button variant="outline" asChild>
-                  <a href={`tel:${siteConfig.phone}`}>
+                  <a href={`tel:${siteConfig.phoneLink}`}>
                     <Phone className="mr-2 h-4 w-4" />
                     {siteConfig.phone}
                   </a>

@@ -323,7 +323,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     </Button>
                     <Button variant="outline" className="w-full" size="lg" asChild>
                       <a
-                        href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
+                        href={`tel:${siteConfig.phoneLink}`}
                         data-testid="service-phone-cta"
                       >
                         <Phone className="mr-2 h-4 w-4" />

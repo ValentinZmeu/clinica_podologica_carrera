@@ -52,7 +52,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold">Contacto</h3>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={`tel:${siteConfig.phoneLink}`}
                 className="flex items-center gap-2 hover:text-primary"
                 data-testid="footer-phone-link"
               >
