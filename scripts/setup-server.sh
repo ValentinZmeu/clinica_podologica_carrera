@@ -3,7 +3,7 @@
 # =============================================================================
 # Script de Configuración Inicial del Servidor
 # =============================================================================
-# Uso: curl -fsSL https://raw.githubusercontent.com/tu-usuario/repo/main/scripts/setup-server.sh | bash
+# Uso: curl -fsSL https://raw.githubusercontent.com/ValentinZmeu/clinica_podologica_carrera/main/scripts/setup-server.sh | bash
 # O:   ./scripts/setup-server.sh
 # =============================================================================
 
@@ -176,7 +176,7 @@ echo "   certbot --nginx -d $DOMAIN -d www.$DOMAIN"
 echo ""
 echo "2. Clonar el repositorio:"
 echo "   cd $APP_DIR"
-echo "   git clone <tu-repo> ."
+echo "   git clone git@github.com:ValentinZmeu/clinica_podologica_carrera.git ."
 echo ""
 echo "3. Configurar variables de entorno:"
 echo "   cp .env.example .env"

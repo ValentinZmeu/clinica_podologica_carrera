@@ -22,9 +22,10 @@ NC='\033[0m' # No Color
 # Configuración
 APP_NAME="clinica-podologica"
 APP_DIR="/var/www/clinica-podologica"
-REPO_URL="git@github.com:tu-usuario/clinica-podologica.git"
+REPO_URL="git@github.com:ValentinZmeu/clinica_podologica_carrera.git"
 BRANCH="main"
 NODE_VERSION="20"
+PORT=3000
 
 # Flags
 SKIP_BUILD=false
@@ -89,6 +90,35 @@ check_requirements() {
   fi
 
   log_success "Todos los requisitos cumplidos"
+}
+
+# Verificar disponibilidad del puerto
+check_port() {
+  log_info "Verificando puerto $PORT..."
+
+  # Si la app ya está corriendo con PM2, el puerto estará ocupado por ella (OK)
+  if pm2 list | grep -q "$APP_NAME.*online"; then
+    log_success "Puerto $PORT en uso por $APP_NAME (se reiniciará)"
+    return
+  fi
+
+  # Verificar si otro proceso está usando el puerto
+  if command -v lsof &> /dev/null; then
+    PORT_PID=$(lsof -ti :$PORT 2>/dev/null || true)
+    if [ -n "$PORT_PID" ]; then
+      log_error "Puerto $PORT ocupado por proceso PID: $PORT_PID"
+      log_info "Ejecutar: sudo kill $PORT_PID  (para liberar el puerto)"
+      exit 1
+    fi
+  elif command -v ss &> /dev/null; then
+    if ss -tuln | grep -q ":$PORT "; then
+      log_error "Puerto $PORT está ocupado"
+      log_info "Ejecutar: sudo ss -tulnp | grep :$PORT  (para ver qué proceso)"
+      exit 1
+    fi
+  fi
+
+  log_success "Puerto $PORT disponible"
 }
 
 # Crear backup del directorio actual
@@ -233,6 +263,7 @@ main() {
   fi
 
   check_requirements
+  check_port
   backup_current
   update_code
   install_deps

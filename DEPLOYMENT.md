@@ -87,7 +87,7 @@ sudo ufw enable
 ```bash
 # 1. Clonar repositorio
 cd /var/www
-sudo git clone git@github.com:tu-usuario/clinica-podologica.git
+sudo git clone git@github.com:ValentinZmeu/clinica_podologica_carrera.git clinica-podologica
 cd clinica-podologica
 
 # 2. Configurar variables de entorno
@@ -128,13 +128,14 @@ chmod +x scripts/deploy.sh
 ### ¿Qué Hace el Script?
 
 1. **Verifica requisitos** - Node.js, PM2, Git
-2. **Crea backup** - Del despliegue anterior
-3. **Actualiza código** - `git pull` o `git clone`
-4. **Instala dependencias** - `npm ci`
-5. **Compila aplicación** - `npm run build`
-6. **Reinicia PM2** - Zero-downtime reload
-7. **Verifica salud** - Health check HTTP
-8. **Limpia backups** - Mantiene últimos 5
+2. **Verifica puerto** - Comprueba que el puerto 3000 esté disponible
+3. **Crea backup** - Del despliegue anterior
+4. **Actualiza código** - `git pull` o `git clone`
+5. **Instala dependencias** - `npm ci`
+6. **Compila aplicación** - `npm run build`
+7. **Reinicia PM2** - Zero-downtime reload
+8. **Verifica salud** - Health check HTTP
+9. **Limpia backups** - Mantiene últimos 5
 
 ---
 
