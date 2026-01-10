@@ -39,7 +39,7 @@ export function CTASection() {
 
           <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
             ¿Listo para cuidar{' '}
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+            <span className="text-primary-400">
               de tus pies?
             </span>
           </h2>

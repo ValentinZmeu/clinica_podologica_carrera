@@ -38,7 +38,7 @@ export function Hero() {
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Tu{' '}
             <span className="relative">
-              <span className="relative z-10 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+              <span className="relative z-10 text-primary-400">
                 Clínica Podológica
               </span>
             </span>

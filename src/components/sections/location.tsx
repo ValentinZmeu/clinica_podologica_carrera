@@ -1,6 +1,5 @@
 import { MapPin, Phone, Mail, Clock, ExternalLink, Navigation } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
 
 const contactInfo = [
@@ -56,7 +55,7 @@ export function Location() {
           </span>
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Encuéntranos en{' '}
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+            <span className="text-primary-500">
               Móstoles
             </span>
           </h2>
@@ -91,13 +90,8 @@ export function Location() {
             {contactInfo.map((item, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-xl border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-xl border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary-200"
               >
-                {/* Background on hover */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 transition-opacity group-hover:opacity-5`}
-                />
-
                 <div className="flex items-start gap-4">
                   <div
                     className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${item.gradient} text-white shadow-md`}
@@ -113,20 +107,15 @@ export function Location() {
                       </p>
                     )}
                     {item.link && (
-                      <Button
-                        variant="link"
-                        className="mt-1 h-auto p-0 text-primary"
-                        asChild
+                      <a
+                        href={item.link}
+                        target={item.link.startsWith('http') ? '_blank' : undefined}
+                        rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="mt-2 inline-flex items-center text-sm font-medium text-primary-500 hover:text-primary-600 transition-colors z-10"
                       >
-                        <a
-                          href={item.link}
-                          target={item.link.startsWith('http') ? '_blank' : undefined}
-                          rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        >
-                          {item.linkText}
-                          <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </Button>
+                        {item.linkText}
+                        <ExternalLink className="ml-1 h-3 w-3" />
+                      </a>
                     )}
                   </div>
                 </div>

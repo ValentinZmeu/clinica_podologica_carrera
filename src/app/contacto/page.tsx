@@ -261,7 +261,7 @@ export default function ContactoPage() {
             <div className="mb-6 text-center">
               <h2 className="text-2xl font-bold md:text-3xl">
                 Encuéntranos en{' '}
-                <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+                <span className="text-primary-500">
                   Móstoles
                 </span>
               </h2>

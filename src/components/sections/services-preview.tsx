@@ -31,7 +31,7 @@ export function ServicesPreview() {
           </div>
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Nuestros{' '}
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+            <span className="text-primary-500">
               Servicios
             </span>
           </h2>
@@ -58,7 +58,7 @@ export function ServicesPreview() {
         <div className="mt-12 text-center">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+            className="bg-accent-500 hover:bg-accent-600 text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
             asChild
           >
             <Link href="/servicios" data-testid="services-view-all-link">

@@ -49,7 +49,7 @@ export function TestimonialCard({
       {/* Author */}
       <div className="flex items-center gap-3">
         <Avatar className="h-12 w-12 border-2 border-primary/20">
-          <AvatarFallback className="bg-gradient-to-br from-primary-500 to-accent-500 text-white font-semibold">
+          <AvatarFallback className="bg-primary-500 text-white font-semibold">
             {initials || name.slice(0, 2).toUpperCase()}
           </AvatarFallback>
         </Avatar>
@@ -85,7 +85,7 @@ export function TestimonialCard({
       </div>
 
       {/* Bottom gradient line */}
-      <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 transition-opacity group-hover:opacity-100" />
+      <div className="absolute bottom-0 left-0 h-1 w-full bg-primary-500 opacity-0 transition-opacity group-hover:opacity-100" />
     </div>
   );
 }

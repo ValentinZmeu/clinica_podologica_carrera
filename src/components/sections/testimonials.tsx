@@ -46,7 +46,7 @@ export function Testimonials() {
 
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Lo Que Dicen{' '}
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+            <span className="text-primary-500">
               Nuestros Pacientes
             </span>
           </h2>

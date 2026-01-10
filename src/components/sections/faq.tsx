@@ -50,7 +50,7 @@ export function FAQ() {
           </div>
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Preguntas{' '}
-            <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+            <span className="text-primary-500">
               Frecuentes
             </span>
           </h2>
@@ -69,7 +69,7 @@ export function FAQ() {
                   value={faq.id}
                   trigger={
                     <span className="flex items-center text-left">
-                      <span className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-sm font-bold text-white">
+                      <span className="mr-4 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary-500 text-sm font-bold text-white">
                         {index + 1}
                       </span>
                       {faq.question}
@@ -90,7 +90,7 @@ export function FAQ() {
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-primary-500 to-accent-500 text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+              className="bg-accent-500 hover:bg-accent-600 text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
               asChild
             >
               <a
