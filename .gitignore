@@ -42,6 +42,9 @@ logs/
 *.db
 *.db-journal
 
+# contact messages (user data)
+data/contact-messages.json
+
 # IDE
 .idea/
 .vscode/

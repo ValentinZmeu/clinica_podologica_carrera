@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-
-import prisma from '@/lib/prisma';
+import fs from 'fs/promises';
+import path from 'path';
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -10,20 +10,50 @@ const contactSchema = z.object({
   message: z.string().min(10),
 });
 
+interface ContactMessage {
+  id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  message: string;
+  createdAt: string;
+}
+
+const MESSAGES_FILE = path.join(process.cwd(), 'data', 'contact-messages.json');
+
+async function getMessages(): Promise<ContactMessage[]> {
+  try {
+    const data = await fs.readFile(MESSAGES_FILE, 'utf-8');
+    return JSON.parse(data);
+  } catch {
+    return [];
+  }
+}
+
+async function saveMessages(messages: ContactMessage[]): Promise<void> {
+  const dir = path.dirname(MESSAGES_FILE);
+  await fs.mkdir(dir, { recursive: true });
+  await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2));
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const data = contactSchema.parse(body);
 
-    // Save to database
-    await prisma.contactMessage.create({
-      data: {
-        name: data.name,
-        email: data.email,
-        phone: data.phone || null,
-        message: data.message,
-      },
-    });
+    const messages = await getMessages();
+
+    const newMessage: ContactMessage = {
+      id: crypto.randomUUID(),
+      name: data.name,
+      email: data.email,
+      phone: data.phone || null,
+      message: data.message,
+      createdAt: new Date().toISOString(),
+    };
+
+    messages.push(newMessage);
+    await saveMessages(messages);
 
     // Here you could also send an email notification
     // await sendEmailNotification(data);
