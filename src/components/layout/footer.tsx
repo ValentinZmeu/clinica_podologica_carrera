@@ -8,7 +8,7 @@ import { siteConfig, navLinks } from '@/lib/constants';
 export function Footer() {
   return (
     <footer
-      className="border-t bg-muted/50"
+      className="relative z-50 border-t bg-background"
       data-testid="footer"
     >
       <div className="container py-12">

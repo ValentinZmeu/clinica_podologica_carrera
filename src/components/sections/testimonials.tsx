@@ -22,26 +22,29 @@ export function Testimonials() {
 
       <div className="container">
         <div className="mx-auto mb-16 max-w-2xl text-center">
-          {/* Rating badge */}
-          <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-amber-50 px-4 py-2 ring-1 ring-amber-200">
-            <div className="flex gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-5 w-5 fill-amber-400 text-amber-400"
-                />
-              ))}
-            </div>
-            <span className="text-sm font-semibold text-amber-700">
-              {siteConfig.rating} en Google
+          {/* Section label */}
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-1.5">
+            <MessageSquareQuote className="h-4 w-4 text-primary-600" />
+            <span className="text-sm font-medium text-primary-700">
+              Testimonios Reales
             </span>
           </div>
 
-          <div className="mb-4 inline-flex items-center gap-2">
-            <MessageSquareQuote className="h-5 w-5 text-primary-500" />
-            <span className="text-sm font-medium text-primary-600">
-              Testimonios Reales
-            </span>
+          {/* Rating badge */}
+          <div className="mb-6 flex justify-center">
+            <div className="inline-flex items-center gap-3 rounded-full bg-amber-50 px-4 py-2 ring-1 ring-amber-200">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className="h-5 w-5 fill-amber-400 text-amber-400"
+                  />
+                ))}
+              </div>
+              <span className="text-sm font-semibold text-amber-700">
+                {siteConfig.rating} en Google
+              </span>
+            </div>
           </div>
 
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">

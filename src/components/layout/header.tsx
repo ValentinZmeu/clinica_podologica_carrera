@@ -16,7 +16,7 @@ const MobileNav = dynamic(
 export function Header() {
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b bg-background/10 backdrop-blur supports-[backdrop-filter]:bg-background/85"
+      className="sticky top-0 z-50 w-full border-b bg-white"
       data-testid="header"
     >
       <div className="container flex h-16 items-center justify-between">

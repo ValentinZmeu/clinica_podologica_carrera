@@ -1,7 +1,37 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 import { siteConfig } from '@/lib/constants';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
 export function WhatsAppButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.querySelector('[data-testid="hero-section"]');
+      if (!heroSection) {
+        setIsVisible(true);
+        return;
+      }
+
+      const heroRect = heroSection.getBoundingClientRect();
+      const heroHeight = heroRect.height;
+      const heroTop = heroRect.top;
+
+      // Show button when scrolled past half of the hero section
+      setIsVisible(heroTop < -(heroHeight / 2));
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <a
       href={formatWhatsAppUrl(
@@ -10,7 +40,11 @@ export function WhatsAppButton() {
       )}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg transition-colors hover:bg-green-600"
+      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg transition-all duration-300 ease-out hover:bg-green-600 ${
+        isVisible
+          ? 'translate-x-0 opacity-100'
+          : 'translate-x-20 opacity-0 pointer-events-none'
+      }`}
       data-testid="whatsapp-float-button"
       aria-label="Contactar por WhatsApp"
     >
