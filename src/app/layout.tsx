@@ -90,6 +90,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        {/* Preload critical logo for faster LCP */}
+        <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" />
         {/* Preconnect to Google Fonts for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

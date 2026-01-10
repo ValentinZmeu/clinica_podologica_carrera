@@ -274,11 +274,12 @@ export default function ContactoPage() {
             <div className="mb-6 group relative overflow-hidden rounded-2xl border shadow-lg">
               <div className="relative aspect-[16/9]">
                 <Image
-                  src="/images/Entrada de Clínica Podológica Carrera.png"
+                  src="/images/entrada-clinica.webp"
                   alt="Fachada de Clínica Podológica Carrera en Móstoles"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 800px"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">

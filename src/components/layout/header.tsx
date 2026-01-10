@@ -27,12 +27,13 @@ export function Header() {
           data-testid="nav-home-link"
         >
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt={`Logo de ${siteConfig.name}`}
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             className="h-10 w-10"
             priority
+            unoptimized
           />
           <span className="text-xl font-bold text-primary-600">
             {siteConfig.name}
