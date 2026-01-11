@@ -19,8 +19,8 @@ const siteConfig = {
   name: 'Clínica Podológica Carrera',
   description:
     'Clínica de podología en Móstoles, Madrid. Especialistas en quiropodia, plantillas personalizadas, estudio biomecánico, podología deportiva y tratamiento de uñas encarnadas. Pide tu cita.',
-  url: 'https://podologiacarrera.com',
-  ogImage: 'https://podologiacarrera.com/og-image.jpg',
+  url: 'https://clinica-podologica-carrera.com',
+  ogImage: 'https://clinica-podologica-carrera.com/og-image.jpg',
 };
 
 export const metadata: Metadata = {

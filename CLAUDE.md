@@ -380,6 +380,6 @@ Los datos de contacto están en `data.json`:
 - **Dirección**: C. de la Carrera, 7, 28931 Móstoles, Madrid
 - **Teléfono**: +34 912 26 88 58
 - **WhatsApp**: +34 682 15 81 58
-- **Web**: https://podologiacarrera.com
+- **Web**: https://clinica-podologica-carrera.com
 - **Horarios**: L-V 09:30-14:00 y 17:00-20:00
 - **Rating**: 4.8 estrellas

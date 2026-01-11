@@ -6,7 +6,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'podologiacarrera.com',
+        hostname: 'clinica-podologica-carrera.com',
       },
     ],
   },
