@@ -157,6 +157,14 @@ sudo nano /etc/nginx/sites-available/clinica-podologica-carrera.com
 Contenido:
 
 ```nginx
+# Redirección de .es a .com
+server {
+    listen 80;
+    server_name clinica-podologica-carrera.es www.clinica-podologica-carrera.es;
+    return 301 https://clinica-podologica-carrera.com$request_uri;
+}
+
+# Sitio principal (.com)
 server {
     listen 80;
     server_name clinica-podologica-carrera.com www.clinica-podologica-carrera.com;
@@ -181,15 +189,62 @@ sudo ln -s /etc/nginx/sites-available/clinica-podologica-carrera.com /etc/nginx/
 sudo nginx -t
 sudo systemctl reload nginx
 
-# Obtener certificado SSL
-sudo certbot --nginx -d clinica-podologica-carrera.com -d www.clinica-podologica-carrera.com
+# Obtener certificados SSL (incluye ambos dominios .com y .es)
+sudo certbot --nginx \
+  -d clinica-podologica-carrera.com \
+  -d www.clinica-podologica-carrera.com \
+  -d clinica-podologica-carrera.es \
+  -d www.clinica-podologica-carrera.es
+```
+
+#### Alternativa: Configuración con Caddy
+
+Si prefieres usar Caddy (SSL automático, configuración más simple):
+
+```bash
+# Instalar Caddy
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+
+# Crear Caddyfile
+sudo nano /etc/caddy/Caddyfile
+```
+
+Contenido del Caddyfile:
+
+```caddy
+# Redirección de .es a .com
+clinica-podologica-carrera.es, www.clinica-podologica-carrera.es {
+    redir https://clinica-podologica-carrera.com{uri} permanent
+}
+
+# Sitio principal
+clinica-podologica-carrera.com, www.clinica-podologica-carrera.com {
+    reverse_proxy localhost:3000
+    encode gzip
+}
+```
+
+```bash
+# Reiniciar Caddy (SSL automático vía Let's Encrypt)
+sudo systemctl reload caddy
 ```
 
 ### 5. Configurar firewall
 
 ```bash
 sudo ufw allow ssh
+
+# Si usas Nginx:
 sudo ufw allow 'Nginx Full'
+
+# Si usas Caddy:
+# sudo ufw allow 80/tcp
+# sudo ufw allow 443/tcp
+
 sudo ufw enable
 ```
 
