@@ -16,6 +16,7 @@ import {
   getOtherServices,
   getServiceSlugs,
 } from '@/lib/data';
+import { getIconComponent } from '@/lib/icons';
 
 interface ServicePageProps {
   params: Promise<{
@@ -64,6 +65,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
   }
 
   const otherServices = getOtherServices(slug);
+
+  // Obtener componente de icono
+  const ServiceIcon = getIconComponent(service.icon);
 
   // JSON-LD Schema para el servicio
   const serviceSchema = {
@@ -190,11 +194,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </Link>
 
             <div className="flex items-start gap-4">
-              {service.icon && (
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-4xl">
-                  {service.icon}
-                </div>
-              )}
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                <ServiceIcon className="h-8 w-8 text-primary" />
+              </div>
               <div>
                 {service.isFeatured && (
                   <Badge className="mb-2" variant="secondary">
@@ -334,27 +336,30 @@ export default async function ServicePage({ params }: ServicePageProps) {
               Otros servicios que pueden interesarte
             </h2>
             <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
-              {otherServices.map((otherService) => (
-                <Link
-                  key={otherService.id}
-                  href={`/servicios/${otherService.slug}`}
-                  className="group"
-                >
-                  <Card className="h-full transition-all hover:shadow-md">
-                    <CardContent className="p-6">
-                      {otherService.icon && (
-                        <div className="mb-3 text-3xl">{otherService.icon}</div>
-                      )}
-                      <h3 className="mb-2 font-semibold group-hover:text-primary">
-                        {otherService.name}
-                      </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {otherService.shortDesc}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+              {otherServices.map((otherService) => {
+                const OtherServiceIcon = getIconComponent(otherService.icon);
+                return (
+                  <Link
+                    key={otherService.id}
+                    href={`/servicios/${otherService.slug}`}
+                    className="group"
+                  >
+                    <Card className="h-full transition-all hover:shadow-md">
+                      <CardContent className="p-6">
+                        <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                          <OtherServiceIcon className="h-6 w-6 text-primary" />
+                        </div>
+                        <h3 className="mb-2 font-semibold group-hover:text-primary">
+                          {otherService.name}
+                        </h3>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {otherService.shortDesc}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

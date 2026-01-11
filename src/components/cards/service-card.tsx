@@ -1,29 +1,8 @@
 import Link from 'next/link';
-import {
-  Footprints,
-  Layers,
-  Activity,
-  Dumbbell,
-  Scissors,
-  Heart,
-  CircleDot,
-  Sparkles,
-  ArrowRight,
-  LucideIcon,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
-
-const iconMap: Record<string, LucideIcon> = {
-  Footprints,
-  Layers,
-  Activity,
-  Dumbbell,
-  Scissors,
-  Heart,
-  CircleDot,
-  Sparkles,
-};
+import { getIconComponent } from '@/lib/icons';
 
 const gradients = [
   'from-blue-500 to-cyan-500',
@@ -51,7 +30,7 @@ export function ServiceCard({
   isFeatured,
   index = 0,
 }: ServiceCardProps) {
-  const Icon = icon ? iconMap[icon] || Footprints : Footprints;
+  const Icon = getIconComponent(icon);
   const gradient = gradients[index % gradients.length];
 
   return (
