@@ -92,4 +92,4 @@ jobs:
             docker image prune -f
 
             # Show status
-            docker compose ps
+            docker compose -f docker-compose.prod.yml ps
