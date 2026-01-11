@@ -14,15 +14,15 @@ const CTASection = dynamic(() => import('@/components/sections/cta-section').the
 // JSON-LD Schema para LocalBusiness
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Podiatrist',
+  '@type': ['LocalBusiness', 'MedicalBusiness', 'Podiatrist'],
   '@id': `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
   telephone: siteConfig.phone,
   email: siteConfig.email,
-  image: `${siteConfig.url}/og-image.jpg`,
-  logo: `${siteConfig.url}/logo.png`,
+  image: `${siteConfig.url}/images/entrada-clinica.webp`,
+  logo: `${siteConfig.url}/images/logo.webp`,
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
@@ -54,9 +54,9 @@ const localBusinessSchema = {
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: siteConfig.rating,
-    bestRating: 5,
-    worstRating: 1,
-    ratingCount: 50,
+    bestRating: '5',
+    worstRating: '1',
+    ratingCount: '50',
   },
   areaServed: [
     { '@type': 'City', name: 'Móstoles' },
