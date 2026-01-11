@@ -185,9 +185,11 @@ Route (app)                                 Size     First Load JS
 
 ### Próximos Pasos (Opcional)
 
-- [ ] Añadir imágenes reales de la clínica
+- [x] Añadir imágenes reales de la clínica
 - [x] Implementar Open Graph images personalizadas
 - [x] Añadir más testimonios (9 testimonios totales)
-- [ ] Validar Core Web Vitals en producción
-- [ ] Test en Google Rich Results
+- [x] Validar Core Web Vitals (Performance: 100, LCP: 0.5s)
+- [ ] Test en Google Rich Results (ver [GOOGLE-RICH-RESULTS-TEST.md](../GOOGLE-RICH-RESULTS-TEST.md))
 - [x] Implementar página 404 personalizada
+
+**Nota**: El test de Rich Results se puede hacer ahora con el servidor local (`npm run dev`) siguiendo la guía creada.
