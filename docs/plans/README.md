@@ -8,6 +8,7 @@
 | ---- | ----------- | ------ | ------------ |
 | [mejoras-web-v2](pending/mejoras-web-v2.md) | Bugs, UX/UI, accesibilidad y SEO | PENDIENTE | 2026-02-14 |
 | [google-analytics-searchconsole](pending/google-analytics-searchconsole.md) | Integrar GA4 y Google Search Console con variables .env | PENDIENTE | 2026-02-14 |
+| [seo-servicios-local-llm](pending/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | PENDIENTE | 2026-02-15 |
 
 ## Planes Archivados
 
