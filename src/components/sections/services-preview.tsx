@@ -51,9 +51,9 @@ export function ServicesPreview() {
                 slug={service.slug}
                 name={service.name}
                 shortDesc={service.shortDesc}
+                image={service.image}
                 icon={service.icon}
                 isFeatured={service.isFeatured}
-                index={index}
               />
             </AnimateOnScroll>
           ))}

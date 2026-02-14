@@ -12,6 +12,7 @@
       "Alivio inmediato del dolor"
     ],
     "duration": "30-45 minutos",
+    "image": "/images/servicios/quiropodia-tratamiento-pies.webp",
     "icon": "Footprints",
     "keywords": "quiropodia móstoles, eliminar durezas pies, callosidades, cuidado uñas pies",
     "order": 1,
@@ -45,6 +46,7 @@
       "Mejora del rendimiento deportivo"
     ],
     "duration": "60-90 minutos (incluye estudio)",
+    "image": "/images/servicios/plantillas-ortopedicas-personalizadas.webp",
     "icon": "Layers",
     "keywords": "plantillas ortopédicas móstoles, plantillas personalizadas, plantillas a medida",
     "order": 2,
@@ -78,6 +80,7 @@
       "Mejora del rendimiento deportivo"
     ],
     "duration": "45-60 minutos",
+    "image": "/images/servicios/estudio-biomecanico-pisada.webp",
     "icon": "Activity",
     "keywords": "estudio pisada móstoles, análisis biomecánico, estudio marcha",
     "order": 3,
@@ -98,6 +101,7 @@
       "Mejora del rendimiento"
     ],
     "duration": "Variable según tratamiento",
+    "image": "/images/servicios/podologia-deportiva-lesiones.webp",
     "icon": "Dumbbell",
     "keywords": "podólogo deportivo móstoles, fascitis plantar, lesiones deportivas pies",
     "order": 4,
@@ -118,6 +122,7 @@
       "Recuperación rápida"
     ],
     "duration": "30-60 minutos",
+    "image": "/images/servicios/unas-encarnadas-tratamiento.webp",
     "icon": "Scissors",
     "keywords": "uñas encarnadas móstoles, onicocriptosis tratamiento, tratamiento uña encarnada",
     "order": 5,
@@ -151,6 +156,7 @@
       "Tratamiento de lesiones"
     ],
     "duration": "30-45 minutos",
+    "image": "/images/servicios/pie-diabetico-cuidado.webp",
     "icon": "Heart",
     "keywords": "pie diabético móstoles, cuidado pies diabetes, podólogo diabéticos",
     "order": 6,
@@ -178,6 +184,7 @@
       "Prevención de contagio"
     ],
     "duration": "Variable según tratamiento",
+    "image": "/images/servicios/papilomas-plantares-verrugas.webp",
     "icon": "CircleDot",
     "keywords": "papilomas pies móstoles, verrugas plantares tratamiento, eliminar verruga pie",
     "order": 7,
@@ -198,6 +205,7 @@
       "Prevención de recaídas"
     ],
     "duration": "Variable según tratamiento",
+    "image": "/images/servicios/hongos-unas-onicomicosis.webp",
     "icon": "Sparkles",
     "keywords": "hongos uñas pies móstoles, onicomicosis tratamiento, eliminar hongos uñas",
     "order": 8,

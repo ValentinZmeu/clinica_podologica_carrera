@@ -17,6 +17,7 @@ export interface Service {
   fullDesc: string;
   benefits: string[];
   duration: string;
+  image: string | null;
   icon: string | null;
   keywords: string;
   order: number;
