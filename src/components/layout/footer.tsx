@@ -114,8 +114,16 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row">
           <p>
-            © {new Date().getFullYear()} {siteConfig.name}. Todos los derechos
-            reservados.
+            Made with <span className="text-red-500">&#10084;</span> by{' '}
+            <a
+              href="https://dev-dim.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="devdim-gradient font-semibold"
+            >
+              DevDim
+            </a>
+            {' '}© {new Date().getFullYear()} {siteConfig.name}.
           </p>
           <div className="flex gap-4">
             <Link href="/privacidad" className="hover:text-primary">
