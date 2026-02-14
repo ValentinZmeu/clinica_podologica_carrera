@@ -4,7 +4,7 @@
     "slug": "quiropodia",
     "name": "Quiropodia",
     "shortDesc": "Tratamiento completo para el cuidado de tus pies: eliminación de durezas, callosidades y uñas.",
-    "fullDesc": "La quiropodia es el tratamiento básico y fundamental en podología. Consiste en la eliminación de hiperqueratosis (durezas y callos), corte y fresado de uñas, y tratamiento de cualquier alteración cutánea del pie. Es recomendable realizarla cada 4-6 semanas para mantener los pies en óptimas condiciones.",
+    "fullDesc": "La quiropodia es el tratamiento básico y fundamental en podología, y uno de los servicios más demandados en nuestra clínica de Móstoles. Consiste en la eliminación profesional de hiperqueratosis (durezas y callos), el corte y fresado de uñas, y el tratamiento de cualquier alteración cutánea del pie. En Clínica Podológica Carrera realizamos la quiropodia con instrumental estéril y técnicas que garantizan un resultado indoloro y seguro. Es recomendable acudir cada 4-6 semanas para mantener los pies en condiciones óptimas y prevenir patologías más graves como uñas encarnadas o infecciones. Nuestras podólogas en Móstoles evalúan el estado completo de tus pies en cada sesión, ofreciendo recomendaciones personalizadas de cuidado e higiene podal.",
     "benefits": [
       "Eliminación de durezas y callosidades",
       "Corte y cuidado profesional de uñas",
@@ -14,22 +14,119 @@
     "duration": "30-45 minutos",
     "image": "/images/servicios/quiropodia-tratamiento-pies.webp",
     "icon": "Footprints",
-    "keywords": "quiropodia móstoles, eliminar durezas pies, callosidades, cuidado uñas pies",
+    "keywords": "quiropodia móstoles, eliminar durezas pies, callosidades, cuidado uñas pies, podólogo móstoles quiropodia",
     "order": 1,
     "isActive": true,
     "isFeatured": true,
+    "metaDescription": "Quiropodia profesional en Móstoles. Eliminamos durezas, callos y cuidamos tus uñas sin dolor. Podólogas colegiadas con más de 15 años de experiencia. Pide cita.",
+    "h1Override": "Quiropodia Profesional en Móstoles",
+    "tldr": "La quiropodia es el tratamiento podológico básico que elimina durezas, callosidades y cuida las uñas de los pies de forma profesional e indolora. En Clínica Podológica Carrera en Móstoles realizamos este tratamiento con instrumental estéril en sesiones de 30-45 minutos, recomendándose cada 4-6 semanas para mantener la salud de los pies.",
+    "condition": {
+      "name": "Hiperqueratosis plantar",
+      "alternateName": ["Durezas en los pies", "Callosidades", "Helomas", "Tilomas"],
+      "description": "La hiperqueratosis plantar es el engrosamiento excesivo de la capa córnea de la piel del pie como respuesta a la presión o fricción repetida. Se manifiesta como durezas difusas o callos localizados que pueden generar dolor al caminar y afectar la calidad de vida del paciente.",
+      "bodyLocation": "Planta del pie, dedos, zona metatarsal",
+      "riskFactors": ["Calzado inadecuado", "Alteraciones biomecánicas", "Sobrepeso", "Edad avanzada", "Bipedestación prolongada", "Práctica deportiva intensa"],
+      "affectedPopulation": "Afecta a personas de todas las edades, siendo más frecuente en adultos mayores de 40 años, deportistas y personas que permanecen muchas horas de pie."
+    },
+    "symptoms": [
+      { "name": "Durezas en la planta", "description": "Zonas de piel engrosada y endurecida, especialmente bajo los metatarsianos y en el talón." },
+      { "name": "Callos entre los dedos", "description": "Helomas interdigitales que producen molestias al caminar o con el uso de calzado cerrado." },
+      { "name": "Dolor al caminar", "description": "Sensación de pisar una piedra o dolor punzante en zonas de presión del pie." },
+      { "name": "Uñas gruesas o amarillentas", "description": "Uñas engrosadas que se vuelven difíciles de cortar con herramientas domésticas." },
+      { "name": "Grietas en los talones", "description": "Fisuras en la piel reseca del talón que pueden infectarse si no se tratan." }
+    ],
+    "whoNeedsIt": [
+      "Personas con durezas o callosidades que causan molestias al caminar",
+      "Mayores que no pueden cortarse las uñas de los pies por sí mismos",
+      "Deportistas que someten sus pies a esfuerzo constante",
+      "Pacientes diabéticos que necesitan cuidado podológico preventivo",
+      "Cualquier persona que quiera mantener sus pies sanos y cuidados"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Exploración inicial", "description": "La podóloga examina el estado general de tus pies, identificando durezas, callosidades, alteraciones ungueales y posibles patologías." },
+      { "step": 2, "title": "Eliminación de durezas", "description": "Con bisturí estéril se eliminan las hiperqueratosis (durezas y callos) de forma precisa e indolora, respetando la piel sana." },
+      { "step": 3, "title": "Cuidado de uñas", "description": "Corte profesional, fresado y limpieza de uñas. Se tratan surcos ungueales y se previenen uñas encarnadas." },
+      { "step": 4, "title": "Tratamiento de helomas", "description": "Los callos localizados (ojos de gallo) se eliminan hasta su núcleo para aliviar el dolor de forma inmediata." },
+      { "step": 5, "title": "Hidratación y recomendaciones", "description": "Se aplican cremas específicas y la podóloga te ofrece pautas personalizadas de cuidado para mantener los resultados en casa." }
+    ],
+    "preparation": "No necesitas preparación especial. Acude con los pies limpios y evita aplicar cremas el mismo día de la cita para facilitar el tratamiento.",
+    "aftercare": [
+      "Hidrata tus pies diariamente con crema específica para pies",
+      "Usa calzado cómodo y de horma ancha que no presione los dedos",
+      "Seca bien los pies después de la ducha, especialmente entre los dedos",
+      "Evita cortar las uñas demasiado cortas o redondear las esquinas",
+      "Acude a revisión cada 4-6 semanas para mantener los resultados"
+    ],
+    "recoveryTimeline": "El alivio es inmediato. Puedes caminar con normalidad tras la sesión sin ninguna limitación.",
+    "additionalSections": [
+      {
+        "heading": "¿Por qué es importante la quiropodia regular?",
+        "body": "Muchas personas subestiman la importancia del cuidado podológico regular. Las durezas y callosidades no son solo un problema estético: si no se tratan, pueden derivar en dolor crónico, alteraciones de la marcha, uñas encarnadas e incluso infecciones. En nuestra clínica de Móstoles vemos a diario pacientes que han dejado pasar demasiado tiempo y llegan con problemas que habrían sido fáciles de prevenir con una quiropodia periódica.",
+        "listItems": [
+          "Previene la formación de uñas encarnadas",
+          "Evita infecciones por grietas y fisuras",
+          "Mejora la comodidad al caminar y la calidad de vida",
+          "Permite detectar precozmente patologías como hongos o papilomas"
+        ]
+      }
+    ],
+    "relatedServices": ["unas-encarnadas", "pie-diabetico", "plantillas-personalizadas"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "Sociedad Española de Podología - Guía de práctica clínica en quiropodia",
+      "Consejo General de Colegios Oficiales de Podólogos de España",
+      "Journal of Foot and Ankle Research - Management of hyperkeratosis"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
     "faqs": [
       {
         "id": "quiropodia-faq-1",
         "question": "¿Es dolorosa la quiropodia?",
-        "answer": "No, la quiropodia no es dolorosa. Utilizamos instrumentos profesionales y técnicas cuidadosas que hacen del tratamiento una experiencia cómoda.",
+        "answer": "No, la quiropodia no es dolorosa. Utilizamos instrumentos profesionales y técnicas cuidadosas que hacen del tratamiento una experiencia cómoda. La mayoría de pacientes describen la sesión como relajante.",
         "order": 1
       },
       {
         "id": "quiropodia-faq-2",
         "question": "¿Cada cuánto tiempo debo hacerme una quiropodia?",
-        "answer": "Lo recomendable es cada 4-6 semanas, aunque depende de cada persona y del estado de sus pies.",
+        "answer": "Lo recomendable es cada 4-6 semanas, aunque depende de cada persona y del estado de sus pies. En tu primera visita a nuestra clínica en Móstoles evaluamos tu caso y te indicamos la frecuencia ideal.",
         "order": 2
+      },
+      {
+        "id": "quiropodia-faq-3",
+        "question": "¿Puedo hacerme la quiropodia en casa?",
+        "answer": "No es recomendable. Las herramientas domésticas como cuchillas o limas pueden causar cortes, infecciones o empeorar la lesión. Solo un podólogo colegiado dispone del instrumental estéril y la formación necesaria para realizar el tratamiento de forma segura.",
+        "order": 3
+      },
+      {
+        "id": "quiropodia-faq-4",
+        "question": "¿Cuánto cuesta una quiropodia en Móstoles?",
+        "answer": "El precio de la quiropodia varía según el estado de los pies y los tratamientos adicionales necesarios. Contacta con nuestra clínica para informarte sobre las tarifas actuales. Ofrecemos precios competitivos en la zona sur de Madrid.",
+        "order": 4
+      },
+      {
+        "id": "quiropodia-faq-5",
+        "question": "¿La quiropodia está indicada para personas mayores?",
+        "answer": "Sí, es especialmente recomendable. Las personas mayores suelen tener dificultad para cuidar sus propios pies y son más propensas a durezas, uñas engrosadas y problemas circulatorios. En nuestra clínica de Móstoles tratamos a muchos pacientes mayores con cuidado especial.",
+        "order": 5
+      },
+      {
+        "id": "quiropodia-faq-6",
+        "question": "¿Necesito cita previa para una quiropodia?",
+        "answer": "Sí, recomendamos pedir cita previa para garantizar la atención sin esperas. Puedes pedir cita por teléfono o WhatsApp. En caso de urgencia, intentamos atenderte el mismo día.",
+        "order": 6
+      },
+      {
+        "id": "quiropodia-faq-7",
+        "question": "¿Se puede hacer quiropodia a pacientes diabéticos?",
+        "answer": "Sí, de hecho es imprescindible. Los pacientes diabéticos necesitan un cuidado podológico regular y profesional. En nuestra clínica seguimos protocolos especiales para el pie diabético durante la quiropodia.",
+        "order": 7
       }
     ]
   },
@@ -38,7 +135,7 @@
     "slug": "plantillas-personalizadas",
     "name": "Plantillas Personalizadas",
     "shortDesc": "Plantillas ortopédicas a medida diseñadas específicamente para tus pies y necesidades.",
-    "fullDesc": "Las plantillas personalizadas se diseñan tras un estudio biomecánico completo de tu pisada. Fabricadas con materiales de alta calidad, corrigen alteraciones del pie y mejoran la distribución de presiones, aliviando dolores en pies, rodillas, caderas y espalda.",
+    "fullDesc": "Las plantillas personalizadas son dispositivos ortopédicos diseñados a medida tras un estudio biomecánico completo de tu pisada. En Clínica Podológica Carrera en Móstoles fabricamos cada par de plantillas con materiales de alta calidad, adaptándolas a la anatomía exacta de tus pies y a tu tipo de actividad. Las plantillas ortopédicas corrigen alteraciones biomecánicas, mejoran la distribución de presiones plantares y alivian dolores en pies, rodillas, caderas y espalda. Nuestras podólogas especializadas en biomecánica realizan un análisis completo de tu marcha y pisada en nuestra clínica de Móstoles, utilizando la información obtenida para diseñar plantillas que se adaptan perfectamente a tu calzado habitual y a tus necesidades específicas.",
     "benefits": [
       "Diseño 100% personalizado",
       "Corrección de la pisada",
@@ -48,22 +145,121 @@
     "duration": "60-90 minutos (incluye estudio)",
     "image": "/images/servicios/plantillas-ortopedicas-personalizadas.webp",
     "icon": "Layers",
-    "keywords": "plantillas ortopédicas móstoles, plantillas personalizadas, plantillas a medida",
+    "keywords": "plantillas ortopédicas móstoles, plantillas personalizadas, plantillas a medida, plantillas pies móstoles",
     "order": 2,
     "isActive": true,
     "isFeatured": true,
+    "metaDescription": "Plantillas ortopédicas personalizadas en Móstoles. Diseño a medida tras estudio biomecánico completo. Corrige tu pisada y alivia dolores. Pide cita.",
+    "h1Override": "Plantillas Ortopédicas Personalizadas en Móstoles",
+    "tldr": "Las plantillas personalizadas son dispositivos ortopédicos fabricados a medida que corrigen la pisada y alivian dolores en pies, rodillas y espalda. En Clínica Podológica Carrera en Móstoles las diseñamos tras un estudio biomecánico completo, con materiales de alta calidad que se adaptan a tu calzado y actividad diaria.",
+    "condition": {
+      "name": "Alteraciones biomecánicas del pie",
+      "alternateName": ["Pie plano", "Pie cavo", "Pronación excesiva", "Supinación", "Metatarsalgia"],
+      "description": "Las alteraciones biomecánicas del pie comprenden cualquier desviación del patrón normal de marcha que provoca una distribución inadecuada de las presiones plantares. Pueden causar dolor en pies, tobillos, rodillas, caderas e incluso espalda, y se corrigen eficazmente con plantillas ortopédicas personalizadas.",
+      "bodyLocation": "Pie, tobillo, arco plantar",
+      "riskFactors": ["Pie plano o cavo", "Sobrepeso", "Calzado inadecuado", "Actividad deportiva intensa", "Trabajo con bipedestación prolongada", "Embarazo"],
+      "affectedPopulation": "Afecta a personas de todas las edades. Especialmente frecuente en deportistas, personas con sobrepeso, trabajadores que pasan muchas horas de pie y adultos mayores con desgaste articular."
+    },
+    "symptoms": [
+      { "name": "Dolor en la planta del pie", "description": "Molestias bajo el arco plantar o en la zona metatarsal al caminar o estar de pie durante tiempo prolongado." },
+      { "name": "Dolor de rodillas o cadera", "description": "Molestias articulares que pueden tener su origen en una mala pisada y distribución de cargas." },
+      { "name": "Desgaste irregular del calzado", "description": "Zapatos que se desgastan más por un lado, indicando pronación o supinación excesiva." },
+      { "name": "Fatiga al caminar", "description": "Cansancio excesivo en pies y piernas tras recorridos cortos o al estar de pie." },
+      { "name": "Dolor lumbar", "description": "Molestias en la zona baja de la espalda relacionadas con alteraciones de la marcha y la postura." }
+    ],
+    "whoNeedsIt": [
+      "Personas con pie plano, pie cavo o alteraciones de la pisada",
+      "Deportistas que buscan mejorar rendimiento y prevenir lesiones",
+      "Pacientes con dolor de pies, rodillas o espalda al caminar",
+      "Trabajadores que pasan muchas horas de pie",
+      "Niños con alteraciones en el desarrollo del pie"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Entrevista clínica", "description": "Recogemos tu historial médico, síntomas, tipo de actividad, calzado habitual y objetivos del tratamiento." },
+      { "step": 2, "title": "Exploración biomecánica", "description": "Realizamos un estudio biomecánico completo: análisis de la pisada en estática y dinámica, valoración articular y muscular." },
+      { "step": 3, "title": "Estudio de presiones plantares", "description": "Con tecnología especializada analizamos cómo distribuyes el peso en tus pies al caminar y correr." },
+      { "step": 4, "title": "Diseño de las plantillas", "description": "Con todos los datos obtenidos, diseñamos las plantillas adaptadas a tu anatomía, patología y tipo de calzado." },
+      { "step": 5, "title": "Fabricación a medida", "description": "Las plantillas se fabrican con materiales de alta calidad seleccionados según tu peso, actividad y necesidades." },
+      { "step": 6, "title": "Entrega y ajuste", "description": "Te entregamos las plantillas, verificamos su adaptación al calzado y programamos una revisión de seguimiento." }
+    ],
+    "preparation": "Trae el calzado que uses habitualmente (deporte, trabajo, diario). Si tienes plantillas anteriores o informes médicos, tráelos también. Ven con ropa cómoda que permita valorar tu marcha.",
+    "aftercare": [
+      "Usa las plantillas de forma progresiva: empieza con 2-3 horas al día la primera semana",
+      "Aumenta el tiempo de uso gradualmente hasta llevarlas todo el día",
+      "Acude a la revisión de seguimiento a las 3-4 semanas para ajustarlas si es necesario",
+      "Mantén las plantillas limpias y secas; déjalas airear por la noche",
+      "Consulta antes de cambiar de calzado habitual para verificar la compatibilidad",
+      "Reemplaza las plantillas cuando notes desgaste o pérdida de forma (generalmente cada 1-3 años)"
+    ],
+    "recoveryTimeline": "La adaptación a las plantillas dura entre 1 y 2 semanas. La mejora de los síntomas suele notarse a partir de la segunda o tercera semana de uso continuado.",
+    "additionalSections": [
+      {
+        "heading": "Plantillas personalizadas vs. plantillas de farmacia",
+        "body": "Las plantillas genéricas de farmacia ofrecen una solución temporal y estándar que no se adapta a la anatomía de tu pie. Las plantillas personalizadas que fabricamos en nuestra clínica de Móstoles se diseñan a partir de un estudio biomecánico individual, lo que permite corregir de forma precisa las alteraciones específicas de cada paciente y ofrecer resultados duraderos.",
+        "listItems": [
+          "Diseño individualizado frente a talla estándar",
+          "Materiales profesionales de larga duración",
+          "Corrección específica de tu alteración biomecánica",
+          "Seguimiento y ajustes por parte de tu podóloga"
+        ]
+      }
+    ],
+    "relatedServices": ["estudio-biomecanico", "podologia-deportiva", "quiropodia"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "Revista Española de Podología - Eficacia de las ortesis plantares personalizadas",
+      "Journal of Foot and Ankle Research - Custom foot orthoses for musculoskeletal conditions",
+      "Consejo General de Colegios Oficiales de Podólogos de España"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
     "faqs": [
       {
         "id": "plantillas-faq-1",
         "question": "¿Cuánto duran las plantillas personalizadas?",
-        "answer": "Las plantillas personalizadas suelen durar entre 1 y 3 años dependiendo del uso, actividad y cuidados. Realizamos revisiones periódicas para comprobar su estado.",
+        "answer": "Las plantillas personalizadas suelen durar entre 1 y 3 años dependiendo del uso, actividad y cuidados. Realizamos revisiones periódicas en nuestra clínica de Móstoles para comprobar su estado y ajustarlas si es necesario.",
         "order": 1
       },
       {
         "id": "plantillas-faq-2",
         "question": "¿Puedo usar las plantillas en cualquier calzado?",
-        "answer": "Diseñamos las plantillas adaptadas al tipo de calzado que más uses. Pueden utilizarse en varios pares, aunque es importante que el zapato tenga espacio suficiente.",
+        "answer": "Diseñamos las plantillas adaptadas al tipo de calzado que más uses. Pueden utilizarse en varios pares, aunque es importante que el zapato tenga espacio suficiente. En tu visita te asesoramos sobre el calzado más adecuado.",
         "order": 2
+      },
+      {
+        "id": "plantillas-faq-3",
+        "question": "¿Las plantillas duelen al principio?",
+        "answer": "Es normal notar una ligera molestia los primeros días mientras tu pie se adapta a la nueva posición. Por eso recomendamos un uso progresivo: empieza con 2-3 horas al día y aumenta gradualmente.",
+        "order": 3
+      },
+      {
+        "id": "plantillas-faq-4",
+        "question": "¿A qué edad se pueden usar plantillas?",
+        "answer": "Se pueden prescribir plantillas a partir de los 3-4 años de edad, una vez que la estructura del pie está más definida. En nuestra clínica de Móstoles tratamos a pacientes de todas las edades.",
+        "order": 4
+      },
+      {
+        "id": "plantillas-faq-5",
+        "question": "¿Son necesarias las plantillas para hacer deporte?",
+        "answer": "Si tienes una alteración biomecánica, las plantillas deportivas personalizadas mejoran el rendimiento y previenen lesiones. Son especialmente recomendables para corredores, futbolistas y personas que practican deportes de impacto.",
+        "order": 5
+      },
+      {
+        "id": "plantillas-faq-6",
+        "question": "¿Cuánto cuestan las plantillas personalizadas en Móstoles?",
+        "answer": "El precio incluye el estudio biomecánico, la fabricación a medida y las revisiones de seguimiento. Contacta con nuestra clínica para informarte sobre las tarifas actuales.",
+        "order": 6
+      },
+      {
+        "id": "plantillas-faq-7",
+        "question": "¿Cómo sé si necesito plantillas?",
+        "answer": "Si tienes dolor al caminar, fatiga en las piernas, dolor de rodillas o espalda, o notas que tu calzado se desgasta de forma irregular, es recomendable realizar un estudio biomecánico para valorar si necesitas plantillas.",
+        "order": 7
       }
     ]
   },
@@ -72,7 +268,7 @@
     "slug": "estudio-biomecanico",
     "name": "Estudio Biomecánico",
     "shortDesc": "Análisis completo de tu pisada y marcha para detectar alteraciones y prevenir lesiones.",
-    "fullDesc": "El estudio biomecánico de la marcha analiza cómo pisas y caminas para identificar alteraciones que puedan causar problemas en pies, rodillas, caderas o espalda. Utilizamos tecnología avanzada para obtener datos precisos y diseñar el tratamiento más adecuado.",
+    "fullDesc": "El estudio biomecánico de la marcha es una exploración completa que analiza cómo pisas y caminas para identificar alteraciones que puedan causar problemas en pies, rodillas, caderas o espalda. En Clínica Podológica Carrera en Móstoles utilizamos tecnología avanzada para obtener datos precisos sobre la distribución de presiones plantares, la alineación articular y el patrón de marcha. Este estudio es la base fundamental para el diseño de plantillas personalizadas y el abordaje de lesiones deportivas. Nuestras podólogas especializadas en biomecánica en Móstoles realizan un análisis exhaustivo que incluye exploración en estática, dinámica y, cuando es necesario, análisis del gesto deportivo específico.",
     "benefits": [
       "Diagnóstico preciso de alteraciones",
       "Prevención de lesiones",
@@ -82,18 +278,122 @@
     "duration": "45-60 minutos",
     "image": "/images/servicios/estudio-biomecanico-pisada.webp",
     "icon": "Activity",
-    "keywords": "estudio pisada móstoles, análisis biomecánico, estudio marcha",
+    "keywords": "estudio pisada móstoles, análisis biomecánico, estudio marcha, estudio biomecánico pie móstoles",
     "order": 3,
     "isActive": true,
     "isFeatured": true,
-    "faqs": []
+    "metaDescription": "Estudio biomecánico de la pisada en Móstoles. Análisis completo de tu marcha con tecnología avanzada. Prevención de lesiones y diseño de plantillas. Pide cita.",
+    "h1Override": "Estudio Biomecánico de la Pisada en Móstoles",
+    "tldr": "El estudio biomecánico analiza tu pisada y marcha para detectar alteraciones que causan dolor en pies, rodillas o espalda. En Clínica Podológica Carrera en Móstoles realizamos este análisis con tecnología avanzada en sesiones de 45-60 minutos, siendo la base para el diseño de plantillas personalizadas y la prevención de lesiones.",
+    "condition": {
+      "name": "Alteraciones de la marcha",
+      "alternateName": ["Trastornos de la pisada", "Dismetría", "Pronación excesiva", "Supinación"],
+      "description": "Las alteraciones de la marcha son desviaciones del patrón normal de caminar que pueden provocar sobrecargas, dolor articular y lesiones repetitivas. El estudio biomecánico permite identificarlas con precisión para diseñar el tratamiento correctivo más adecuado.",
+      "bodyLocation": "Pie, tobillo, rodilla, cadera, columna",
+      "riskFactors": ["Práctica deportiva intensa", "Calzado inadecuado", "Lesiones previas", "Diferencias de longitud en extremidades", "Sobrepeso"],
+      "affectedPopulation": "Personas de todas las edades, especialmente deportistas, personas con dolor articular de origen desconocido y niños en fase de crecimiento."
+    },
+    "symptoms": [
+      { "name": "Dolor al caminar o correr", "description": "Molestias recurrentes en pies, rodillas o caderas durante la actividad física o al caminar distancias moderadas." },
+      { "name": "Lesiones deportivas repetitivas", "description": "Fascitis plantar, periostitis tibial, tendinitis de Aquiles u otras lesiones que reaparecen tras la recuperación." },
+      { "name": "Desgaste asimétrico del calzado", "description": "El zapato se desgasta significativamente más por un lado, indicando un patrón de marcha alterado." },
+      { "name": "Inestabilidad al caminar", "description": "Sensación de inseguridad o tobillos que se tuercen con facilidad al andar por superficies irregulares." },
+      { "name": "Dolor lumbar crónico", "description": "Dolor en la zona baja de la espalda que no mejora con tratamiento convencional y puede estar relacionado con la pisada." }
+    ],
+    "whoNeedsIt": [
+      "Deportistas que quieren mejorar rendimiento y prevenir lesiones",
+      "Personas con dolor de pies, rodillas o espalda sin diagnóstico claro",
+      "Niños con alteraciones en la marcha o desarrollo del pie",
+      "Pacientes que van a iniciar tratamiento con plantillas",
+      "Personas con lesiones deportivas repetitivas"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Historia clínica completa", "description": "Recogemos información sobre tu historial médico, lesiones previas, tipo de actividad, calzado habitual y síntomas actuales." },
+      { "step": 2, "title": "Exploración en estática", "description": "Valoración de la alineación de tus pies, rodillas y caderas en posición de pie: arcos plantares, ejes del retropié y antepié." },
+      { "step": 3, "title": "Análisis de la marcha", "description": "Estudio de tu forma de caminar y correr para identificar alteraciones en el patrón de pisada y las fases de la marcha." },
+      { "step": 4, "title": "Estudio de presiones plantares", "description": "Registro de la distribución de presiones en la planta del pie durante la marcha mediante plataforma de presiones." },
+      { "step": 5, "title": "Diagnóstico y plan de tratamiento", "description": "Con todos los datos analizados, te explicamos los hallazgos y proponemos un plan de tratamiento personalizado." }
+    ],
+    "preparation": "Trae ropa cómoda que permita ver tus rodillas (pantalón corto o leggings). Trae también tu calzado habitual y deportivo, y plantillas anteriores si las tienes.",
+    "aftercare": [
+      "Sigue las recomendaciones de tratamiento indicadas por la podóloga",
+      "Si se prescriben plantillas, utilízalas de forma progresiva según las indicaciones",
+      "Acude a la revisión de seguimiento programada (habitualmente a las 4-6 semanas)",
+      "Informa a la podóloga si notas cambios en tus síntomas tras iniciar el tratamiento",
+      "Mantén una actividad física regular adaptada a las recomendaciones recibidas"
+    ],
+    "recoveryTimeline": "El estudio es una prueba diagnóstica indolora. Los resultados se entregan en la misma sesión y el tratamiento puede iniciarse inmediatamente.",
+    "additionalSections": [
+      {
+        "heading": "¿Cuándo es necesario un estudio biomecánico?",
+        "body": "Aunque cualquier persona puede beneficiarse de un estudio biomecánico, hay situaciones en las que es especialmente recomendable. En nuestra clínica de Móstoles realizamos este estudio como primer paso antes de fabricar plantillas personalizadas, pero también es fundamental para deportistas con lesiones recurrentes y personas con dolor articular de origen desconocido.",
+        "listItems": [
+          "Antes de fabricar plantillas ortopédicas personalizadas",
+          "Cuando existen lesiones deportivas que se repiten",
+          "Si hay dolor de pies, rodillas o espalda sin causa clara",
+          "En niños con marcha alterada o pies planos"
+        ]
+      }
+    ],
+    "relatedServices": ["plantillas-personalizadas", "podologia-deportiva", "quiropodia"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "Revista Española de Podología - Protocolos de exploración biomecánica",
+      "Journal of Biomechanics - Gait analysis in clinical practice",
+      "International Journal of Sports Physical Therapy"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
+    "faqs": [
+      {
+        "id": "biomecanico-faq-1",
+        "question": "¿El estudio biomecánico duele?",
+        "answer": "No, es una prueba totalmente indolora. Consiste en caminar, correr y mantenerse de pie mientras la podóloga analiza tu pisada y registra datos con tecnología especializada.",
+        "order": 1
+      },
+      {
+        "id": "biomecanico-faq-2",
+        "question": "¿Cuánto dura un estudio biomecánico?",
+        "answer": "El estudio completo dura entre 45 y 60 minutos. Incluye entrevista, exploración física, análisis de la marcha, estudio de presiones y explicación de resultados.",
+        "order": 2
+      },
+      {
+        "id": "biomecanico-faq-3",
+        "question": "¿Siempre necesito plantillas tras el estudio?",
+        "answer": "No necesariamente. El estudio biomecánico es diagnóstico. Según los resultados, la podóloga puede recomendar plantillas, ejercicios, cambios de calzado u otros tratamientos. En nuestra clínica de Móstoles te explicamos todas las opciones.",
+        "order": 3
+      },
+      {
+        "id": "biomecanico-faq-4",
+        "question": "¿Es necesario para niños?",
+        "answer": "Sí, es muy recomendable en niños a partir de 4-5 años si se detectan alteraciones en la marcha, pies planos, caídas frecuentes o dolor al caminar. La detección temprana permite un tratamiento más efectivo.",
+        "order": 4
+      },
+      {
+        "id": "biomecanico-faq-5",
+        "question": "¿Cubre la seguridad social el estudio biomecánico?",
+        "answer": "Generalmente no está cubierto por la sanidad pública. Sin embargo, muchos seguros privados incluyen podología en sus coberturas. Consulta con tu aseguradora o contacta con nuestra clínica en Móstoles para informarte.",
+        "order": 5
+      },
+      {
+        "id": "biomecanico-faq-6",
+        "question": "¿Cada cuánto hay que repetir el estudio?",
+        "answer": "Recomendamos repetirlo cada 2-3 años o cuando cambien las circunstancias (nueva actividad deportiva, embarazo, cambio significativo de peso, nueva lesión). En niños conviene revisarlo anualmente durante el crecimiento.",
+        "order": 6
+      }
+    ]
   },
   {
     "id": "podologia-deportiva",
     "slug": "podologia-deportiva",
     "name": "Podología Deportiva",
     "shortDesc": "Tratamiento especializado para deportistas: prevención y tratamiento de lesiones.",
-    "fullDesc": "La podología deportiva se centra en las necesidades específicas de los deportistas. Tratamos lesiones comunes como fascitis plantar, esguinces, tendinitis y metatarsalgias, además de optimizar el rendimiento mediante plantillas deportivas personalizadas.",
+    "fullDesc": "La podología deportiva se centra en las necesidades específicas de los deportistas, tanto profesionales como aficionados. En Clínica Podológica Carrera en Móstoles tratamos lesiones comunes del pie relacionadas con la práctica deportiva: fascitis plantar, periostitis tibial, tendinitis de Aquiles, metatarsalgias y esguinces de repetición. Además de tratar lesiones existentes, trabajamos en la prevención mediante estudios biomecánicos deportivos, diseño de plantillas específicas para cada deporte y asesoramiento sobre calzado deportivo. Nuestra podóloga especializada en biomecánica deportiva en Móstoles analiza el gesto técnico de tu deporte para optimizar el rendimiento y minimizar el riesgo de lesión.",
     "benefits": [
       "Prevención de lesiones deportivas",
       "Tratamiento de fascitis plantar",
@@ -103,18 +403,123 @@
     "duration": "Variable según tratamiento",
     "image": "/images/servicios/podologia-deportiva-lesiones.webp",
     "icon": "Dumbbell",
-    "keywords": "podólogo deportivo móstoles, fascitis plantar, lesiones deportivas pies",
+    "keywords": "podólogo deportivo móstoles, fascitis plantar, lesiones deportivas pies, plantillas deportivas móstoles",
     "order": 4,
     "isActive": true,
     "isFeatured": false,
-    "faqs": []
+    "metaDescription": "Podología deportiva en Móstoles. Tratamiento de fascitis plantar, lesiones deportivas y plantillas a medida para deportistas. Mejora tu rendimiento. Pide cita.",
+    "h1Override": "Podología Deportiva en Móstoles",
+    "tldr": "La podología deportiva trata y previene lesiones del pie en deportistas: fascitis plantar, tendinitis, metatarsalgias y esguinces. En Clínica Podológica Carrera en Móstoles combinamos estudio biomecánico deportivo con plantillas específicas para cada deporte, mejorando el rendimiento y reduciendo el riesgo de lesión.",
+    "condition": {
+      "name": "Lesiones podológicas deportivas",
+      "alternateName": ["Fascitis plantar", "Periostitis tibial", "Metatarsalgia", "Tendinitis de Aquiles"],
+      "description": "Las lesiones podológicas deportivas engloban un conjunto de patologías del pie y tobillo causadas por el sobreuso, la mala biomecánica o el calzado inadecuado durante la práctica deportiva. Incluyen fascitis plantar, periostitis, tendinitis y fracturas por estrés.",
+      "bodyLocation": "Pie, tobillo, fascia plantar, tendón de Aquiles, metatarsianos",
+      "riskFactors": ["Aumento brusco de la carga de entrenamiento", "Calzado deportivo inadecuado", "Alteraciones biomecánicas no tratadas", "Superficies de entrenamiento duras", "Falta de calentamiento y estiramientos"],
+      "affectedPopulation": "Deportistas de todas las edades y niveles, especialmente corredores, futbolistas, jugadores de pádel y personas que practican deportes de impacto."
+    },
+    "symptoms": [
+      { "name": "Dolor en el talón al levantarse", "description": "Dolor intenso en la planta del pie al dar los primeros pasos por la mañana, típico de la fascitis plantar." },
+      { "name": "Dolor en la espinilla", "description": "Molestias en la cara interna de la tibia durante o después del ejercicio, característico de la periostitis tibial." },
+      { "name": "Dolor metatarsal", "description": "Sensación de quemazón o dolor en la zona de los metatarsianos al correr o saltar." },
+      { "name": "Molestias en el tendón de Aquiles", "description": "Dolor y rigidez en la parte posterior del tobillo que empeora con la actividad física." },
+      { "name": "Ampollas y uñas negras", "description": "Lesiones cutáneas y ungueales frecuentes en corredores y deportistas de impacto." }
+    ],
+    "whoNeedsIt": [
+      "Corredores con fascitis plantar, periostitis u otras lesiones recurrentes",
+      "Deportistas que buscan optimizar su rendimiento a través de la pisada",
+      "Jugadores de fútbol, pádel, baloncesto u otros deportes de impacto",
+      "Personas que inician una actividad deportiva y quieren prevenir lesiones",
+      "Deportistas que necesitan plantillas específicas para su disciplina"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Valoración deportiva", "description": "Entrevista sobre tu actividad deportiva, historial de lesiones, calzado, superficie de entrenamiento y objetivos." },
+      { "step": 2, "title": "Estudio biomecánico deportivo", "description": "Análisis de tu pisada específico para tu deporte: carrera, cambios de dirección, saltos o gestos técnicos propios de tu disciplina." },
+      { "step": 3, "title": "Diagnóstico de la lesión", "description": "Identificación precisa de la patología y sus causas biomecánicas subyacentes." },
+      { "step": 4, "title": "Plan de tratamiento personalizado", "description": "Combinación de tratamiento directo, plantillas deportivas a medida, ejercicios y recomendaciones de calzado." },
+      { "step": 5, "title": "Seguimiento y readaptación", "description": "Revisiones periódicas para ajustar el tratamiento según tu evolución y vuelta progresiva a la actividad deportiva." }
+    ],
+    "preparation": "Trae tu calzado deportivo habitual, ropa de entrenamiento y, si es posible, un registro de tu actividad (distancias, frecuencia, superficies). Si tienes informes médicos previos o radiografías, tráelos también.",
+    "aftercare": [
+      "Sigue el protocolo de vuelta a la actividad indicado por la podóloga",
+      "Usa las plantillas deportivas en todo momento durante el entrenamiento",
+      "Realiza los ejercicios de fortalecimiento y estiramientos prescritos",
+      "No aumentes la carga de entrenamiento bruscamente (regla del 10%)",
+      "Acude a las revisiones de seguimiento programadas",
+      "Renueva tu calzado deportivo cada 500-800 km o cuando pierda amortiguación"
+    ],
+    "recoveryTimeline": "Depende de la lesión. La fascitis plantar mejora significativamente en 4-8 semanas con tratamiento adecuado. Lesiones musculares y tendinosas pueden requerir 6-12 semanas.",
+    "additionalSections": [
+      {
+        "heading": "Fascitis plantar: la lesión estrella del corredor",
+        "body": "La fascitis plantar es la causa más frecuente de consulta en podología deportiva en Móstoles. Se produce por la inflamación de la fascia plantar, una banda de tejido que conecta el talón con los dedos. En nuestra clínica abordamos esta lesión de forma integral, combinando el tratamiento directo con la corrección biomecánica mediante plantillas personalizadas para eliminar la causa del problema, no solo el síntoma.",
+        "listItems": [
+          "Dolor punzante en el talón al dar los primeros pasos",
+          "Empeora con el ejercicio y mejora parcialmente en reposo",
+          "Se relaciona con pronación excesiva, sobrecarga y calzado inadecuado",
+          "Tratamiento efectivo con plantillas personalizadas y ejercicios específicos"
+        ]
+      }
+    ],
+    "relatedServices": ["estudio-biomecanico", "plantillas-personalizadas", "quiropodia"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "British Journal of Sports Medicine - Management of plantar fasciitis",
+      "International Journal of Sports Physical Therapy",
+      "Revista Española de Podología - Biomecánica del deporte"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
+    "faqs": [
+      {
+        "id": "deportiva-faq-1",
+        "question": "¿Cuánto tarda en curarse una fascitis plantar?",
+        "answer": "Con un tratamiento adecuado que combine plantillas, ejercicios y modificación de la actividad, la fascitis plantar mejora significativamente en 4-8 semanas. En nuestra clínica de Móstoles abordamos la causa del problema para evitar recaídas.",
+        "order": 1
+      },
+      {
+        "id": "deportiva-faq-2",
+        "question": "¿Puedo seguir entrenando mientras me tratan?",
+        "answer": "Depende de la lesión y su gravedad. En la mayoría de casos no es necesario parar completamente, sino adaptar la actividad. Te daremos indicaciones precisas sobre qué puedes hacer durante el tratamiento.",
+        "order": 2
+      },
+      {
+        "id": "deportiva-faq-3",
+        "question": "¿Las plantillas deportivas son diferentes a las normales?",
+        "answer": "Sí, se diseñan con materiales y características específicas para cada deporte. Una plantilla para correr es diferente a una para fútbol o pádel, tanto en materiales como en diseño biomecánico.",
+        "order": 3
+      },
+      {
+        "id": "deportiva-faq-4",
+        "question": "¿Necesito un podólogo deportivo si soy corredor popular?",
+        "answer": "Sí, cualquier corredor puede beneficiarse de una valoración podológica. No hace falta ser profesional. Un estudio biomecánico previene lesiones y mejora la eficiencia de tu pisada al correr.",
+        "order": 4
+      },
+      {
+        "id": "deportiva-faq-5",
+        "question": "¿Cómo sé si mi calzado deportivo es adecuado?",
+        "answer": "Un calzado deportivo adecuado debe tener buena amortiguación, estabilidad y adaptarse a tu tipo de pie. En nuestra clínica de Móstoles te asesoramos sobre el calzado más apropiado para tu deporte y tipo de pisada.",
+        "order": 5
+      },
+      {
+        "id": "deportiva-faq-6",
+        "question": "¿El podólogo deportivo trata esguinces de tobillo?",
+        "answer": "Sí, tratamos las secuelas de los esguinces y trabajamos en la prevención de esguinces recurrentes mediante tratamiento propioceptivo, vendajes funcionales y plantillas estabilizadoras.",
+        "order": 6
+      }
+    ]
   },
   {
     "id": "unas-encarnadas",
     "slug": "unas-encarnadas",
     "name": "Uñas Encarnadas",
     "shortDesc": "Tratamiento definitivo para uñas encarnadas con técnicas mínimamente invasivas.",
-    "fullDesc": "Las uñas encarnadas (onicocriptosis) causan dolor e infección cuando el borde de la uña penetra en la piel. Ofrecemos tratamientos conservadores y técnicas especializadas para solucionar el problema de forma efectiva y duradera.",
+    "fullDesc": "Las uñas encarnadas (onicocriptosis) son una de las patologías más dolorosas y frecuentes del pie. Se producen cuando el borde lateral de la uña penetra en la piel del surco ungueal, provocando dolor, inflamación e infección. En Clínica Podológica Carrera en Móstoles ofrecemos tratamientos tanto conservadores como técnicas especializadas para resolver el problema de forma definitiva y duradera. Nuestra podóloga especialista en patología ungueal valora cada caso individualmente para determinar el abordaje más adecuado, priorizando siempre técnicas mínimamente invasivas que permiten una recuperación rápida. Si sufres uñas encarnadas en Móstoles, no esperes a que se infecte: cuanto antes se trate, más sencilla y rápida será la solución.",
     "benefits": [
       "Alivio inmediato del dolor",
       "Técnicas mínimamente invasivas",
@@ -124,22 +529,120 @@
     "duration": "30-60 minutos",
     "image": "/images/servicios/unas-encarnadas-tratamiento.webp",
     "icon": "Scissors",
-    "keywords": "uñas encarnadas móstoles, onicocriptosis tratamiento, tratamiento uña encarnada",
+    "keywords": "uñas encarnadas móstoles, onicocriptosis tratamiento, tratamiento uña encarnada, podólogo uñas encarnadas móstoles",
     "order": 5,
     "isActive": true,
     "isFeatured": false,
+    "metaDescription": "Tratamiento de uñas encarnadas en Móstoles. Solución definitiva con técnicas mínimamente invasivas. Alivio inmediato del dolor. Podólogas colegiadas. Pide cita.",
+    "h1Override": "Tratamiento de Uñas Encarnadas en Móstoles",
+    "tldr": "Las uñas encarnadas (onicocriptosis) se producen cuando el borde de la uña penetra en la piel, causando dolor e infección. En Clínica Podológica Carrera en Móstoles ofrecemos tratamiento definitivo con técnicas mínimamente invasivas, alivio inmediato del dolor y recuperación rápida en sesiones de 30-60 minutos.",
+    "condition": {
+      "name": "Onicocriptosis",
+      "alternateName": ["Uña encarnada", "Uña incarnada", "Uña clavada"],
+      "description": "La onicocriptosis es la penetración del borde lateral o medial de la uña en el surco ungueal, produciendo dolor, inflamación, infección y formación de tejido de granulación. Es una de las patologías ungueales más frecuentes y dolorosas, que requiere tratamiento podológico profesional.",
+      "bodyLocation": "Uñas de los pies, especialmente el primer dedo (dedo gordo)",
+      "riskFactors": ["Corte inadecuado de uñas (demasiado cortas o redondeadas)", "Calzado estrecho o puntiagudo", "Sudoración excesiva", "Traumatismos repetidos", "Predisposición genética (uñas en teja)", "Sobrepeso"],
+      "affectedPopulation": "Afecta a personas de todas las edades, siendo más frecuente en adolescentes y adultos jóvenes. También común en deportistas y personas que usan calzado estrecho."
+    },
+    "symptoms": [
+      { "name": "Dolor en el borde de la uña", "description": "Dolor punzante e intenso en uno o ambos lados de la uña del dedo gordo, que empeora con el calzado y la presión." },
+      { "name": "Enrojecimiento e hinchazón", "description": "Inflamación visible alrededor del borde de la uña con piel enrojecida, caliente y sensible al tacto." },
+      { "name": "Supuración o pus", "description": "Secreción amarillenta o verdosa que indica infección del surco ungueal y requiere atención inmediata." },
+      { "name": "Tejido de granulación", "description": "Aparición de un bulto carnoso, rojo y sangrante junto al borde de la uña (hipergranulación)." },
+      { "name": "Dificultad para caminar", "description": "El dolor intenso obliga a modificar la forma de andar, apoyar solo parte del pie o evitar el calzado cerrado." }
+    ],
+    "whoNeedsIt": [
+      "Personas con dolor en el borde de la uña del pie",
+      "Pacientes con infección o pus en la uña encarnada",
+      "Personas con uñas encarnadas recurrentes que no se resuelven con cuidados caseros",
+      "Deportistas con uñas encarnadas por traumatismos repetidos",
+      "Personas con uñas en teja o con predisposición genética"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Evaluación de la uña", "description": "La podóloga examina el estado de la uña, el grado de afectación y la presencia de infección para determinar el tratamiento más adecuado." },
+      { "step": 2, "title": "Tratamiento conservador", "description": "En casos leves se realiza un corte técnico del borde ungueal, limpieza del surco y colocación de un dispositivo corrector si procede." },
+      { "step": 3, "title": "Tratamiento de la infección", "description": "Si hay infección activa, se drena la zona, se limpia en profundidad y se pautan cuidados antibióticos locales." },
+      { "step": 4, "title": "Técnica correctiva definitiva", "description": "En casos recurrentes o graves, se aplican técnicas especializadas para corregir el crecimiento de la uña y evitar futuras recidivas." },
+      { "step": 5, "title": "Seguimiento y prevención", "description": "Revisiones para verificar la correcta evolución y educación en el corte adecuado de uñas para prevenir recurrencias." }
+    ],
+    "preparation": "No apliques esmalte de uñas ni cremas antes de la cita. Si estás tomando medicación anticoagulante o eres diabético, infórmanos al pedir cita.",
+    "aftercare": [
+      "Mantén el pie limpio y seco; lava con agua y jabón neutro",
+      "Aplica la cura local indicada por la podóloga durante los días prescritos",
+      "Usa calzado amplio y abierto durante la recuperación",
+      "No te cortes tú la uña: acude a revisión para el siguiente corte",
+      "Evita actividades deportivas de impacto hasta la revisión de control",
+      "Acude a la revisión en la fecha indicada (habitualmente 7-10 días)"
+    ],
+    "recoveryTimeline": "El alivio del dolor es inmediato tras el tratamiento. La recuperación completa varía entre 1 y 3 semanas según el grado de afectación. La revisión de control se programa a los 7-10 días.",
+    "additionalSections": [
+      {
+        "heading": "Cómo cortar las uñas correctamente para evitar que se encarnen",
+        "body": "La causa más frecuente de las uñas encarnadas es el corte inadecuado. En nuestra clínica de Móstoles educamos a todos nuestros pacientes en la técnica correcta para prevenir recurrencias. El corte debe ser recto, sin redondear las esquinas, y con una longitud que sobrepase ligeramente el borde del dedo.",
+        "listItems": [
+          "Corta siempre recto, nunca en forma redondeada",
+          "No cortes demasiado corto: la uña debe sobresalir ligeramente del dedo",
+          "Usa cortaúñas o tijeras de punta recta, nunca de punta curva",
+          "Si tienes dificultad para cortarte las uñas, acude a tu podólogo"
+        ]
+      }
+    ],
+    "relatedServices": ["quiropodia", "hongos-unas", "pie-diabetico"],
+    "procedureType": "PercutaneousProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "Journal of the American Podiatric Medical Association - Ingrown toenail management",
+      "Sociedad Española de Podología - Protocolo de tratamiento de onicocriptosis",
+      "Dermatologic Surgery - Conservative and surgical treatment of ingrown toenails"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
     "faqs": [
       {
         "id": "unas-faq-1",
         "question": "¿El tratamiento de uña encarnada es doloroso?",
-        "answer": "No, utilizamos técnicas cuidadosas y profesionales que minimizan las molestias. Nuestro objetivo es que el tratamiento sea lo más cómodo posible.",
+        "answer": "No, utilizamos técnicas cuidadosas y profesionales que minimizan las molestias. En los casos que requieren un tratamiento más intensivo, se aplica anestesia local para garantizar que no sientas dolor.",
         "order": 1
       },
       {
         "id": "unas-faq-2",
         "question": "¿Cuánto tarda en mejorar una uña encarnada?",
-        "answer": "La mejoría suele notarse desde la primera sesión. El tiempo total de tratamiento depende de la gravedad, pero normalmente en pocas semanas el problema está resuelto.",
+        "answer": "La mejoría se nota desde la primera sesión. El tiempo total de tratamiento depende de la gravedad: los casos leves se resuelven en una sesión, mientras que los casos con infección pueden requerir seguimiento durante 2-3 semanas.",
         "order": 2
+      },
+      {
+        "id": "unas-faq-3",
+        "question": "¿Pueden volver a encarnarse las uñas después del tratamiento?",
+        "answer": "Con el tratamiento correcto y siguiendo las pautas de prevención, la recurrencia es muy baja. En nuestra clínica de Móstoles disponemos de técnicas correctivas que impiden que el problema vuelva a aparecer.",
+        "order": 3
+      },
+      {
+        "id": "unas-faq-4",
+        "question": "¿Es necesario quitar toda la uña?",
+        "answer": "No, en la mayoría de casos solo se trata el borde afectado, conservando la uña. La extracción completa solo se considera en casos muy excepcionales.",
+        "order": 4
+      },
+      {
+        "id": "unas-faq-5",
+        "question": "¿Puedo ir a urgencias por una uña encarnada?",
+        "answer": "En urgencias hospitalarias pueden drenarte una infección, pero el tratamiento definitivo requiere un podólogo. Si tienes una uña encarnada en Móstoles, ven directamente a nuestra clínica para una solución completa y profesional.",
+        "order": 5
+      },
+      {
+        "id": "unas-faq-6",
+        "question": "¿Por qué se encarnan las uñas de los pies?",
+        "answer": "Las causas más frecuentes son: corte inadecuado de las uñas (demasiado cortas o redondeadas), calzado estrecho, sudoración excesiva, traumatismos y predisposición genética (uñas en teja). En tu visita te indicaremos cómo prevenirlo.",
+        "order": 6
+      },
+      {
+        "id": "unas-faq-7",
+        "question": "¿Puedo hacer deporte con una uña encarnada?",
+        "answer": "Es recomendable evitar el deporte de impacto hasta que la uña esté tratada, ya que el calzado deportivo y el golpeo empeoran la lesión. Tras el tratamiento podrás volver a tu actividad deportiva rápidamente.",
+        "order": 7
       }
     ]
   },
@@ -148,7 +651,7 @@
     "slug": "pie-diabetico",
     "name": "Pie Diabético",
     "shortDesc": "Cuidado especializado para pacientes diabéticos: prevención y tratamiento de complicaciones.",
-    "fullDesc": "El pie diabético requiere cuidados especializados debido al riesgo de úlceras y complicaciones. Realizamos revisiones periódicas, tratamiento de lesiones, educación en autocuidado y diseño de calzado y plantillas especiales para prevenir problemas.",
+    "fullDesc": "El pie diabético es una de las complicaciones más graves de la diabetes y requiere un seguimiento podológico especializado para prevenir úlceras, infecciones y amputaciones. En Clínica Podológica Carrera en Móstoles ofrecemos un programa completo de cuidado del pie diabético que incluye revisiones periódicas, exploración vascular y neurológica, tratamiento de lesiones y educación en autocuidado. La diabetes afecta a la circulación sanguínea y la sensibilidad nerviosa de los pies, lo que significa que pequeñas heridas pueden convertirse en problemas graves si no se detectan a tiempo. Nuestras podólogas colegiadas en Móstoles están especializadas en la detección precoz de complicaciones y en el tratamiento seguro del pie diabético, trabajando en coordinación con el equipo médico del paciente.",
     "benefits": [
       "Prevención de úlceras",
       "Revisiones periódicas especializadas",
@@ -158,16 +661,126 @@
     "duration": "30-45 minutos",
     "image": "/images/servicios/pie-diabetico-cuidado.webp",
     "icon": "Heart",
-    "keywords": "pie diabético móstoles, cuidado pies diabetes, podólogo diabéticos",
+    "keywords": "pie diabético móstoles, cuidado pies diabetes, podólogo diabéticos, revisión pie diabético móstoles",
     "order": 6,
     "isActive": true,
     "isFeatured": false,
+    "metaDescription": "Tratamiento del pie diabético en Móstoles. Revisiones especializadas, prevención de úlceras y cuidado profesional. Podólogas colegiadas con experiencia. Pide cita.",
+    "h1Override": "Tratamiento del Pie Diabético en Móstoles",
+    "tldr": "El pie diabético requiere cuidado podológico especializado para prevenir úlceras, infecciones y amputaciones. En Clínica Podológica Carrera en Móstoles realizamos revisiones periódicas con exploración vascular y neurológica, tratamiento seguro de lesiones y educación en autocuidado para pacientes diabéticos.",
+    "condition": {
+      "name": "Pie diabético",
+      "alternateName": ["Complicaciones podológicas de la diabetes", "Neuropatía diabética del pie", "Úlcera de pie diabético"],
+      "description": "El pie diabético es el conjunto de alteraciones neurológicas, vasculares y biomecánicas que la diabetes produce en los pies. La pérdida de sensibilidad (neuropatía) y la mala circulación (angiopatía) favorecen la aparición de úlceras que pueden infectarse y, en casos graves, requerir amputación.",
+      "bodyLocation": "Pie completo: planta, dedos, talón, zona dorsal",
+      "riskFactors": ["Diabetes de larga evolución", "Control glucémico deficiente (HbA1c elevada)", "Neuropatía periférica", "Enfermedad vascular periférica", "Deformidades del pie", "Antecedentes de úlceras o amputación previas", "Tabaquismo"],
+      "affectedPopulation": "Pacientes con diabetes tipo 1 y tipo 2. El riesgo aumenta con los años de evolución de la diabetes. Se estima que el 15-25% de los diabéticos desarrollarán una úlcera en el pie a lo largo de su vida."
+    },
+    "symptoms": [
+      { "name": "Pérdida de sensibilidad", "description": "No sentir dolor, temperatura o presión en los pies. El paciente puede herirse sin darse cuenta." },
+      { "name": "Hormigueo o entumecimiento", "description": "Sensación de cosquilleo, pinchazos o adormecimiento en los pies, especialmente por la noche." },
+      { "name": "Piel seca y agrietada", "description": "La piel de los pies se vuelve muy seca, con grietas que pueden convertirse en puertas de entrada para infecciones." },
+      { "name": "Cambios de color en la piel", "description": "Zonas rojizas, azuladas o blanquecinas que indican problemas circulatorios o de presión." },
+      { "name": "Heridas que tardan en curar", "description": "Cualquier herida, por pequeña que sea, que no cicatriza en un tiempo normal es señal de alarma." },
+      { "name": "Deformidades en los dedos", "description": "Dedos en garra o en martillo que generan puntos de presión anormales y riesgo de úlceras." }
+    ],
+    "whoNeedsIt": [
+      "Todos los pacientes diagnosticados con diabetes tipo 1 o tipo 2",
+      "Diabéticos con pérdida de sensibilidad o problemas circulatorios en los pies",
+      "Pacientes con antecedentes de úlceras o amputaciones",
+      "Diabéticos con deformidades en los pies (juanetes, dedos en garra)",
+      "Familiares de pacientes diabéticos que buscan asesoramiento en cuidados"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Historia clínica diabetológica", "description": "Recogemos datos sobre tu diabetes: años de evolución, control glucémico, medicación, complicaciones previas y otros factores de riesgo." },
+      { "step": 2, "title": "Exploración neurológica", "description": "Evaluamos la sensibilidad de tus pies con monofilamento, diapasón y pruebas específicas para detectar neuropatía diabética." },
+      { "step": 3, "title": "Exploración vascular", "description": "Valoramos la circulación de tus pies mediante palpación de pulsos y Doppler para detectar enfermedad vascular periférica." },
+      { "step": 4, "title": "Cuidado podológico adaptado", "description": "Realizamos quiropodia con protocolo específico para diabéticos: instrumental estéril, corte seguro de uñas y tratamiento de durezas sin riesgo." },
+      { "step": 5, "title": "Clasificación del riesgo", "description": "Determinamos tu nivel de riesgo (bajo, moderado, alto) y programamos la frecuencia de revisiones adecuada." },
+      { "step": 6, "title": "Educación en autocuidado", "description": "Te enseñamos a revisar tus pies diariamente, elegir calzado adecuado, hidratar la piel y actuar ante cualquier lesión." }
+    ],
+    "preparation": "Trae tu glucómetro y un registro reciente de tus niveles de glucosa. Si tomas medicación para la diabetes o anticoagulantes, tráenos la lista. Informa de cualquier herida o cambio que hayas notado en tus pies.",
+    "aftercare": [
+      "Revisa tus pies todos los días: busca heridas, cambios de color, hinchazón o zonas calientes",
+      "Hidrata los pies diariamente con crema específica, sin aplicar entre los dedos",
+      "No camines descalzo nunca, ni siquiera en casa",
+      "Usa calzado cerrado, cómodo y sin costuras internas que puedan rozar",
+      "No cortes tú las uñas ni las durezas: acude siempre al podólogo",
+      "Ante cualquier herida, por pequeña que sea, acude a tu podólogo de inmediato"
+    ],
+    "recoveryTimeline": "La revisión del pie diabético es un tratamiento preventivo continuo. Las sesiones regulares son indoloras y permiten detectar problemas antes de que se agraven. La frecuencia recomendada es cada 1-3 meses según el nivel de riesgo.",
+    "additionalSections": [
+      {
+        "heading": "¿Por qué los diabéticos deben ir al podólogo?",
+        "body": "La diabetes puede dañar los nervios (neuropatía) y los vasos sanguíneos (angiopatía) de los pies. Esto significa que un paciente diabético puede herirse sin darse cuenta y que esas heridas tardan más en curar, pudiendo infectarse gravemente. En nuestra clínica de Móstoles el cuidado del pie diabético es prioritario: detectamos problemas antes de que se conviertan en urgencias.",
+        "listItems": [
+          "El 15-25% de los diabéticos desarrollarán una úlcera en el pie",
+          "El 85% de las amputaciones en diabéticos empezaron como una úlcera que podía haberse prevenido",
+          "Las revisiones podológicas regulares reducen hasta un 50% el riesgo de amputación",
+          "La detección precoz de neuropatía y vasculopatía es clave para la prevención"
+        ]
+      },
+      {
+        "heading": "Coordinación con tu equipo médico",
+        "body": "En Clínica Podológica Carrera en Móstoles trabajamos en coordinación con endocrinólogos, médicos de atención primaria y enfermeras para ofrecer un cuidado integral del pie diabético. Tras cada revisión emitimos un informe que puedes compartir con tu médico para mantener un seguimiento completo de tu salud podológica."
+      }
+    ],
+    "relatedServices": ["quiropodia", "plantillas-personalizadas", "hongos-unas"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "International Working Group on the Diabetic Foot (IWGDF) - Guidelines on prevention and management",
+      "Sociedad Española de Diabetes - Consenso sobre pie diabético",
+      "Diabetes Care - Standards of Medical Care in Diabetes (ADA)"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
     "faqs": [
       {
         "id": "diabetico-faq-1",
         "question": "¿Con qué frecuencia debe revisarse un diabético los pies?",
-        "answer": "Recomendamos revisiones cada 1-2 meses, aunque la frecuencia puede variar según el control de la diabetes y el estado de los pies.",
+        "answer": "Recomendamos revisiones cada 1-3 meses según el nivel de riesgo. Los pacientes con neuropatía, mala circulación o antecedentes de úlceras deben revisarse con más frecuencia. En tu primera visita a nuestra clínica en Móstoles establecemos el calendario adecuado.",
         "order": 1
+      },
+      {
+        "id": "diabetico-faq-2",
+        "question": "¿La revisión del pie diabético es dolorosa?",
+        "answer": "No, es indolora. Incluye pruebas de sensibilidad con un filamento suave, valoración de la circulación y una quiropodia adaptada con instrumental estéril y técnicas seguras para diabéticos.",
+        "order": 2
+      },
+      {
+        "id": "diabetico-faq-3",
+        "question": "¿Puedo cortarme las uñas yo mismo si soy diabético?",
+        "answer": "No es recomendable. La pérdida de sensibilidad puede hacer que te cortes sin darte cuenta. Acude siempre a un podólogo colegiado para el cuidado de tus uñas y piel.",
+        "order": 3
+      },
+      {
+        "id": "diabetico-faq-4",
+        "question": "¿Qué hago si me sale una herida en el pie siendo diabético?",
+        "answer": "Limpia la herida con agua y jabón, cúbrela con una gasa estéril y acude a tu podólogo o médico lo antes posible. No apliques productos irritantes como alcohol o betadine sin indicación profesional.",
+        "order": 4
+      },
+      {
+        "id": "diabetico-faq-5",
+        "question": "¿Los diabéticos pueden usar cualquier calzado?",
+        "answer": "No. El calzado para diabéticos debe ser amplio, sin costuras internas, con suela firme y cierre ajustable. En nuestra clínica de Móstoles te asesoramos sobre el calzado más adecuado y, si es necesario, diseñamos plantillas protectoras.",
+        "order": 5
+      },
+      {
+        "id": "diabetico-faq-6",
+        "question": "¿El podólogo puede detectar si mi diabetes está afectando a mis pies?",
+        "answer": "Sí. Mediante pruebas de sensibilidad y circulación podemos detectar neuropatía y vasculopatía en fases tempranas, antes de que aparezcan síntomas graves. Es una de las razones más importantes para las revisiones regulares.",
+        "order": 6
+      },
+      {
+        "id": "diabetico-faq-7",
+        "question": "¿Necesito receta médica para ir al podólogo siendo diabético?",
+        "answer": "No necesitas receta para acudir a un podólogo. Sin embargo, te recomendamos informar a tu médico de que estás en seguimiento podológico. Nosotros emitimos informes que puedes compartir con tu equipo médico.",
+        "order": 7
       }
     ]
   },
@@ -176,7 +789,7 @@
     "slug": "papilomas-plantares",
     "name": "Papilomas Plantares",
     "shortDesc": "Eliminación de verrugas plantares con tratamientos efectivos y seguros.",
-    "fullDesc": "Los papilomas o verrugas plantares son lesiones causadas por el virus del papiloma humano (VPH). Ofrecemos diferentes tratamientos según el tipo y extensión de la lesión, utilizando técnicas especializadas y efectivas.",
+    "fullDesc": "Los papilomas o verrugas plantares son lesiones causadas por el virus del papiloma humano (VPH) que afectan a la piel de la planta del pie. Son contagiosos y pueden provocar dolor intenso al caminar, ya que el peso del cuerpo los presiona hacia el interior del pie. En Clínica Podológica Carrera en Móstoles ofrecemos diferentes opciones de tratamiento según el tipo, tamaño y localización de la verruga, utilizando técnicas especializadas con alta tasa de éxito. Nuestra podóloga especialista en Móstoles realiza un diagnóstico diferencial preciso para distinguir el papiloma de otras lesiones similares como callosidades, y selecciona el tratamiento más adecuado para cada caso, priorizando la eliminación completa del virus y la prevención del contagio.",
     "benefits": [
       "Diagnóstico diferencial preciso",
       "Múltiples opciones de tratamiento",
@@ -186,18 +799,122 @@
     "duration": "Variable según tratamiento",
     "image": "/images/servicios/papilomas-plantares-verrugas.webp",
     "icon": "CircleDot",
-    "keywords": "papilomas pies móstoles, verrugas plantares tratamiento, eliminar verruga pie",
+    "keywords": "papilomas pies móstoles, verrugas plantares tratamiento, eliminar verruga pie, podólogo verrugas móstoles",
     "order": 7,
     "isActive": true,
     "isFeatured": false,
-    "faqs": []
+    "metaDescription": "Eliminación de papilomas plantares en Móstoles. Tratamiento profesional de verrugas en pies con técnicas avanzadas y alta tasa de éxito. Pide cita.",
+    "h1Override": "Tratamiento de Papilomas Plantares en Móstoles",
+    "tldr": "Los papilomas plantares son verrugas causadas por el virus del papiloma humano (VPH) que producen dolor al caminar. En Clínica Podológica Carrera en Móstoles ofrecemos diagnóstico preciso y múltiples opciones de tratamiento con alta tasa de éxito para eliminar la verruga completamente y prevenir el contagio.",
+    "condition": {
+      "name": "Verruga plantar",
+      "alternateName": ["Papiloma plantar", "Verruga vírica del pie", "Mirmecia"],
+      "description": "Las verrugas plantares son lesiones cutáneas benignas causadas por la infección del virus del papiloma humano (VPH) en la piel de la planta del pie. Se transmiten por contacto directo o en superficies húmedas contaminadas y pueden causar dolor significativo al caminar.",
+      "bodyLocation": "Planta del pie, zona metatarsal, talón, dedos",
+      "riskFactors": ["Caminar descalzo en zonas húmedas (piscinas, duchas, vestuarios)", "Sistema inmunológico debilitado", "Lesiones o cortes previos en la piel del pie", "Sudoración excesiva en los pies", "Edad: más frecuente en niños y adolescentes"],
+      "affectedPopulation": "Afecta principalmente a niños, adolescentes y adultos jóvenes. Es frecuente en personas que frecuentan piscinas, gimnasios y vestuarios comunitarios."
+    },
+    "symptoms": [
+      { "name": "Lesión rugosa en la planta", "description": "Zona de piel endurecida con superficie irregular y pequeños puntos negros en su interior (capilares trombosados)." },
+      { "name": "Dolor al caminar", "description": "Sensación de tener una piedra bajo el pie o dolor punzante al apoyar la zona afectada." },
+      { "name": "Dolor al pellizcar lateralmente", "description": "A diferencia de las durezas, el papiloma duele más al presionar los laterales que al presionar directamente encima." },
+      { "name": "Crecimiento progresivo", "description": "La verruga puede aumentar de tamaño o multiplicarse si no se trata a tiempo." }
+    ],
+    "whoNeedsIt": [
+      "Personas con una lesión sospechosa en la planta del pie que causa dolor",
+      "Niños y adolescentes que frecuentan piscinas o vestuarios",
+      "Pacientes con verrugas que no responden a tratamientos de farmacia",
+      "Personas con papilomas múltiples o recurrentes",
+      "Deportistas con verrugas plantares que dificultan el entrenamiento"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Diagnóstico diferencial", "description": "La podóloga examina la lesión para confirmar que se trata de un papiloma y no de una callosidad, un cuerpo extraño u otra patología cutánea." },
+      { "step": 2, "title": "Desbridamiento de la lesión", "description": "Se eliminan las capas superficiales de piel endurecida para acceder al núcleo de la verruga y visualizar su extensión real." },
+      { "step": 3, "title": "Selección del tratamiento", "description": "Según el tipo, tamaño, localización y características del paciente, se selecciona la técnica más adecuada: ácidos, crioterapia u otros métodos." },
+      { "step": 4, "title": "Aplicación del tratamiento", "description": "Se aplica el tratamiento seleccionado sobre la verruga de forma controlada y segura." },
+      { "step": 5, "title": "Seguimiento hasta resolución", "description": "Se programan sesiones de seguimiento (generalmente cada 1-2 semanas) hasta la eliminación completa del papiloma." }
+    ],
+    "preparation": "No es necesaria preparación especial. Evita aplicar productos como tiritas con ácido salicílico o remedios caseros antes de la cita, ya que pueden dificultar el diagnóstico.",
+    "aftercare": [
+      "Mantén la zona limpia y seca; sigue las indicaciones de cura local",
+      "No arranques ni manipules la zona tratada",
+      "Usa chanclas en duchas, vestuarios y piscinas para evitar reinfección",
+      "No compartas toallas, calcetines ni calzado con otras personas",
+      "Acude puntualmente a las sesiones de seguimiento programadas",
+      "Si la verruga reaparece, consulta lo antes posible"
+    ],
+    "recoveryTimeline": "El tratamiento completo puede requerir entre 2 y 8 sesiones según el tipo y tamaño de la verruga. Las sesiones se espacian 1-2 semanas. La eliminación completa suele lograrse en 1-2 meses.",
+    "additionalSections": [
+      {
+        "heading": "¿Cómo prevenir los papilomas plantares?",
+        "body": "La prevención es fundamental, especialmente en niños y personas que frecuentan piscinas y gimnasios en Móstoles y alrededores. El virus del papiloma humano se transmite por contacto con superficies húmedas contaminadas, por lo que adoptar hábitos sencillos de higiene puede evitar el contagio.",
+        "listItems": [
+          "Usa siempre chanclas en piscinas, duchas y vestuarios públicos",
+          "Seca bien los pies después de nadar o ducharte, especialmente entre los dedos",
+          "No toques ni rasques las verrugas, ni tuyas ni de otras personas",
+          "No compartas calzado, calcetines ni toallas de pies"
+        ]
+      }
+    ],
+    "relatedServices": ["quiropodia", "hongos-unas", "unas-encarnadas"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "British Journal of Dermatology - Treatment of plantar warts",
+      "Sociedad Española de Podología - Abordaje de las verrugas plantares",
+      "Journal of the European Academy of Dermatology and Venereology"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
+    "faqs": [
+      {
+        "id": "papilomas-faq-1",
+        "question": "¿El tratamiento de papilomas duele?",
+        "answer": "La molestia varía según la técnica utilizada. Algunos tratamientos pueden producir una leve sensación de escozor o pinchazo durante unos segundos. Nuestras podólogas en Móstoles seleccionan siempre la técnica menos molesta posible.",
+        "order": 1
+      },
+      {
+        "id": "papilomas-faq-2",
+        "question": "¿Cómo se contagian los papilomas?",
+        "answer": "Se transmiten por contacto directo con el virus en superficies húmedas: suelos de piscinas, duchas, vestuarios y áreas comunes. Caminar descalzo en estas zonas es el principal factor de riesgo.",
+        "order": 2
+      },
+      {
+        "id": "papilomas-faq-3",
+        "question": "¿Cómo distingo un papiloma de un callo?",
+        "answer": "El papiloma tiene puntos negros en su interior y duele más al pellizcar lateralmente que al presionar directamente. Los callos no tienen puntos negros y duelen más a la presión directa. Ante la duda, acude a un podólogo para un diagnóstico certero.",
+        "order": 3
+      },
+      {
+        "id": "papilomas-faq-4",
+        "question": "¿Se puede ir a la piscina con un papiloma?",
+        "answer": "No es recomendable sin protección. Si necesitas ir, cubre la verruga con un apósito impermeable para evitar contagiar a otros. Lo ideal es tratarlo cuanto antes.",
+        "order": 4
+      },
+      {
+        "id": "papilomas-faq-5",
+        "question": "¿Cuántas sesiones se necesitan para eliminar un papiloma?",
+        "answer": "Depende del tamaño, tipo y tiempo de evolución. Los papilomas pequeños y recientes pueden eliminarse en 2-3 sesiones. Los más grandes o antiguos pueden requerir hasta 6-8 sesiones espaciadas cada 1-2 semanas.",
+        "order": 5
+      },
+      {
+        "id": "papilomas-faq-6",
+        "question": "¿Los remedios caseros funcionan para los papilomas?",
+        "answer": "Los remedios caseros rara vez eliminan completamente la verruga y pueden retrasar el tratamiento profesional. Algunos pueden incluso dañar la piel sana alrededor. Es más eficaz y seguro acudir a un podólogo desde el principio.",
+        "order": 6
+      }
+    ]
   },
   {
     "id": "hongos-unas",
     "slug": "hongos-unas",
     "name": "Hongos en Uñas",
     "shortDesc": "Tratamiento de onicomicosis (hongos en uñas) con técnicas avanzadas.",
-    "fullDesc": "La onicomicosis es una infección fúngica de las uñas muy común. Realizamos diagnóstico preciso y ofrecemos tratamientos tópicos, sistémicos y técnicas avanzadas como la terapia fotodinámica para eliminar los hongos de forma efectiva.",
+    "fullDesc": "La onicomicosis es una infección fúngica de las uñas de los pies que afecta a una gran parte de la población. Los hongos provocan que la uña cambie de color, se engrose, se deforme y se vuelva frágil, pudiendo llegar a desprenderse si no se trata. En Clínica Podológica Carrera en Móstoles realizamos un diagnóstico preciso para confirmar la presencia de hongos y determinar el tipo de hongo responsable, lo que nos permite seleccionar el tratamiento más efectivo para cada caso. Ofrecemos tratamientos tópicos, fresado de la uña afectada y seguimiento profesional hasta la resolución completa. Nuestra directora, Isabel Carrera, es especialista en onicomicosis con más de 15 años de experiencia tratando hongos en uñas en Móstoles, lo que garantiza un abordaje experto y resultados contrastados.",
     "benefits": [
       "Diagnóstico preciso",
       "Tratamientos personalizados",
@@ -207,22 +924,120 @@
     "duration": "Variable según tratamiento",
     "image": "/images/servicios/hongos-unas-onicomicosis.webp",
     "icon": "Sparkles",
-    "keywords": "hongos uñas pies móstoles, onicomicosis tratamiento, eliminar hongos uñas",
+    "keywords": "hongos uñas pies móstoles, onicomicosis tratamiento, eliminar hongos uñas, podólogo hongos móstoles",
     "order": 8,
     "isActive": true,
     "isFeatured": false,
+    "metaDescription": "Tratamiento de hongos en uñas (onicomicosis) en Móstoles. Diagnóstico preciso y tratamiento personalizado. Más de 15 años de experiencia. Pide cita.",
+    "h1Override": "Tratamiento de Hongos en Uñas en Móstoles",
+    "tldr": "La onicomicosis es una infección por hongos que afecta a las uñas de los pies, causando engrosamiento, decoloración y fragilidad. En Clínica Podológica Carrera en Móstoles ofrecemos diagnóstico preciso, fresado profesional de la uña y tratamientos personalizados con seguimiento hasta la resolución completa, con más de 15 años de experiencia.",
+    "condition": {
+      "name": "Onicomicosis",
+      "alternateName": ["Hongos en las uñas", "Infección fúngica ungueal", "Tiña ungueal"],
+      "description": "La onicomicosis es una infección de la uña causada por hongos dermatofitos, levaduras o mohos. Provoca cambios en el color, grosor y textura de la uña que pueden extenderse a otras uñas y contagiar a otras personas. Es la patología ungueal más frecuente y requiere tratamiento prolongado y constante.",
+      "bodyLocation": "Uñas de los pies, especialmente primer y quinto dedo",
+      "riskFactors": ["Edad avanzada", "Diabetes", "Mala circulación periférica", "Sudoración excesiva en los pies", "Uso de duchas y vestuarios comunes", "Traumatismos ungueales", "Sistema inmunológico debilitado"],
+      "affectedPopulation": "Afecta a entre el 10-14% de la población general, aumentando con la edad. Es más frecuente en hombres, diabéticos, deportistas y personas con mala circulación."
+    },
+    "symptoms": [
+      { "name": "Uña amarillenta o marrón", "description": "Cambio de color de la uña que comienza generalmente por el borde libre y avanza hacia la raíz." },
+      { "name": "Engrosamiento de la uña", "description": "La uña se vuelve gruesa y difícil de cortar con herramientas domésticas convencionales." },
+      { "name": "Uña frágil y quebradiza", "description": "La uña se desmenuza, se rompe con facilidad o se separa del lecho ungueal (onicólisis)." },
+      { "name": "Deformación de la uña", "description": "La uña pierde su forma normal, se curva o presenta surcos y rugosidades en la superficie." },
+      { "name": "Mal olor", "description": "Olor desagradable proveniente de la uña afectada, más intenso al cortarla o fresarla." }
+    ],
+    "whoNeedsIt": [
+      "Personas con cambios de color, grosor o textura en las uñas de los pies",
+      "Pacientes con uñas que se despegan o se desmenuzan",
+      "Diabéticos o pacientes con mala circulación que notan cambios en sus uñas",
+      "Personas que han probado tratamientos de farmacia sin resultado",
+      "Deportistas con traumatismos ungueales repetidos"
+    ],
+    "treatmentProcess": [
+      { "step": 1, "title": "Diagnóstico de la infección", "description": "Exploración visual y recogida de muestra ungueal para confirmar la presencia de hongos y determinar el tipo de hongo responsable." },
+      { "step": 2, "title": "Fresado de la uña", "description": "Se reduce el grosor de la uña afectada con fresa profesional, eliminando el material infectado y facilitando la penetración del tratamiento." },
+      { "step": 3, "title": "Prescripción del tratamiento", "description": "Se pauta un tratamiento tópico antifúngico adaptado al tipo de hongo y grado de afectación. En casos severos se puede coordinar tratamiento sistémico con el médico." },
+      { "step": 4, "title": "Sesiones de seguimiento", "description": "Revisiones periódicas (cada 4-6 semanas) para fresar la uña, valorar la evolución y ajustar el tratamiento si es necesario." },
+      { "step": 5, "title": "Alta y prevención", "description": "Cuando la uña sana ha crecido completamente, se confirma la curación y se dan pautas para prevenir la reinfección." }
+    ],
+    "preparation": "No apliques esmalte ni tratamiento antifúngico al menos 48 horas antes de la cita para que la podóloga pueda valorar correctamente la uña.",
+    "aftercare": [
+      "Aplica el tratamiento tópico prescrito diariamente sin interrupciones",
+      "Seca bien los pies después de la ducha, especialmente entre los dedos",
+      "Usa calcetines de algodón o tejidos transpirables; cámbialos a diario",
+      "Desinfecta tu calzado regularmente con spray antifúngico",
+      "Usa chanclas en duchas, vestuarios y piscinas públicas",
+      "Ten paciencia: la uña tarda 9-12 meses en crecer completamente sana"
+    ],
+    "recoveryTimeline": "El tratamiento de la onicomicosis es largo. La mejora visual comienza a notarse a los 2-3 meses. La curación completa requiere que toda la uña crezca sana, lo que puede tardar entre 9 y 12 meses. La constancia es clave.",
+    "additionalSections": [
+      {
+        "heading": "¿Por qué los hongos de uñas son tan difíciles de tratar?",
+        "body": "Los hongos se alojan bajo la uña y dentro de ella, donde los tratamientos tópicos tienen dificultad para penetrar. Además, la uña crece lentamente (unos 0,1 mm al día), por lo que se necesita mantener el tratamiento durante meses hasta que toda la uña infectada haya sido reemplazada por uña sana. En nuestra clínica de Móstoles el fresado periódico de la uña es fundamental para facilitar la penetración del antifúngico y acelerar la mejoría.",
+        "listItems": [
+          "Los hongos están protegidos bajo la uña, donde los tratamientos llegan con dificultad",
+          "La uña del pie tarda 9-12 meses en renovarse completamente",
+          "Interrumpir el tratamiento antes de tiempo provoca recaídas",
+          "El fresado profesional mejora la eficacia del tratamiento tópico"
+        ]
+      }
+    ],
+    "relatedServices": ["quiropodia", "pie-diabetico", "unas-encarnadas"],
+    "procedureType": "NoninvasiveProcedure",
+    "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
+    "lastReviewed": "2026-02-01",
+    "references": [
+      "British Journal of Dermatology - Guidelines for the management of onychomycosis",
+      "Sociedad Española de Podología - Protocolo de diagnóstico y tratamiento de onicomicosis",
+      "Journal of the American Academy of Dermatology - Onychomycosis treatment update"
+    ],
+    "localContext": {
+      "neighborhoods": ["Centro", "Villafontana", "Parque Coimbra", "Parque de los Estados", "Pradillo"],
+      "nearbyLandmarks": ["Hospital Universitario Rey Juan Carlos", "Centro Comercial Xanadú", "Estación Cercanías Móstoles Central"],
+      "serviceArea": ["Móstoles", "Alcorcón", "Fuenlabrada", "Leganés", "Getafe", "Navalcarnero", "Villaviciosa de Odón"]
+    },
     "faqs": [
       {
         "id": "hongos-faq-1",
         "question": "¿Cuánto tiempo tarda en curarse un hongo de uña?",
-        "answer": "El tratamiento puede durar entre 6 meses y un año, ya que la uña necesita crecer completamente sana. La constancia en el tratamiento es clave.",
+        "answer": "El tratamiento puede durar entre 6 meses y un año, ya que la uña necesita crecer completamente sana. La constancia en el tratamiento es clave para la curación. En nuestra clínica de Móstoles realizamos seguimiento regular para maximizar la eficacia.",
         "order": 1
       },
       {
         "id": "hongos-faq-2",
         "question": "¿Los hongos en uñas son contagiosos?",
-        "answer": "Sí, pueden contagiarse. Te daremos recomendaciones para evitar el contagio a familiares y prevenir la reinfección.",
+        "answer": "Sí, pueden contagiarse por contacto directo o a través de superficies contaminadas como suelos de duchas y piscinas. Te daremos recomendaciones para evitar el contagio a familiares y prevenir la reinfección.",
         "order": 2
+      },
+      {
+        "id": "hongos-faq-3",
+        "question": "¿Cómo sé si tengo hongos en las uñas?",
+        "answer": "Los signos más frecuentes son: cambio de color (amarillento, marrón o blanquecino), engrosamiento, fragilidad, deformación y mal olor. Si notas alguno de estos cambios, acude a un podólogo para un diagnóstico profesional.",
+        "order": 3
+      },
+      {
+        "id": "hongos-faq-4",
+        "question": "¿Los productos de farmacia curan los hongos de uñas?",
+        "answer": "Los tratamientos de venta libre tienen una eficacia limitada porque no penetran bien la uña gruesa. El tratamiento profesional combina el fresado de la uña (para reducir el grosor) con antifúngicos de mayor potencia, lo que aumenta significativamente la tasa de curación.",
+        "order": 4
+      },
+      {
+        "id": "hongos-faq-5",
+        "question": "¿Puedo pintarme las uñas si tengo hongos?",
+        "answer": "No es recomendable. El esmalte crea un ambiente húmedo que favorece la proliferación del hongo y dificulta la acción del tratamiento antifúngico. Evita el esmalte hasta que la uña esté completamente curada.",
+        "order": 5
+      },
+      {
+        "id": "hongos-faq-6",
+        "question": "¿Los hongos de uñas pueden prevenirse?",
+        "answer": "Sí, con medidas sencillas: secar bien los pies después del baño, usar calcetines transpirables, alternar calzado, usar chanclas en duchas públicas y mantener las uñas cortas y limpias. Si eres diabético o tienes mala circulación, las revisiones regulares son clave.",
+        "order": 6
+      },
+      {
+        "id": "hongos-faq-7",
+        "question": "¿Es necesario arrancar la uña afectada por hongos?",
+        "answer": "No, en la gran mayoría de casos no es necesario. El tratamiento conservador con fresado y antifúngicos es efectivo. La extracción total de la uña solo se plantea en casos muy excepcionales y como último recurso.",
+        "order": 7
       }
     ]
   }

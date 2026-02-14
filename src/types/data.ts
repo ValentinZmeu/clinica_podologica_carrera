@@ -9,6 +9,44 @@ export interface ServiceFAQ {
   order: number;
 }
 
+export interface ServiceSymptom {
+  name: string;
+  description: string;
+}
+
+export interface ServiceTreatmentStep {
+  step: number;
+  title: string;
+  description: string;
+}
+
+export interface ServiceAuthor {
+  name: string;
+  role: string;
+  teamMemberId: string;
+}
+
+export interface ServiceContentSection {
+  heading: string;
+  body: string;
+  listItems?: string[];
+}
+
+export interface ServiceCondition {
+  name: string;
+  alternateName?: string[];
+  description: string;
+  bodyLocation?: string;
+  riskFactors?: string[];
+  affectedPopulation?: string;
+}
+
+export interface ServiceLocalContext {
+  neighborhoods?: string[];
+  nearbyLandmarks?: string[];
+  serviceArea?: string[];
+}
+
 export interface Service {
   id: string;
   slug: string;
@@ -24,6 +62,23 @@ export interface Service {
   isActive: boolean;
   isFeatured: boolean;
   faqs: ServiceFAQ[];
+  metaDescription?: string;
+  h1Override?: string;
+  tldr?: string;
+  condition?: ServiceCondition;
+  symptoms?: ServiceSymptom[];
+  whoNeedsIt?: string[];
+  treatmentProcess?: ServiceTreatmentStep[];
+  preparation?: string;
+  aftercare?: string[];
+  recoveryTimeline?: string;
+  additionalSections?: ServiceContentSection[];
+  relatedServices?: string[];
+  procedureType?: string;
+  author?: ServiceAuthor;
+  lastReviewed?: string;
+  references?: string[];
+  localContext?: ServiceLocalContext;
 }
 
 export interface Testimonial {

@@ -6,12 +6,13 @@
 
 | Plan | Descripción | Estado | Fecha Inicio |
 | ---- | ----------- | ------ | ------------ |
-| [seo-servicios-local-llm](pending/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | PENDIENTE | 2026-02-15 |
+| [google-places-rating](pending/google-places-rating.md) | Rating dinámico desde Google Places API (ISR 24h) | PENDIENTE | 2026-02-15 |
 
 ## Planes Archivados
 
 | Plan                                                          | Descripción                                  | Fecha Completado |
 | ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| [seo-servicios-local-llm](_archive/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | 2026-02-15       |
 | [google-analytics](_archive/06-google-analytics.md)            | Integrar GA4 con variables .env              | 2026-02-15       |
 | [mejoras-web-v2](_archive/05-mejoras-web-v2.md)               | Bugs, UX/UI, accesibilidad y SEO             | 2026-02-15       |
 | [docker-cicd](_archive/04-docker-cicd.md)                     | Dockerización y CI/CD (GHCR + VPS SSH)       | 2026-02-14       |

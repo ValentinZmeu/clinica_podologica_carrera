@@ -121,3 +121,21 @@ export const getActiveFAQs = cache((): FAQ[] => {
 export const getServiceSlugs = cache((): string[] => {
   return getActiveServices().map((s) => s.slug);
 });
+
+/**
+ * Obtiene testimonios filtrados por servicio
+ */
+export const getTestimonialsByService = cache(
+  (serviceSlug: string): Testimonial[] => {
+    return getActiveTestimonials().filter((t) => t.service === serviceSlug);
+  }
+);
+
+/**
+ * Obtiene un miembro del equipo por ID
+ */
+export const getTeamMemberById = cache(
+  (id: string): TeamMember | undefined => {
+    return getTeamMembers().find((m) => m.id === id);
+  }
+);
