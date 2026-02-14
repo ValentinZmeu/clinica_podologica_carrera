@@ -12,7 +12,7 @@ import { siteConfig } from '@/lib/constants';
 import { getActiveTeamMembers } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Sobre Nosotros | Clínica Podológica Carrera - Móstoles',
+  title: 'Sobre Nosotros - Podólogo en Móstoles',
   description:
     'Conoce al equipo de Clínica Podológica Carrera. Más de 15 años cuidando la salud de los pies de las familias de Móstoles. Podólogas colegiadas y formación continua.',
   keywords: [
@@ -32,6 +32,9 @@ export const metadata: Metadata = {
       'Más de 15 años cuidando la salud de los pies de las familias de Móstoles.',
     url: `${siteConfig.url}/sobre-nosotros`,
     type: 'website',
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/sobre-nosotros`,
   },
 };
 
