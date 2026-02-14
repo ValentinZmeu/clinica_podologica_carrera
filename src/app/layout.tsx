@@ -5,6 +5,7 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { WhatsAppButton } from '@/components/layout/whatsapp-button';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { siteConfig } from '@/lib/constants';
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -98,6 +99,9 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }
