@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Check, Phone, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Check, Phone } from 'lucide-react';
+
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 import {
   NativeAccordion,
@@ -290,7 +292,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         rel="noopener noreferrer"
                         data-testid="service-whatsapp-cta"
                       >
-                        <MessageCircle className="mr-2 h-4 w-4" />
+                        <WhatsAppIcon className="mr-2 h-4 w-4" />
                         Pedir Cita por WhatsApp
                       </a>
                     </Button>

@@ -1,6 +1,7 @@
-import { Phone, MessageCircle, Star, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Phone, Star, CheckCircle2, ArrowRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { siteConfig } from '@/lib/constants';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
@@ -64,7 +65,7 @@ export function Hero() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               size="lg"
-              className="group h-14 w-full bg-primary-500 px-8 text-base font-semibold hover:bg-primary-600 sm:w-auto"
+              className="group h-14 w-full bg-[#25D366] px-8 text-base font-semibold text-white hover:bg-[#1fb855] sm:w-auto"
               asChild
             >
               <a
@@ -76,7 +77,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 data-testid="hero-whatsapp-button"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <WhatsAppIcon className="mr-2 h-5 w-5" />
                 Pedir Cita por WhatsApp
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>

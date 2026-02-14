@@ -1,4 +1,6 @@
-import { Phone, MessageCircle, Clock, CheckCircle } from 'lucide-react';
+import { Phone, Clock, CheckCircle } from 'lucide-react';
+
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
@@ -79,14 +81,14 @@ export function CTASection() {
                 rel="noopener noreferrer"
                 data-testid="cta-whatsapp-button"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <WhatsAppIcon className="mr-2 h-5 w-5" />
                 Pide tu Cita por WhatsApp
               </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="h-14 w-full border-white/20 bg-white/5 px-8 text-lg text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:scale-105 sm:w-auto"
+              className="h-14 w-full border-white/20 bg-white/5 px-8 text-lg text-white backdrop-blur-sm transition-all hover:bg-white/85 hover:text-slate-900 hover:scale-105 sm:w-auto"
               asChild
             >
               <a
@@ -94,7 +96,7 @@ export function CTASection() {
                 data-testid="cta-call-button"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                {siteConfig.phone}
+                Llamar al {siteConfig.phone}
               </a>
             </Button>
           </div>

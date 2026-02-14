@@ -5,10 +5,11 @@ import {
   Mail,
   MapPin,
   Clock,
-  MessageCircle,
   Navigation,
   ExternalLink,
 } from 'lucide-react';
+
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -87,7 +88,7 @@ export default function ContactoPage() {
                 <CardContent className="p-0">
                   <div className="flex flex-col items-center gap-6 p-8 md:flex-row md:p-10">
                     <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/25">
-                      <MessageCircle className="h-10 w-10" />
+                      <WhatsAppIcon className="h-10 w-10" />
                     </div>
                     <div className="flex-1 text-center md:text-left">
                       <p className="text-sm font-medium text-green-600">
@@ -111,7 +112,7 @@ export default function ContactoPage() {
                         rel="noopener noreferrer"
                         data-testid="contact-whatsapp-btn"
                       >
-                        <MessageCircle className="mr-2 h-5 w-5" />
+                        <WhatsAppIcon className="mr-2 h-5 w-5" />
                         Escribir ahora
                       </a>
                     </Button>

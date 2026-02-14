@@ -1,4 +1,6 @@
-import { HelpCircle, MessageCircle } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
+
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 import {
   NativeAccordion,
@@ -107,7 +109,7 @@ export function FAQ() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <WhatsAppIcon className="mr-2 h-5 w-5" />
                 Pregúntanos por WhatsApp
               </a>
             </Button>

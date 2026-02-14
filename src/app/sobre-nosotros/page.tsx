@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { PageHero } from '@/components/layout/page-hero';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
+import { CountUp } from '@/components/ui/count-up';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
 import { getActiveTeamMembers } from '@/lib/data';
@@ -239,25 +240,33 @@ export default function SobreNosotrosPage() {
           <AnimateOnScroll variant="fade-up">
           <div className="mx-auto grid max-w-4xl gap-8 text-center md:grid-cols-4">
             <div>
-              <div className="text-4xl font-bold md:text-5xl">15+</div>
+              <div className="text-4xl font-bold md:text-5xl">
+                <CountUp end={15} suffix="+" />
+              </div>
               <div className="mt-2 text-primary-foreground/80">
                 Años de experiencia
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold md:text-5xl">5000+</div>
+              <div className="text-4xl font-bold md:text-5xl">
+                <CountUp end={5000} suffix="+" />
+              </div>
               <div className="mt-2 text-primary-foreground/80">
                 Pacientes atendidos
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold md:text-5xl">4.8</div>
+              <div className="text-4xl font-bold md:text-5xl">
+                <CountUp end={4.8} decimals={1} />
+              </div>
               <div className="mt-2 text-primary-foreground/80">
                 Valoración media
               </div>
             </div>
             <div>
-              <div className="text-4xl font-bold md:text-5xl">100%</div>
+              <div className="text-4xl font-bold md:text-5xl">
+                <CountUp end={100} suffix="%" />
+              </div>
               <div className="mt-2 text-primary-foreground/80">
                 Dedicación
               </div>
