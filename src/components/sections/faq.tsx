@@ -68,7 +68,7 @@ export function FAQ() {
         <div className="mx-auto max-w-3xl">
           <AnimateOnScroll variant="scale-up">
           <div className="rounded-2xl border bg-card p-2 shadow-lg">
-            <NativeAccordion>
+            <NativeAccordion defaultValue={faqs[0]?.id}>
               {faqs.map((faq, index) => (
                 <NativeAccordionItem
                   key={faq.id}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
 import { siteConfig, navLinks } from '@/lib/constants';
@@ -30,6 +30,17 @@ export function Footer() {
               Tu clínica de podología de confianza en Móstoles. Cuidamos de la
               salud de tus pies con profesionalidad y cercanía.
             </p>
+            <a
+              href="https://www.google.com/maps/place/Clinica+Podol%C3%B3gica+Carrera/@40.3266811,-3.8639111,17z/data=!4m16!1m9!3m8!1s0xd418e81e5d565c3:0x8f1c87dfcd45852b!2sClinica+Podol%C3%B3gica+Carrera!8m2!3d40.326677!4d-3.8613362!9m1!1b1!16s%2Fg%2F11c2j39c56!3m5!1s0xd418e81e5d565c3:0x8f1c87dfcd45852b!8m2!3d40.326677!4d-3.8613362!16s%2Fg%2F11c2j39c56"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary"
+              data-testid="footer-reviews-link"
+            >
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span className="font-medium">{siteConfig.rating}</span>
+              <span>en Google Reviews</span>
+            </a>
           </div>
 
           {/* Links */}

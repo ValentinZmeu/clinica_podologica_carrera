@@ -81,7 +81,7 @@ export function Location() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación de Clínica Podológica Carrera"
-                className="transition-all duration-500 grayscale group-hover:grayscale-0"
+                className="transition-all duration-500"
               />
               {/* Overlay gradient */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />

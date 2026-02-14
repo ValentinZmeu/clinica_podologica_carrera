@@ -50,9 +50,13 @@ export const getServiceBySlug = cache((slug: string): Service | undefined => {
  */
 export const getOtherServices = cache(
   (currentSlug: string, limit = 3): Service[] => {
-    return getActiveServices()
-      .filter((s) => s.slug !== currentSlug)
-      .slice(0, limit);
+    const others = getActiveServices().filter((s) => s.slug !== currentSlug);
+    // Shuffle using Fisher-Yates to show different services each build
+    for (let i = others.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [others[i], others[j]] = [others[j], others[i]];
+    }
+    return others.slice(0, limit);
   }
 );
 

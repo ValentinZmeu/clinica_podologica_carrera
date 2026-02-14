@@ -18,7 +18,7 @@ import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Contacto | Clínica Podológica Carrera - Móstoles',
+  title: 'Contacto - Podólogo en Móstoles',
   description:
     'Contacta con Clínica Podológica Carrera en Móstoles. Pide tu cita por teléfono o WhatsApp. C. de la Carrera, 7, junto al Mercado de la Constitución.',
   keywords: [
@@ -33,6 +33,9 @@ export const metadata: Metadata = {
       'Pide tu cita en Clínica Podológica Carrera. Llámanos o escríbenos por WhatsApp.',
     url: `${siteConfig.url}/contacto`,
     type: 'website',
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/contacto`,
   },
 };
 
@@ -316,7 +319,7 @@ export default function ContactoPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación de Clínica Podológica Carrera"
-                className="grayscale transition-all duration-500 hover:grayscale-0"
+                className="transition-all duration-500"
               />
             </div>
           </div>

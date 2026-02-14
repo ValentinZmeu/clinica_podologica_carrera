@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
@@ -23,10 +24,18 @@ function isActive(pathname: string, href: string) {
 
 export function Header() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b bg-white"
+      className={`sticky top-0 z-50 w-full border-b bg-white transition-shadow ${scrolled ? 'shadow-sm' : ''}`}
       data-testid="header"
     >
       <div className="container flex h-16 items-center justify-between">

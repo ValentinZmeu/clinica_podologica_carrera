@@ -47,7 +47,7 @@ export function CTASection() {
               de tus pies?
             </span>
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-xl text-white/70">
+          <p className="mx-auto mb-10 max-w-2xl text-xl text-white/80">
             Pide tu cita hoy y empieza a disfrutar de unos pies sanos y sin
             molestias. Más de 15 años de experiencia nos avalan.
           </p>
@@ -102,7 +102,7 @@ export function CTASection() {
           </div>
 
           {/* Schedule */}
-          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 text-white/60">
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 text-white/80">
             <Clock className="h-4 w-4" />
             <span className="text-sm">
               L-J: {siteConfig.schedule.weekdays} | V: {siteConfig.schedule.friday}

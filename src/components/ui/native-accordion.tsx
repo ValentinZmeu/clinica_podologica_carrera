@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface AccordionItemProps {
@@ -5,7 +8,8 @@ interface AccordionItemProps {
   trigger: React.ReactNode;
   children: React.ReactNode;
   className?: string;
-  defaultOpen?: boolean;
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
 export function NativeAccordionItem({
@@ -13,19 +17,26 @@ export function NativeAccordionItem({
   trigger,
   children,
   className,
-  defaultOpen = false,
+  isOpen = false,
+  onToggle,
 }: AccordionItemProps) {
   return (
-    <details
-      name="accordion"
-      className={cn('group border-b-0 px-4', className)}
+    <div
+      className={cn('border-b last:border-b-0 px-4', className)}
       data-testid={`accordion-item-${value}`}
-      open={defaultOpen}
     >
-      <summary className="flex cursor-pointer list-none items-center justify-between py-5 font-semibold transition-colors hover:text-primary [&::-webkit-details-marker]:hidden">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex w-full cursor-pointer items-center justify-between py-5 font-semibold transition-colors hover:text-primary"
+        aria-expanded={isOpen}
+      >
         {trigger}
         <svg
-          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
+          className={cn(
+            'h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-300',
+            isOpen && 'rotate-180'
+          )}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -33,19 +44,49 @@ export function NativeAccordionItem({
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
-      </summary>
-      <div className="pb-5 pl-12 text-muted-foreground leading-relaxed">
-        {children}
+      </button>
+      <div
+        className={cn(
+          'grid transition-[grid-template-rows] duration-300 ease-in-out',
+          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="pb-5 pl-12 text-muted-foreground leading-relaxed">
+            {children}
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
   );
 }
 
 interface NativeAccordionProps {
   children: React.ReactNode;
   className?: string;
+  defaultValue?: string;
 }
 
-export function NativeAccordion({ children, className }: NativeAccordionProps) {
-  return <div className={cn('w-full', className)}>{children}</div>;
+export function NativeAccordion({ children, className, defaultValue }: NativeAccordionProps) {
+  const [openItem, setOpenItem] = useState<string | null>(defaultValue ?? null);
+
+  const items = Array.isArray(children) ? children : [children];
+
+  return (
+    <div className={cn('w-full', className)}>
+      {items.map((child) => {
+        if (!child || typeof child !== 'object' || !('props' in child)) return child;
+        const itemValue = child.props.value as string;
+        return {
+          ...child,
+          key: itemValue,
+          props: {
+            ...child.props,
+            isOpen: openItem === itemValue,
+            onToggle: () => setOpenItem(openItem === itemValue ? null : itemValue),
+          },
+        };
+      })}
+    </div>
+  );
 }
