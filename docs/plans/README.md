@@ -12,6 +12,7 @@
 
 | Plan                                                          | Descripción                                  | Fecha Completado |
 | ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| [e2e-playwright](_archive/03-e2e-playwright.md)               | Tests E2E con Playwright (202 tests, 2 viewports) | 2026-02-14       |
 | [scroll-animations](_archive/02-scroll-animations.md)         | Animaciones sutiles de scroll (CSS + IntersectionObserver) | 2026-02-14       |
 | [landing-nextjs-seo](_archive/01-landing-nextjs-seo.md)       | Landing Next.js + shadcn + Tailwind + SQLite | 2026-01-06       |
 
