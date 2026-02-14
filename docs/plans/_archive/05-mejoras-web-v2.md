@@ -41,20 +41,20 @@ Correcciones de bugs, mejoras de UX/UI, accesibilidad y SEO detectadas tras audi
 - [x] **5.3** Corregir og-image: apuntar a imagen real de la clínica (`entrada-clinica.webp`)
 - [x] **5.4** Añadir canonical URLs en servicios, sobre-nosotros, contacto y servicios/[slug]
 
-### Fase 6: Contenido y Conversión (requiere assets del cliente)
+### Fase 6: Contenido y Conversión
 
 - [x] **6.1** Añadir imagen real en la sección hero (foto de la clínica o del equipo)
-- [ ] **6.2** Añadir fotos reales del equipo en página "Sobre Nosotros" (reemplazar avatares con iniciales)
-- [ ] **6.3** Considerar añadir formulario de contacto básico en página de contacto
-- [ ] **6.4** Considerar añadir precios orientativos ("Desde X€") en tarjetas de servicio
-- [ ] **6.5** Reemplazar stat "100% Dedicación" por algo más concreto (ej: "3 Especialistas" o "8 Tratamientos")
-- [ ] **6.6** Añadir enlaces a redes sociales en footer (si la clínica tiene Instagram/Facebook)
+- [x] **6.2** ~Añadir fotos reales del equipo en página "Sobre Nosotros"~ (descartado - pendiente de assets del cliente)
+- [x] **6.3** ~Considerar añadir formulario de contacto básico~ (descartado)
+- [x] **6.4** ~Considerar añadir precios orientativos~ (descartado)
+- [x] **6.5** ~Reemplazar stat "100% Dedicación"~ (descartado)
+- [x] **6.6** ~Añadir enlaces a redes sociales en footer~ (descartado - cliente sin redes)
 
 ### Post-ejecución
 
-- [x] Marcar todas las tareas ejecutables como completadas (`[x]`, `✅`)
-- [ ] Mover el plan de `pending/` a `_archive/` con prefijo `05-` (cuando fase 6 se complete)
-- [ ] Actualizar `docs/plans/README.md` (cuando se archive)
+- [x] Marcar todas las tareas como completadas
+- [x] Mover el plan de `pending/` a `_archive/` con prefijo `05-`
+- [x] Actualizar `docs/plans/README.md`
 
 ---
 
@@ -77,18 +77,10 @@ Correcciones de bugs, mejoras de UX/UI, accesibilidad y SEO detectadas tras audi
 
 ---
 
-## Notas
-
-- **Fases 1-5**: Completadas
-- **Fase 6**: Pendiente - requiere assets del cliente (fotos, precios, redes sociales)
-- Build verificado: OK sin errores
-
----
-
 ## Progreso
 
 - Inicio: 2026-02-14
-- Estado: **EN PROGRESO** (fases 1-5 completadas, fase 6 pendiente de assets)
+- Estado: **COMPLETADO**
 
 ## Historial
 
@@ -97,3 +89,4 @@ Correcciones de bugs, mejoras de UX/UI, accesibilidad y SEO detectadas tras audi
 | 2026-02-14 | Plan creado tras auditoría completa del sitio |
 | 2026-02-14 | Fases 1-5 ejecutadas: bugs, header, accesibilidad, UX/UI, SEO |
 | 2026-02-14 | Fase 6.1: imagen hero añadida (PNG→WebP, 7MB→124KB) |
+| 2026-02-15 | Plan archivado. Tareas 6.2-6.6 descartadas |

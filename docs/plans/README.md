@@ -6,7 +6,6 @@
 
 | Plan | Descripción | Estado | Fecha Inicio |
 | ---- | ----------- | ------ | ------------ |
-| [mejoras-web-v2](pending/mejoras-web-v2.md) | Bugs, UX/UI, accesibilidad y SEO | PENDIENTE | 2026-02-14 |
 | [google-analytics-searchconsole](pending/google-analytics-searchconsole.md) | Integrar GA4 y Google Search Console con variables .env | PENDIENTE | 2026-02-14 |
 | [seo-servicios-local-llm](pending/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | PENDIENTE | 2026-02-15 |
 
@@ -14,6 +13,7 @@
 
 | Plan                                                          | Descripción                                  | Fecha Completado |
 | ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| [mejoras-web-v2](_archive/05-mejoras-web-v2.md)               | Bugs, UX/UI, accesibilidad y SEO             | 2026-02-15       |
 | [docker-cicd](_archive/04-docker-cicd.md)                     | Dockerización y CI/CD (GHCR + VPS SSH)       | 2026-02-14       |
 | [e2e-playwright](_archive/03-e2e-playwright.md)               | Tests E2E con Playwright (202 tests, 2 viewports) | 2026-02-14       |
 | [scroll-animations](_archive/02-scroll-animations.md)         | Animaciones sutiles de scroll (CSS + IntersectionObserver) | 2026-02-14       |
