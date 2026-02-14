@@ -6,12 +6,13 @@
 
 | Plan | Descripción | Estado | Fecha Inicio |
 | ---- | ----------- | ------ | ------------ |
-| [docker-cicd](pending/docker-cicd.md) | Dockerización y CI/CD desde cero (GHCR + VPS SSH) | **PENDIENTE** | 2026-02-14 |
+| -    | -           | -      | -            |
 
 ## Planes Archivados
 
 | Plan                                                          | Descripción                                  | Fecha Completado |
 | ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| [docker-cicd](_archive/04-docker-cicd.md)                     | Dockerización y CI/CD (GHCR + VPS SSH)       | 2026-02-14       |
 | [e2e-playwright](_archive/03-e2e-playwright.md)               | Tests E2E con Playwright (202 tests, 2 viewports) | 2026-02-14       |
 | [scroll-animations](_archive/02-scroll-animations.md)         | Animaciones sutiles de scroll (CSS + IntersectionObserver) | 2026-02-14       |
 | [landing-nextjs-seo](_archive/01-landing-nextjs-seo.md)       | Landing Next.js + shadcn + Tailwind + SQLite | 2026-01-06       |
