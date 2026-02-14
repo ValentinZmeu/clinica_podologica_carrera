@@ -4,15 +4,16 @@
 
 ## Planes Activos
 
-| Plan                                                 | Descripción                                    | Estado        | Fecha Inicio |
-| ---------------------------------------------------- | ---------------------------------------------- | ------------- | ------------ |
-| [landing-nextjs-seo](pending/landing-nextjs-seo.md)  | Landing Next.js + shadcn + Tailwind + SQLite   | **PENDIENTE** | 2026-01-06   |
+| Plan | Descripción | Estado | Fecha Inicio |
+| ---- | ----------- | ------ | ------------ |
+| [docker-cicd](pending/docker-cicd.md) | Dockerización y CI/CD desde cero (GHCR + VPS SSH) | **PENDIENTE** | 2026-02-14 |
 
 ## Planes Archivados
 
-| Plan | Descripción | Fecha Completado |
-| ---- | ----------- | ---------------- |
-| -    | -           | -                |
+| Plan                                                          | Descripción                                  | Fecha Completado |
+| ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| [scroll-animations](_archive/02-scroll-animations.md)         | Animaciones sutiles de scroll (CSS + IntersectionObserver) | 2026-02-14       |
+| [landing-nextjs-seo](_archive/01-landing-nextjs-seo.md)       | Landing Next.js + shadcn + Tailwind + SQLite | 2026-01-06       |
 
 ---
 
