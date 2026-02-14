@@ -113,18 +113,23 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row">
-          <p>
-            Made with <span className="text-red-500">&#10084;</span> by{' '}
-            <a
-              href="https://dev-dim.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="devdim-gradient font-semibold"
-            >
-              DevDim
-            </a>
-            {' '}© {new Date().getFullYear()} {siteConfig.name}.
-          </p>
+          <div className="flex flex-col items-center gap-1 md:flex-row md:gap-0">
+            <p>
+              Made with <span className="text-red-500">&#10084;</span> by{' '}
+              <a
+                href="https://dev-dim.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="devdim-gradient font-semibold"
+              >
+                DevDim
+              </a>
+            </p>
+            <p>
+              <span className="hidden md:inline">{' '}·{' '}</span>
+              © {new Date().getFullYear()} {siteConfig.name}.
+            </p>
+          </div>
           <div className="flex gap-4">
             <Link href="/privacidad" className="hover:text-primary">
               Política de Privacidad

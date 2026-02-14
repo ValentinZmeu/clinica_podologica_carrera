@@ -17,6 +17,7 @@ export function MobileNav() {
   const [isPeeking, setIsPeeking] = React.useState(false); // panel visible but following drag-to-open
   const [dragOffset, setDragOffset] = React.useState<number | null>(null);
   const panelRef = React.useRef<HTMLDivElement>(null);
+  const backdropRef = React.useRef<HTMLDivElement>(null);
   const touchStart = React.useRef<{ x: number; y: number; time: number } | null>(null);
   const panelWidth = React.useRef(0);
 
@@ -31,12 +32,14 @@ export function MobileNav() {
     setIsOpen(true);
     setDragOffset(null);
     document.body.style.overflow = 'hidden';
-    // Snap panel to open position
+    // Double-rAF ensures browser paints off-screen position before animating in
     requestAnimationFrame(() => {
-      if (panelRef.current) {
-        panelRef.current.style.transition = 'transform 200ms ease';
-        panelRef.current.style.transform = 'translateX(0)';
-      }
+      requestAnimationFrame(() => {
+        if (panelRef.current) {
+          panelRef.current.style.transition = 'transform 200ms ease';
+          panelRef.current.style.transform = 'translateX(0)';
+        }
+      });
     });
   }, []);
 
@@ -148,18 +151,24 @@ export function MobileNav() {
         const offset = panelWidth.current - clamped;
         panelRef.current.style.transition = 'none';
         panelRef.current.style.transform = `translateX(${offset}px)`;
+        // Update backdrop opacity to follow drag
+        if (backdropRef.current) {
+          backdropRef.current.style.opacity = String(clamped / panelWidth.current);
+        }
       }
       if (peek.active) {
         raf = requestAnimationFrame(tick);
       }
     }
 
-    // Start off-screen
+    // Start off-screen with backdrop hidden
     if (panelRef.current) {
       panelRef.current.style.transition = 'none';
       panelRef.current.style.transform = 'translateX(100%)';
-      // Need to measure after render
       panelWidth.current = panelRef.current.offsetWidth;
+    }
+    if (backdropRef.current) {
+      backdropRef.current.style.opacity = '0';
     }
 
     raf = requestAnimationFrame(tick);
@@ -240,6 +249,7 @@ export function MobileNav() {
         <>
           {/* Backdrop */}
           <div
+            ref={backdropRef}
             className="fixed inset-0 h-screen z-40 bg-black/60 backdrop-blur-sm cursor-pointer"
             style={{ opacity: backdropOpacity }}
             onClick={isOpen ? animateClose : undefined}
@@ -250,7 +260,7 @@ export function MobileNav() {
           <div
             ref={panelRef}
             className="fixed top-0 right-0 z-50 h-screen w-4/5 max-w-sm border-l bg-white p-6 shadow-2xl overflow-y-auto flex flex-col"
-            style={{ transform: isPeeking ? 'translateX(100%)' : 'translateX(0)' }}
+            style={{ transform: 'translateX(100%)' }}
             data-testid="nav-mobile-menu"
             role="dialog"
             aria-modal="true"
