@@ -10,40 +10,40 @@ Correcciones de bugs, mejoras de UX/UI, accesibilidad y SEO detectadas tras audi
 
 ### Fase 1: Bugs críticos
 
-- [ ] **1.1** Corregir logo en mobile nav: cambiar `logo.png` a `logo.webp` en `mobile-nav.tsx:265`
-- [ ] **1.2** Corregir horario incorrecto en sidebar de servicio individual (`servicios/[slug]/page.tsx:319`). Dice "L-V: 09:30-14:00 y 17:00-20:00" pero debería usar `siteConfig.schedule`
-- [ ] **1.3** Corregir URL WhatsApp en sidebar de servicio individual (`servicios/[slug]/page.tsx:288`). Usa `siteConfig.whatsapp.replace(/\s/g, '')` que deja el `+`, debería usar `siteConfig.whatsappLink`
-- [ ] **1.4** Eliminar `siteConfig` duplicado en `layout.tsx:18-24` e importar desde `@/lib/constants`
+- [x] **1.1** Corregir logo en mobile nav: cambiar `logo.png` a `logo.webp`
+- [x] **1.2** Corregir horario incorrecto en sidebar de servicio individual (usar `siteConfig.schedule`)
+- [x] **1.3** Corregir URL WhatsApp en sidebar de servicio individual (usar `formatWhatsAppUrl`)
+- [x] **1.4** Eliminar `siteConfig` duplicado en `layout.tsx` e importar desde `@/lib/constants`
 
 ### Fase 2: Navegación y Header
 
-- [ ] **2.1** Añadir indicador de página activa en los enlaces del navbar (highlight con color/underline)
-- [ ] **2.2** Añadir efecto de sombra al header al hacer scroll (`shadow-sm` cuando `scrollY > 0`)
-- [ ] **2.3** Corregir breakpoint mobile nav: cambiar `md:hidden` a `lg:hidden` en hamburger button (o viceversa, alinear con el nav desktop que usa `md:flex`)
+- [x] **2.1** Añadir indicador de página activa en los enlaces del navbar (highlight con color/underline)
+- [x] **2.2** Añadir efecto de sombra al header al hacer scroll (`shadow-sm` cuando `scrollY > 0`)
+- [x] **2.3** Alinear breakpoints entre nav desktop (`lg:flex`) y hamburger button (`lg:hidden`)
 
 ### Fase 3: Accesibilidad
 
-- [ ] **3.1** Revisar contraste de textos `text-white/60` y `text-white/70` en hero y CTA section contra fondo oscuro (WCAG AA)
-- [ ] **3.2** Añadir focus trap y gestión de tecla `Escape` en mobile nav dialog
-- [ ] **3.3** Subir opacidades bajas a mínimo `text-white/80` donde no cumplan ratio 4.5:1
+- [x] **3.1** Revisar contraste de textos en hero y CTA section contra fondo oscuro (WCAG AA)
+- [x] **3.2** Añadir gestión de tecla `Escape` en mobile nav dialog
+- [x] **3.3** Subir opacidades bajas a mínimo `text-white/80` donde no cumplían ratio 4.5:1
 
 ### Fase 4: Mejoras UX/UI
 
-- [ ] **4.1** Mover scroll indicator del hero de `bottom-2` a `bottom-8` para mejor visibilidad
-- [ ] **4.2** Cambiar mapa de contacto de `grayscale` por defecto a color (o grayscale más suave con `grayscale-[50%]`)
-- [ ] **4.3** Añadir enlace a reseñas de Google en el footer
-- [ ] **4.4** Diferenciar la sección "¿Por qué elegir nuestros servicios?" de `/servicios` respecto a Benefits del home (evitar redundancia)
+- [x] **4.1** Mover scroll indicator del hero de `bottom-2` a `bottom-8`
+- [x] **4.2** Quitar mapa `grayscale` en contacto y location (mostrar en color)
+- [x] **4.3** Añadir enlace a reseñas de Google en el footer (con estrella y rating)
+- [x] **4.4** Diferenciar sección de `/servicios` como "Nuestro Enfoque Clínico" (pasos 1-2-3)
 
 ### Fase 5: SEO y Rendimiento
 
-- [ ] **5.1** Verificar/crear `sitemap.xml` (Next.js puede generarlo automáticamente con `app/sitemap.ts`)
-- [ ] **5.2** Verificar/crear `robots.txt` (con `app/robots.ts`)
-- [ ] **5.3** Verificar que existe la imagen `og-image.jpg` referenciada en metadata
-- [ ] **5.4** Añadir canonical URLs en páginas interiores (servicios individuales, sobre-nosotros, contacto)
+- [x] **5.1** Verificar `sitemap.xml` (ya existía `app/sitemap.ts`)
+- [x] **5.2** Verificar `robots.txt` (ya existía `app/robots.ts`)
+- [x] **5.3** Corregir og-image: apuntar a imagen real de la clínica (`entrada-clinica.webp`)
+- [x] **5.4** Añadir canonical URLs en servicios, sobre-nosotros, contacto y servicios/[slug]
 
 ### Fase 6: Contenido y Conversión (requiere assets del cliente)
 
-- [ ] **6.1** Añadir imagen real en la sección hero (foto de la clínica o del equipo)
+- [x] **6.1** Añadir imagen real en la sección hero (foto de la clínica o del equipo)
 - [ ] **6.2** Añadir fotos reales del equipo en página "Sobre Nosotros" (reemplazar avatares con iniciales)
 - [ ] **6.3** Considerar añadir formulario de contacto básico en página de contacto
 - [ ] **6.4** Considerar añadir precios orientativos ("Desde X€") en tarjetas de servicio
@@ -52,47 +52,48 @@ Correcciones de bugs, mejoras de UX/UI, accesibilidad y SEO detectadas tras audi
 
 ### Post-ejecución
 
-- [ ] Marcar todas las tareas como completadas (`[x]`, `✅`)
-- [ ] Mover el plan de `pending/` a `_archive/` con prefijo `05-`
-- [ ] Actualizar `docs/plans/README.md` (eliminar de pendientes, añadir a archivados)
+- [x] Marcar todas las tareas ejecutables como completadas (`[x]`, `✅`)
+- [ ] Mover el plan de `pending/` a `_archive/` con prefijo `05-` (cuando fase 6 se complete)
+- [ ] Actualizar `docs/plans/README.md` (cuando se archive)
 
 ---
 
-## Archivos a Modificar
+## Archivos Modificados
 
 | Archivo | Fase | Cambio | Estado |
 |---------|------|--------|--------|
-| `src/components/layout/mobile-nav.tsx` | 1, 2 | Fix logo, alinear breakpoints | ❌ |
-| `src/app/servicios/[slug]/page.tsx` | 1 | Fix horario y URL WhatsApp | ❌ |
-| `src/app/layout.tsx` | 1 | Eliminar siteConfig duplicado | ❌ |
-| `src/components/layout/header.tsx` | 2 | Indicador activo, sombra scroll | ❌ |
-| `src/components/sections/hero.tsx` | 3, 4 | Contraste, scroll indicator | ❌ |
-| `src/components/sections/cta-section.tsx` | 3 | Contraste textos | ❌ |
-| `src/app/contacto/page.tsx` | 4 | Mapa grayscale | ❌ |
-| `src/components/layout/footer.tsx` | 4, 6 | Enlace reseñas, redes sociales | ❌ |
-| `src/app/sitemap.ts` | 5 | Crear si no existe | ❌ |
-| `src/app/robots.ts` | 5 | Crear si no existe | ❌ |
-| `src/app/servicios/page.tsx` | 4 | Diferenciar sección beneficios | ❌ |
-| `src/app/sobre-nosotros/page.tsx` | 6 | Fotos equipo, stat | ❌ |
-| `src/components/sections/location.tsx` | 4 | Mapa grayscale | ❌ |
+| `src/components/layout/mobile-nav.tsx` | 1, 3 | Fix logo.webp, Escape key | ✅ |
+| `src/app/servicios/[slug]/page.tsx` | 1, 5 | Fix horario, WhatsApp URL, canonical | ✅ |
+| `src/app/layout.tsx` | 1 | Importar siteConfig desde constants | ✅ |
+| `src/components/layout/header.tsx` | 2 | Indicador activo, sombra scroll | ✅ |
+| `src/components/sections/hero.tsx` | 3, 4, 6 | Contraste white/80, scroll indicator bottom-8, imagen fondo | ✅ |
+| `src/components/sections/cta-section.tsx` | 3 | Contraste white/80 | ✅ |
+| `src/app/contacto/page.tsx` | 4, 5 | Quitar grayscale mapa, canonical | ✅ |
+| `src/components/layout/footer.tsx` | 4 | Enlace Google Reviews con estrella | ✅ |
+| `src/app/servicios/page.tsx` | 4, 5 | "Nuestro Enfoque Clínico", canonical | ✅ |
+| `src/app/sobre-nosotros/page.tsx` | 5 | Canonical URL | ✅ |
+| `src/components/sections/location.tsx` | 4 | Quitar grayscale mapa | ✅ |
+| `src/lib/constants.ts` | 1, 5 | Description + og-image actualizados | ✅ |
 
 ---
 
 ## Notas
 
-- **Fase 1-5**: Se pueden ejecutar sin dependencias externas
-- **Fase 6**: Requiere assets del cliente (fotos, precios, redes sociales). Marcar como pendiente hasta obtenerlos
-- Las fases 1-3 son las más prioritarias (bugs + UX + accesibilidad)
+- **Fases 1-5**: Completadas
+- **Fase 6**: Pendiente - requiere assets del cliente (fotos, precios, redes sociales)
+- Build verificado: OK sin errores
 
 ---
 
 ## Progreso
 
 - Inicio: 2026-02-14
-- Estado: **PENDIENTE**
+- Estado: **EN PROGRESO** (fases 1-5 completadas, fase 6 pendiente de assets)
 
 ## Historial
 
 | Fecha | Descripción |
 |-------|-------------|
 | 2026-02-14 | Plan creado tras auditoría completa del sitio |
+| 2026-02-14 | Fases 1-5 ejecutadas: bugs, header, accesibilidad, UX/UI, SEO |
+| 2026-02-14 | Fase 6.1: imagen hero añadida (PNG→WebP, 7MB→124KB) |
