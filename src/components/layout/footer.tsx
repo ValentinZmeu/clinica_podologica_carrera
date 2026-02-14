@@ -136,8 +136,8 @@ export function Footer() {
                 DevDim
               </a>
             </p>
+            &nbsp;|&nbsp;
             <p>
-              <span className="hidden md:inline">{' '}·{' '}</span>
               © {new Date().getFullYear()} {siteConfig.name}.
             </p>
           </div>
