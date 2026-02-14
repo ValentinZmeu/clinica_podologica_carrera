@@ -10,7 +10,7 @@
       "Quiropodia avanzada",
       "Tratamiento ungueal"
     ],
-    "collegiateNum": "COPOMA XXXX",
+    "collegiateNum": null,
     "order": 1,
     "isActive": true
   },
@@ -25,7 +25,7 @@
       "Podología deportiva",
       "Fascitis plantar"
     ],
-    "collegiateNum": "COPOMA XXXX",
+    "collegiateNum": null,
     "order": 2,
     "isActive": true
   },
@@ -40,7 +40,7 @@
       "Papilomas plantares",
       "Quiropodia"
     ],
-    "collegiateNum": "COPOMA XXXX",
+    "collegiateNum": null,
     "order": 3,
     "isActive": true
   }

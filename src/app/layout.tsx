@@ -5,6 +5,7 @@ import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { WhatsAppButton } from '@/components/layout/whatsapp-button';
+import { siteConfig } from '@/lib/constants';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -14,14 +15,6 @@ const plusJakarta = Plus_Jakarta_Sans({
   preload: true,
   adjustFontFallback: true,
 });
-
-const siteConfig = {
-  name: 'Clínica Podológica Carrera',
-  description:
-    'Clínica de podología en Móstoles, Madrid. Especialistas en quiropodia, plantillas personalizadas, estudio biomecánico, podología deportiva y tratamiento de uñas encarnadas. Pide tu cita.',
-  url: 'https://clinica-podologica-carrera.com',
-  ogImage: 'https://clinica-podologica-carrera.com/og-image.jpg',
-};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

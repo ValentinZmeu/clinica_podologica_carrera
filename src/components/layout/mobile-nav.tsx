@@ -184,6 +184,16 @@ export function MobileNav() {
     }
   }, [isOpen]);
 
+  // Close on Escape key
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') animateClose();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [isOpen, animateClose]);
+
   // --- Panel drag to close ---
   const onPanelTouchStart = React.useCallback((e: React.TouchEvent) => {
     if (isPeeking) return; // Don't interfere with peek gesture
@@ -273,7 +283,7 @@ export function MobileNav() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.webp"
                   alt={`Logo de ${siteConfig.name}`}
                   width={32}
                   height={32}

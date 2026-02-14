@@ -14,6 +14,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { Badge } from '@/components/ui/badge';
 import { siteConfig } from '@/lib/constants';
+import { formatWhatsAppUrl } from '@/lib/utils';
 import {
   getServiceBySlug,
   getOtherServices,
@@ -47,7 +48,7 @@ export async function generateMetadata({
   const keywords = service.keywords.split(',').map((k) => k.trim());
 
   return {
-    title: `${service.name} en Móstoles | Clínica Podológica Carrera`,
+    title: `${service.name} en Móstoles`,
     description: service.shortDesc,
     keywords,
     openGraph: {
@@ -55,6 +56,9 @@ export async function generateMetadata({
       description: service.shortDesc,
       url: `${siteConfig.url}/servicios/${service.slug}`,
       type: 'article',
+    },
+    alternates: {
+      canonical: `${siteConfig.url}/servicios/${service.slug}`,
     },
   };
 }
@@ -255,7 +259,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <div className="mt-12">
                   <h2 className="mb-6 text-2xl font-bold">Preguntas frecuentes</h2>
                   <div className="rounded-lg border">
-                    <NativeAccordion>
+                    <NativeAccordion defaultValue={service.faqs[0]?.id}>
                       {service.faqs.map((faq, index) => (
                         <NativeAccordionItem
                           key={faq.id}
@@ -287,7 +291,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <div className="space-y-3">
                     <Button className="w-full" size="lg" asChild>
                       <a
-                        href={`https://wa.me/${siteConfig.whatsapp.replace(/\s/g, '')}?text=${encodeURIComponent(`Hola, me gustaría pedir cita para ${service.name}`)}`}
+                        href={formatWhatsAppUrl(siteConfig.whatsapp, `Hola, me gustaría pedir cita para ${service.name}`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="service-whatsapp-cta"
@@ -318,7 +322,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     <p className="mt-3 text-sm text-muted-foreground">
                       <strong>Horario:</strong>
                       <br />
-                      L-V: 09:30-14:00 y 17:00-20:00
+                      L-J: {siteConfig.schedule.weekdays}
+                      <br />
+                      V: {siteConfig.schedule.friday}
                     </p>
                   </div>
                 </CardContent>
