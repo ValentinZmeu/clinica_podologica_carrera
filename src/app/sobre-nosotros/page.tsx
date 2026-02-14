@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { PageHero } from '@/components/layout/page-hero';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
 import { getActiveTeamMembers } from '@/lib/data';
@@ -99,6 +100,7 @@ export default function SobreNosotrosPage() {
       {/* Story Section */}
       <section className="py-16 md:py-24" data-testid="about-story">
         <div className="container">
+          <AnimateOnScroll variant="fade-up">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">
               Nuestra Historia
@@ -123,6 +125,7 @@ export default function SobreNosotrosPage() {
               </p>
             </div>
           </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -132,6 +135,7 @@ export default function SobreNosotrosPage() {
         data-testid="about-values"
       >
         <div className="container">
+          <AnimateOnScroll variant="fade-up">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               Nuestros Valores
@@ -140,9 +144,11 @@ export default function SobreNosotrosPage() {
               Los principios que guían nuestro trabajo cada día.
             </p>
           </div>
+          </AnimateOnScroll>
 
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             {values.map((value, index) => (
+              <AnimateOnScroll key={index} variant="fade-up" delay={index * 100}>
               <Card
                 key={index}
                 className="border-0 bg-background"
@@ -156,6 +162,7 @@ export default function SobreNosotrosPage() {
                   <p className="text-muted-foreground">{value.description}</p>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -164,6 +171,7 @@ export default function SobreNosotrosPage() {
       {/* Team Section */}
       <section className="py-16 md:py-24" data-testid="about-team">
         <div className="container">
+          <AnimateOnScroll variant="fade-up">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               El Equipo
@@ -172,6 +180,7 @@ export default function SobreNosotrosPage() {
               Profesionales colegiadas comprometidas con tu salud podológica.
             </p>
           </div>
+          </AnimateOnScroll>
 
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
             {teamMembers.map((member, index) => {
@@ -182,8 +191,8 @@ export default function SobreNosotrosPage() {
                 .toUpperCase();
 
               return (
+                <AnimateOnScroll key={member.id} variant="fade-up" delay={index * 150}>
                 <Card
-                  key={member.id}
                   className="overflow-hidden"
                   data-testid={`team-member-${index}`}
                 >
@@ -214,6 +223,7 @@ export default function SobreNosotrosPage() {
                     </div>
                   </CardContent>
                 </Card>
+                </AnimateOnScroll>
               );
             })}
           </div>
@@ -226,6 +236,7 @@ export default function SobreNosotrosPage() {
         data-testid="about-stats"
       >
         <div className="container">
+          <AnimateOnScroll variant="fade-up">
           <div className="mx-auto grid max-w-4xl gap-8 text-center md:grid-cols-4">
             <div>
               <div className="text-4xl font-bold md:text-5xl">15+</div>
@@ -252,6 +263,7 @@ export default function SobreNosotrosPage() {
               </div>
             </div>
           </div>
+          </AnimateOnScroll>
         </div>
       </section>
 

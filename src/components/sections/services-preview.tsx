@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { ServiceCard } from '@/components/cards/service-card';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { getFeaturedServices } from '@/lib/data';
 
 export function ServicesPreview() {
@@ -22,51 +23,56 @@ export function ServicesPreview() {
       <div className="absolute right-0 bottom-1/3 -z-10 h-96 w-96 rounded-full bg-accent-100/30 blur-3xl" />
 
       <div className="container">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-1.5">
-            <Sparkles className="h-4 w-4 text-primary-600" />
-            <span className="text-sm font-medium text-primary-700">
-              Tratamientos Especializados
-            </span>
+        <AnimateOnScroll variant="fade-up">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-1.5">
+              <Sparkles className="h-4 w-4 text-primary-600" />
+              <span className="text-sm font-medium text-primary-700">
+                Tratamientos Especializados
+              </span>
+            </div>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+              Nuestros{' '}
+              <span className="text-primary-500">
+                Servicios
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Soluciones profesionales para todas las necesidades de tus pies,
+              desde tratamientos básicos hasta los más avanzados.
+            </p>
           </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Nuestros{' '}
-            <span className="text-primary-500">
-              Servicios
-            </span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Soluciones profesionales para todas las necesidades de tus pies,
-            desde tratamientos básicos hasta los más avanzados.
-          </p>
-        </div>
+        </AnimateOnScroll>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              slug={service.slug}
-              name={service.name}
-              shortDesc={service.shortDesc}
-              icon={service.icon}
-              isFeatured={service.isFeatured}
-              index={index}
-            />
+            <AnimateOnScroll key={service.id} variant="fade-up" delay={index * 100}>
+              <ServiceCard
+                slug={service.slug}
+                name={service.name}
+                shortDesc={service.shortDesc}
+                icon={service.icon}
+                isFeatured={service.isFeatured}
+                index={index}
+              />
+            </AnimateOnScroll>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button
-            size="lg"
-            className="bg-accent-500 hover:bg-accent-600 text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
-            asChild
-          >
-            <Link href="/servicios" data-testid="services-view-all-link">
-              Ver Todos los Servicios
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+        <AnimateOnScroll variant="fade-up" delay={200}>
+          <div className="mt-12 text-center">
+            <Button
+              size="lg"
+              className="bg-accent-500 hover:bg-accent-600 text-white shadow-lg transition-all hover:shadow-xl hover:scale-105"
+              asChild
+            >
+              <Link href="/servicios" data-testid="services-view-all-link">
+                Ver Todos los Servicios
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

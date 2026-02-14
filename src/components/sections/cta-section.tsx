@@ -2,6 +2,7 @@ import { Phone, MessageCircle, Clock, CheckCircle } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
 const benefits = [
@@ -25,6 +26,7 @@ export function CTASection() {
       <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-accent-500/20 blur-3xl" aria-hidden="true" />
 
       <div className="container">
+        <AnimateOnScroll variant="fade-up" duration={800}>
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
@@ -105,6 +107,7 @@ export function CTASection() {
             </span>
           </div>
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

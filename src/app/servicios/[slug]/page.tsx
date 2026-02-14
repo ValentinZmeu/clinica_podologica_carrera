@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/native-accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { Badge } from '@/components/ui/badge';
 import { siteConfig } from '@/lib/constants';
 import {
@@ -220,7 +221,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="container">
           <div className="mx-auto grid max-w-4xl gap-12 lg:grid-cols-3">
             {/* Main Content */}
-            <div className="lg:col-span-2">
+            <AnimateOnScroll variant="fade-up" className="lg:col-span-2">
               <div className="prose prose-lg max-w-none">
                 <h2>¿Qué es {service.name.toLowerCase()}?</h2>
                 <p className="text-muted-foreground">{service.fullDesc}</p>
@@ -267,10 +268,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </div>
                 </div>
               )}
-            </div>
+            </AnimateOnScroll>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <AnimateOnScroll variant="fade-right" delay={200} className="lg:col-span-1">
               <Card className="sticky top-24">
                 <CardContent className="p-6">
                   <h3 className="mb-4 text-lg font-semibold">
@@ -320,7 +321,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -332,13 +333,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
           data-testid="other-services"
         >
           <div className="container">
+            <AnimateOnScroll variant="fade-up">
             <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
               Otros servicios que pueden interesarte
             </h2>
+            </AnimateOnScroll>
             <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
-              {otherServices.map((otherService) => {
+              {otherServices.map((otherService, index) => {
                 const OtherServiceIcon = getIconComponent(otherService.icon);
                 return (
+                  <AnimateOnScroll key={otherService.id} variant="fade-up" delay={index * 100}>
                   <Link
                     key={otherService.id}
                     href={`/servicios/${otherService.slug}`}
@@ -358,6 +362,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                       </CardContent>
                     </Card>
                   </Link>
+                  </AnimateOnScroll>
                 );
               })}
             </div>

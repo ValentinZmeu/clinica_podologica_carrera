@@ -3,6 +3,7 @@ import { Stethoscope } from 'lucide-react';
 
 import { ServiceCard } from '@/components/cards/service-card';
 import { PageHero } from '@/components/layout/page-hero';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
 import { getActiveServices } from '@/lib/data';
@@ -66,15 +67,16 @@ export default function ServiciosPage() {
       <section className="py-16 md:py-24" data-testid="services-grid">
         <div className="container">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                slug={service.slug}
-                name={service.name}
-                shortDesc={service.shortDesc}
-                icon={service.icon}
-                isFeatured={service.isFeatured}
-              />
+            {services.map((service, index) => (
+              <AnimateOnScroll key={service.id} variant="fade-up" delay={index * 100}>
+                <ServiceCard
+                  slug={service.slug}
+                  name={service.name}
+                  shortDesc={service.shortDesc}
+                  icon={service.icon}
+                  isFeatured={service.isFeatured}
+                />
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -86,6 +88,7 @@ export default function ServiciosPage() {
         data-testid="services-benefits"
       >
         <div className="container">
+          <AnimateOnScroll variant="fade-up">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               ¿Por qué elegir nuestros servicios?
@@ -118,6 +121,7 @@ export default function ServiciosPage() {
               </div>
             </div>
           </div>
+          </AnimateOnScroll>
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/native-accordion';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { getActiveFAQs } from '@/lib/data';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
@@ -41,26 +42,29 @@ export function FAQ() {
       </div>
 
       <div className="container">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-1.5">
-            <HelpCircle className="h-4 w-4 text-accent-600" />
-            <span className="text-sm font-medium text-accent-700">
-              Dudas Resueltas
-            </span>
+        <AnimateOnScroll variant="fade-up">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-1.5">
+              <HelpCircle className="h-4 w-4 text-accent-600" />
+              <span className="text-sm font-medium text-accent-700">
+                Dudas Resueltas
+              </span>
+            </div>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+              Preguntas{' '}
+              <span className="text-primary-500">
+                Frecuentes
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Resolvemos tus dudas más comunes sobre nuestros servicios,
+              tratamientos y cómo trabajamos.
+            </p>
           </div>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Preguntas{' '}
-            <span className="text-primary-500">
-              Frecuentes
-            </span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Resolvemos tus dudas más comunes sobre nuestros servicios,
-            tratamientos y cómo trabajamos.
-          </p>
-        </div>
+        </AnimateOnScroll>
 
         <div className="mx-auto max-w-3xl">
+          <AnimateOnScroll variant="scale-up">
           <div className="rounded-2xl border bg-card p-2 shadow-lg">
             <NativeAccordion>
               {faqs.map((faq, index) => (
@@ -82,8 +86,10 @@ export function FAQ() {
               ))}
             </NativeAccordion>
           </div>
+          </AnimateOnScroll>
 
           {/* CTA */}
+          <AnimateOnScroll variant="fade-up" delay={200}>
           <div className="mt-10 text-center">
             <p className="mb-4 text-muted-foreground">
               ¿Tienes más preguntas? Estamos aquí para ayudarte.
@@ -106,6 +112,7 @@ export function FAQ() {
               </a>
             </Button>
           </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>

@@ -13,6 +13,7 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageHero } from '@/components/layout/page-hero';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -80,6 +81,7 @@ export default function ContactoPage() {
         <div className="container">
           <div className="mx-auto max-w-4xl">
             {/* Primary CTA - WhatsApp */}
+            <AnimateOnScroll variant="fade-up">
             <div className="mb-8">
               <Card className="overflow-hidden border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
                 <CardContent className="p-0">
@@ -117,10 +119,12 @@ export default function ContactoPage() {
                 </CardContent>
               </Card>
             </div>
+            </AnimateOnScroll>
 
             {/* Secondary Contact Methods */}
             <div className="grid gap-6 md:grid-cols-2">
               {/* Phone */}
+              <AnimateOnScroll variant="fade-up" delay={0}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -149,8 +153,10 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
 
               {/* Email */}
+              <AnimateOnScroll variant="fade-up" delay={100}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -176,11 +182,13 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
             </div>
 
             {/* Location & Schedule */}
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {/* Address */}
+              <AnimateOnScroll variant="fade-up" delay={0}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -215,8 +223,10 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
 
               {/* Schedule */}
+              <AnimateOnScroll variant="fade-up" delay={100}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -249,6 +259,7 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
@@ -258,6 +269,7 @@ export default function ContactoPage() {
       <section className="pb-16 md:pb-24" data-testid="contact-map">
         <div className="container">
           <div className="mx-auto max-w-4xl">
+            <AnimateOnScroll variant="fade-up">
             <div className="mb-6 text-center">
               <h2 className="text-2xl font-bold md:text-3xl">
                 Encuéntranos en{' '}
@@ -269,6 +281,7 @@ export default function ContactoPage() {
                 En pleno centro, junto al Mercado de la Constitución
               </p>
             </div>
+            </AnimateOnScroll>
 
             {/* Clinic Entrance Image */}
             <div className="mb-6 group relative overflow-hidden rounded-2xl border shadow-lg">

@@ -102,6 +102,76 @@ html {
   @apply text-primary underline underline-offset-2 hover:text-primary-600;
 }
 
+/* ===== Scroll Animation System ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .aos-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .aos-visible {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.aos-init {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.aos-visible {
+  opacity: 1;
+  transform: none;
+  animation-duration: var(--aos-duration, 600ms);
+  animation-delay: var(--aos-delay, 0ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aos-fade-up.aos-init { transform: translateY(30px); }
+.aos-fade-up.aos-visible { animation-name: aos-fade-up; }
+@keyframes aos-fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.aos-fade-down.aos-init { transform: translateY(-30px); }
+.aos-fade-down.aos-visible { animation-name: aos-fade-down; }
+@keyframes aos-fade-down {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.aos-fade-left.aos-init { transform: translateX(-30px); }
+.aos-fade-left.aos-visible { animation-name: aos-fade-left; }
+@keyframes aos-fade-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.aos-fade-right.aos-init { transform: translateX(30px); }
+.aos-fade-right.aos-visible { animation-name: aos-fade-right; }
+@keyframes aos-fade-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.aos-fade-in.aos-init { transform: none; }
+.aos-fade-in.aos-visible { animation-name: aos-fade-in; }
+@keyframes aos-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.aos-scale-up.aos-init { transform: scale(0.95); }
+.aos-scale-up.aos-visible { animation-name: aos-scale-up; }
+@keyframes aos-scale-up {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .legal-content table {
   @apply w-full mb-6 text-sm border-collapse overflow-hidden rounded-lg border;
 }
