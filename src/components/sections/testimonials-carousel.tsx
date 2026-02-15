@@ -16,7 +16,7 @@ interface Review {
 }
 
 interface StaticTestimonial {
-  id: number;
+  id: string | number;
   name: string;
   initials?: string | null;
   location?: string | null;
