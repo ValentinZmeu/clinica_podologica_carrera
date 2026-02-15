@@ -415,9 +415,19 @@ export default async function SobreNosotrosPage() {
                     </div>
 
                     {/* Bio */}
-                    <p className="mt-4 leading-relaxed text-muted-foreground">
-                      {member.extendedBio || member.bio}
-                    </p>
+                    <div className="mt-4 space-y-3 leading-relaxed text-muted-foreground">
+                      {(member.extendedBio || member.bio).split('\n\n').map((paragraph, i) => (
+                        <p
+                          key={i}
+                          dangerouslySetInnerHTML={{
+                            __html: paragraph.replace(
+                              /\*\*(.+?)\*\*/g,
+                              '<strong class="font-semibold text-foreground">$1</strong>'
+                            ),
+                          }}
+                        />
+                      ))}
+                    </div>
 
                     {/* Footer: education + memberOf inline */}
                     {((member.education && member.education.length > 0) ||

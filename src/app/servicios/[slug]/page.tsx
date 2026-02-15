@@ -388,7 +388,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <AnimateOnScroll variant="fade-up">
                 <div className="prose prose-lg max-w-none">
                   <h2>¿Qué es {service.name.toLowerCase().startsWith('el ') || service.name.toLowerCase().startsWith('la ') ? '' : service.name.toLowerCase().match(/^(uñas|hongos|papilomas|pie|plantillas|estudio|quiropodia|podología)/) ? 'la ' : ''}{service.name.toLowerCase()}?</h2>
-                  <p className="text-muted-foreground leading-relaxed">{service.fullDesc}</p>
+                  {service.fullDesc.split('\n\n').map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="text-muted-foreground leading-relaxed"
+                      dangerouslySetInnerHTML={{
+                        __html: paragraph.replace(
+                          /\*\*(.+?)\*\*/g,
+                          '<strong class="font-semibold text-foreground">$1</strong>'
+                        ),
+                      }}
+                    />
+                  ))}
                   {service.condition?.affectedPopulation && (
                     <p className="text-muted-foreground leading-relaxed">
                       {service.condition.affectedPopulation}

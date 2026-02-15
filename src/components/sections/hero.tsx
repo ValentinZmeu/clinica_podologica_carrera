@@ -34,12 +34,23 @@ export async function Hero() {
           {/* Rating Badge */}
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm animate-fade-in">
             <div className="flex items-center gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                />
-              ))}
+              {[...Array(5)].map((_, i) => {
+                const fill = Math.min(1, Math.max(0, rating - i));
+                if (fill >= 1) {
+                  return <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />;
+                }
+                if (fill <= 0) {
+                  return <Star key={i} className="h-4 w-4 fill-transparent text-yellow-400/40" />;
+                }
+                return (
+                  <span key={i} className="relative h-4 w-4">
+                    <Star className="absolute inset-0 h-4 w-4 fill-transparent text-yellow-400/40" />
+                    <span className="absolute inset-0 overflow-hidden" style={{ width: `${fill * 100}%` }}>
+                      <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    </span>
+                  </span>
+                );
+              })}
             </div>
             <span className="font-semibold text-white">{rating}</span>
             <span className="text-white/80">en Google</span>

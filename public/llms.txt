@@ -89,7 +89,7 @@ Each page provides insights into treatment options and patient advice.
 ### Links
 
 - [WhatsApp Appointment](https://wa.me/34696526425?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita)
-- [Clinic Location on Google Maps](https://www.google.com/maps/dir//Clinica+Podol%C3%B3gica+Carrera,+C.+de+la+Carrera,+7,+28931+M%C3%B3stoles,+Madrid)
+- [Clinic Location on Google Maps](https://www.google.com/maps/search/Clinica+Podol%C3%B3gica+Carrera/@40.3266811,-3.8639111,17z?entry=ttu)
 - [Privacy Policy](/privacidad)
 - [Cookies Policy](/cookies)
 
