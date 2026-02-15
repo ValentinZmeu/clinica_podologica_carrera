@@ -102,11 +102,17 @@ export function CTASection() {
           </div>
 
           {/* Schedule */}
-          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 text-white/80">
-            <Clock className="h-4 w-4" />
-            <span className="text-sm">
-              L-J: {siteConfig.schedule.weekdays} | V: {siteConfig.schedule.friday}
-            </span>
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-white/20 bg-white/10 px-6 py-3 text-white backdrop-blur-sm">
+            <Clock className="h-4 w-4 text-primary-300" />
+            <div className="text-sm">
+              <span className="font-semibold">Lunes a Jueves</span>
+              <span className="ml-1.5 text-white/80">{siteConfig.schedule.weekdays}</span>
+            </div>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <div className="text-sm">
+              <span className="font-semibold">Viernes</span>
+              <span className="ml-1.5 text-white/80">{siteConfig.schedule.friday}</span>
+            </div>
           </div>
         </div>
         </AnimateOnScroll>

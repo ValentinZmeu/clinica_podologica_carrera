@@ -2,12 +2,13 @@ import { Star, MessageSquareQuote, ExternalLink } from 'lucide-react';
 
 import { TestimonialCard } from '@/components/cards/testimonial-card';
 import { Button } from '@/components/ui/button';
-import { siteConfig } from '@/lib/constants';
+import { getGoogleRating } from '@/lib/google-places';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { getFeaturedTestimonials } from '@/lib/data';
 
-export function Testimonials() {
+export async function Testimonials() {
   const testimonials = getFeaturedTestimonials();
+  const { rating } = await getGoogleRating();
 
   return (
     <section
@@ -44,7 +45,7 @@ export function Testimonials() {
                   ))}
                 </div>
                 <span className="text-sm font-semibold text-amber-700">
-                  {siteConfig.rating} en Google
+                  {rating} en Google
                 </span>
               </div>
             </div>

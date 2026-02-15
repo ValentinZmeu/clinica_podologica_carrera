@@ -1,6 +1,21 @@
 {
   "versions": [
     {
+      "version": "0.3.0",
+      "date": "2026-02-15",
+      "title": "Rating dinámico de Google",
+      "changes": [
+        {
+          "type": "added",
+          "description": "Valoración de Google actualizada automáticamente cada 24 horas"
+        },
+        {
+          "type": "changed",
+          "description": "Corregida la valoración mostrada de 4.8 a 4.7 para reflejar la puntuación real en Google"
+        }
+      ]
+    },
+    {
       "version": "0.2.0",
       "date": "2026-02-15",
       "title": "Google Analytics",

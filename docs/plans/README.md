@@ -6,12 +6,13 @@
 
 | Plan | Descripción | Estado | Fecha Inicio |
 | ---- | ----------- | ------ | ------------ |
-| [google-places-rating](pending/google-places-rating.md) | Rating dinámico desde Google Places API (ISR 24h) | PENDIENTE | 2026-02-15 |
+| [seo-inicio-sobre-nosotros](pending/seo-inicio-sobre-nosotros.md) | SEO local, Maps y LLM para Inicio y Sobre Nosotros | PENDIENTE | 2026-02-15 |
 
 ## Planes Archivados
 
 | Plan                                                          | Descripción                                  | Fecha Completado |
 | ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
+| [google-places-rating](_archive/google-places-rating.md)        | Rating dinámico desde Google Places API (ISR 24h)  | 2026-02-15       |
 | [seo-servicios-local-llm](_archive/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | 2026-02-15       |
 | [google-analytics](_archive/06-google-analytics.md)            | Integrar GA4 con variables .env              | 2026-02-15       |
 | [mejoras-web-v2](_archive/05-mejoras-web-v2.md)               | Bugs, UX/UI, accesibilidad y SEO             | 2026-02-15       |

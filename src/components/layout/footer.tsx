@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Clock, Star } from 'lucide-react';
+import { MapPin, Phone, Mail, Star } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
 import { siteConfig, navLinks } from '@/lib/constants';
+import { getGoogleRating } from '@/lib/google-places';
 
-export function Footer() {
+export async function Footer() {
+  const { rating } = await getGoogleRating();
+
   return (
     <footer
       className="relative z-50 border-t bg-background"
@@ -38,7 +41,7 @@ export function Footer() {
               data-testid="footer-reviews-link"
             >
               <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span className="font-medium">{siteConfig.rating}</span>
+              <span className="font-medium">{rating}</span>
               <span>en Google Reviews</span>
             </a>
           </div>
@@ -96,26 +99,17 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Horario</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0" />
-                <div>
-                  <p className="font-medium text-foreground">Lunes a Jueves</p>
-                  <p>{siteConfig.schedule.weekdays}</p>
-                </div>
+              <div>
+                <p className="font-medium text-foreground">Lunes a Jueves</p>
+                <p>{siteConfig.schedule.weekdays}</p>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-0" />
-                <div>
-                  <p className="font-medium text-foreground">Viernes</p>
-                  <p>{siteConfig.schedule.friday}</p>
-                </div>
+              <div>
+                <p className="font-medium text-foreground">Viernes</p>
+                <p>{siteConfig.schedule.friday}</p>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-0" />
-                <div>
-                  <p className="font-medium text-foreground">Fines de Semana</p>
-                  <p>{siteConfig.schedule.weekend}</p>
-                </div>
+              <div>
+                <p className="font-medium text-foreground">Fines de Semana</p>
+                <p>{siteConfig.schedule.weekend}</p>
               </div>
             </div>
           </div>

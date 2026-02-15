@@ -9,6 +9,7 @@ import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { CountUp } from '@/components/ui/count-up';
 import { CTASection } from '@/components/sections/cta-section';
 import { siteConfig } from '@/lib/constants';
+import { getGoogleRating } from '@/lib/google-places';
 import { getActiveTeamMembers } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -81,8 +82,9 @@ const aboutPageSchema = {
   },
 };
 
-export default function SobreNosotrosPage() {
+export default async function SobreNosotrosPage() {
   const teamMembers = getActiveTeamMembers();
+  const { rating } = await getGoogleRating();
 
   return (
     <>
@@ -260,7 +262,7 @@ export default function SobreNosotrosPage() {
             </div>
             <div>
               <div className="text-4xl font-bold md:text-5xl">
-                <CountUp end={4.8} decimals={1} />
+                <CountUp end={rating} decimals={1} />
               </div>
               <div className="mt-2 text-primary-foreground/80">
                 Valoración media

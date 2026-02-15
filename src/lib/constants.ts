@@ -24,7 +24,7 @@ export const siteConfig = {
     friday: '09:30 - 14:30',
     weekend: 'Cerrado',
   },
-  rating: 4.8,
+  rating: 4.7,
 };
 
 export const navLinks = [

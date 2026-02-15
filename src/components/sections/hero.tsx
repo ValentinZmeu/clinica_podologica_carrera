@@ -4,9 +4,12 @@ import { Phone, Star, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { siteConfig } from '@/lib/constants';
+import { getGoogleRating } from '@/lib/google-places';
 import { formatWhatsAppUrl } from '@/lib/utils';
 
-export function Hero() {
+export async function Hero() {
+  const { rating } = await getGoogleRating();
+
   return (
     <section
       className="relative min-h-[90vh] overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900"
@@ -38,7 +41,7 @@ export function Hero() {
                 />
               ))}
             </div>
-            <span className="font-semibold text-white">{siteConfig.rating}</span>
+            <span className="font-semibold text-white">{rating}</span>
             <span className="text-white/80">en Google</span>
           </div>
 
