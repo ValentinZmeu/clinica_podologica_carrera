@@ -54,7 +54,7 @@ export function TestimonialCard({
       <div className="flex items-center gap-3">
         <Avatar className="h-12 w-12 border-2 border-primary/20">
           {profilePhotoUrl && (
-            <AvatarImage src={profilePhotoUrl} alt={name} />
+            <AvatarImage src={profilePhotoUrl} alt={name} sizes="48px" />
           )}
           <AvatarFallback className="bg-primary-500 text-white font-semibold">
             {initials || name.slice(0, 2).toUpperCase()}

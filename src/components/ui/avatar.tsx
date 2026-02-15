@@ -22,15 +22,17 @@ interface AvatarImageProps {
   className?: string;
   src: string;
   alt: string;
+  sizes?: string;
 }
 
 const AvatarImage = React.forwardRef<HTMLImageElement, AvatarImageProps>(
-  ({ className, src, alt, ...props }, ref) => (
+  ({ className, src, alt, sizes = '40px', ...props }, ref) => (
     <Image
       ref={ref}
       src={src}
       alt={alt}
       fill
+      sizes={sizes}
       className={cn('aspect-square h-full w-full object-cover', className)}
       {...props}
     />

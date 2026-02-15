@@ -1,15 +1,21 @@
 import { Star, MessageSquareQuote, ExternalLink } from 'lucide-react';
 
-import { TestimonialCard } from '@/components/cards/testimonial-card';
 import { Button } from '@/components/ui/button';
 import { getGooglePlaceData } from '@/lib/google-places';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { getFeaturedTestimonials } from '@/lib/data';
+import { TestimonialsCarousel } from './testimonials-carousel';
 
 export async function Testimonials() {
   const { rating, reviews, googleMapsUri } = await getGooglePlaceData();
   const staticTestimonials = getFeaturedTestimonials();
-  const hasGoogleReviews = reviews.length > 0;
+
+  // Filter: highest rated (>= 4 stars), sorted by rating desc — show top 5
+  const topReviews = [...reviews]
+    .filter((r) => r.rating >= 4)
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 5);
+  const hasGoogleReviews = topReviews.length > 0;
 
   return (
     <section
@@ -66,35 +72,9 @@ export async function Testimonials() {
         </AnimateOnScroll>
 
         {hasGoogleReviews ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {reviews.map((review, index) => (
-              <AnimateOnScroll key={`google-${index}`} variant="fade-up" delay={index * 100} className="h-full">
-                <TestimonialCard
-                  name={review.authorName}
-                  rating={review.rating}
-                  content={review.text}
-                  source="google"
-                  profilePhotoUrl={review.profilePhotoUrl}
-                  relativeTime={review.relativeTime}
-                />
-              </AnimateOnScroll>
-            ))}
-          </div>
+          <TestimonialsCarousel reviews={topReviews} />
         ) : (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {staticTestimonials.map((testimonial, index) => (
-              <AnimateOnScroll key={testimonial.id} variant="fade-up" delay={index * 100} className="h-full">
-                <TestimonialCard
-                  name={testimonial.name}
-                  initials={testimonial.initials}
-                  location={testimonial.location}
-                  rating={testimonial.rating}
-                  content={testimonial.content}
-                  source={testimonial.source}
-                />
-              </AnimateOnScroll>
-            ))}
-          </div>
+          <TestimonialsCarousel staticTestimonials={staticTestimonials} />
         )}
 
         <AnimateOnScroll variant="fade-in" delay={200}>
