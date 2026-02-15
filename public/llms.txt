@@ -10,7 +10,7 @@ This page provides various contact methods for patients seeking assistance or wa
 - **Phone:** +34 912 26 88 58
 - **Email:** contacto@clinica-podologica-carrera.com
 - **Address:** C. de la Carrera, 7, 28931 Móstoles, Madrid
-- **Opening Hours:** 
+- **Opening Hours:** (updated dynamically from Google Places API)
   - Monday to Thursday: 09:30 - 14:30, 17:00 - 19:30
   - Friday: 09:30 - 14:30
   - Saturday and Sunday: Closed

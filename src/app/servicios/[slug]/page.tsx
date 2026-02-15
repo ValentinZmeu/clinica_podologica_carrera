@@ -37,6 +37,7 @@ import {
 import { getIconComponent } from '@/lib/icons';
 import { ServiceCard } from '@/components/cards/service-card';
 import { getActiveServices } from '@/lib/data';
+import { getGooglePlaceData } from '@/lib/google-places';
 
 interface ServicePageProps {
   params: Promise<{
@@ -101,6 +102,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const author = service.author
     ? getTeamMemberById(service.author.teamMemberId)
     : undefined;
+  const { rating, reviewCount, schedule } = await getGooglePlaceData();
 
   // Servicios relacionados
   const allServices = getActiveServices();
@@ -172,9 +174,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
       },
       aggregateRating: {
         '@type': 'AggregateRating',
-        ratingValue: siteConfig.rating,
+        ratingValue: rating,
         bestRating: 5,
-        ratingCount: 150,
+        ratingCount: reviewCount || 23,
       },
       ...(service.localContext?.serviceArea && {
         areaServed: service.localContext.serviceArea.map((city) => ({
@@ -767,9 +769,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
                         <p className="mt-3 text-sm text-muted-foreground">
                           <strong>Horario:</strong>
                           <br />
-                          L-J: {siteConfig.schedule.weekdays}
+                          L-J: {schedule.weekdays}
                           <br />
-                          V: {siteConfig.schedule.friday}
+                          V: {schedule.friday}
                         </p>
                       </div>
                     </CardContent>

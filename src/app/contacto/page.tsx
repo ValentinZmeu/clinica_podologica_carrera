@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { PageHero } from '@/components/layout/page-hero';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { siteConfig } from '@/lib/constants';
+import { getGooglePlaceData } from '@/lib/google-places';
 
 export const metadata: Metadata = {
   title: 'Contacto - Podólogo en Móstoles',
@@ -62,7 +63,8 @@ const contactPageSchema = {
   },
 };
 
-export default function ContactoPage() {
+export default async function ContactoPage() {
+  const { schedule } = await getGooglePlaceData();
   return (
     <>
       {/* JSON-LD Schema */}
@@ -245,18 +247,18 @@ export default function ContactoPage() {
                             Lunes a Jueves:
                           </span>
                         </p>
-                        <p>09:30 - 14:30 y 17:00 - 19:30</p>
+                        <p>{schedule.weekdays}</p>
                         <p className="pt-1">
                           <span className="font-medium text-foreground">
                             Viernes:
                           </span>{' '}
-                          09:30 - 14:30
+                          {schedule.friday}
                         </p>
                         <p>
                           <span className="font-medium text-foreground">
                             Sábado y Domingo:
                           </span>{' '}
-                          Cerrado
+                          {schedule.weekend}
                         </p>
                       </div>
                     </div>

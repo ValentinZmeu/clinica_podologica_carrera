@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { Hero } from '@/components/sections/hero';
 import { Benefits } from '@/components/sections/benefits';
 import { siteConfig } from '@/lib/constants';
-import { getGoogleRating } from '@/lib/google-places';
+import { getGooglePlaceData } from '@/lib/google-places';
 import { getActiveServices } from '@/lib/data';
 
 // Dynamic imports for below-the-fold components to reduce initial bundle
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 533,
         alt: 'Clínica Podológica Carrera - Podólogo en Móstoles',
       },
     ],
@@ -56,9 +56,60 @@ export const metadata: Metadata = {
   },
 };
 
+const dayNumberToName: Record<number, string> = {
+  0: 'Sunday',
+  1: 'Monday',
+  2: 'Tuesday',
+  3: 'Wednesday',
+  4: 'Thursday',
+  5: 'Friday',
+  6: 'Saturday',
+};
+
+const fallbackHoursSpec = [
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+    opens: '09:30',
+    closes: '14:30',
+  },
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+    opens: '17:00',
+    closes: '19:30',
+  },
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Friday'],
+    opens: '09:30',
+    closes: '14:30',
+  },
+];
+
 export default async function Home() {
-  const { rating, reviewCount } = await getGoogleRating();
+  const { rating, reviewCount, openingHours } = await getGooglePlaceData();
   const services = getActiveServices();
+
+  // Build openingHoursSpecification from API periods (or fallback)
+  let openingHoursSpec = fallbackHoursSpec;
+  if (openingHours.periods.length > 0) {
+    const grouped: Record<string, number[]> = {};
+    for (const period of openingHours.periods) {
+      const key = `${period.openTime}|${period.closeTime}`;
+      if (!grouped[key]) grouped[key] = [];
+      grouped[key].push(period.day);
+    }
+    openingHoursSpec = Object.entries(grouped).map(([key, days]) => {
+      const [opens, closes] = key.split('|');
+      return {
+        '@type': 'OpeningHoursSpecification' as const,
+        dayOfWeek: days.map((d) => dayNumberToName[d]).filter(Boolean),
+        opens,
+        closes,
+      };
+    });
+  }
 
   // JSON-LD Schema para LocalBusiness
   const localBusinessSchema = {
@@ -96,26 +147,7 @@ export default async function Home() {
       latitude: siteConfig.coordinates.lat,
       longitude: siteConfig.coordinates.lng,
     },
-    openingHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-        opens: '09:30',
-        closes: '14:30',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-        opens: '17:00',
-        closes: '19:30',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Friday'],
-        opens: '09:30',
-        closes: '14:30',
-      },
-    ],
+    openingHoursSpecification: openingHoursSpec,
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: rating,

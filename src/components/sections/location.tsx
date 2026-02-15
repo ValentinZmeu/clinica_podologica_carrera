@@ -2,43 +2,45 @@ import { MapPin, Phone, Mail, Clock, ExternalLink, Navigation } from 'lucide-rea
 
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { siteConfig } from '@/lib/constants';
+import { getGooglePlaceData } from '@/lib/google-places';
 
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: 'Dirección',
-    content: siteConfig.fullAddress,
-    link: siteConfig.googleMapsUrl,
-    linkText: 'Cómo llegar',
-    gradient: 'from-blue-500 to-cyan-500',
-  },
-  {
-    icon: Phone,
-    title: 'Teléfono',
-    content: siteConfig.phone,
-    subContent: `WhatsApp: ${siteConfig.whatsapp}`,
-    link: `tel:${siteConfig.phoneLink}`,
-    linkText: 'Llamar ahora',
-    gradient: 'from-emerald-500 to-teal-500',
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    content: siteConfig.email,
-    link: `mailto:${siteConfig.email}`,
-    linkText: 'Enviar email',
-    gradient: 'from-violet-500 to-purple-500',
-  },
-  {
-    icon: Clock,
-    title: 'Horario',
-    content: `L-J: ${siteConfig.schedule.weekdays}`,
-    subContent: `V: ${siteConfig.schedule.friday} | S-D: ${siteConfig.schedule.weekend}`,
-    gradient: 'from-amber-500 to-orange-500',
-  },
-];
+export async function Location() {
+  const { schedule } = await getGooglePlaceData();
 
-export function Location() {
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: 'Dirección',
+      content: siteConfig.fullAddress,
+      link: siteConfig.googleMapsUrl,
+      linkText: 'Cómo llegar',
+      gradient: 'from-blue-500 to-cyan-500',
+    },
+    {
+      icon: Phone,
+      title: 'Teléfono',
+      content: siteConfig.phone,
+      subContent: `WhatsApp: ${siteConfig.whatsapp}`,
+      link: `tel:${siteConfig.phoneLink}`,
+      linkText: 'Llamar ahora',
+      gradient: 'from-emerald-500 to-teal-500',
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      content: siteConfig.email,
+      link: `mailto:${siteConfig.email}`,
+      linkText: 'Enviar email',
+      gradient: 'from-violet-500 to-purple-500',
+    },
+    {
+      icon: Clock,
+      title: 'Horario',
+      content: `L-J: ${schedule.weekdays}`,
+      subContent: `V: ${schedule.friday} | S-D: ${schedule.weekend}`,
+      gradient: 'from-amber-500 to-orange-500',
+    },
+  ];
   return (
     <section
       id="contacto"

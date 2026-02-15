@@ -2,13 +2,14 @@ import { Star, MessageSquareQuote, ExternalLink } from 'lucide-react';
 
 import { TestimonialCard } from '@/components/cards/testimonial-card';
 import { Button } from '@/components/ui/button';
-import { getGoogleRating } from '@/lib/google-places';
+import { getGooglePlaceData } from '@/lib/google-places';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { getFeaturedTestimonials } from '@/lib/data';
 
 export async function Testimonials() {
-  const testimonials = getFeaturedTestimonials();
-  const { rating } = await getGoogleRating();
+  const { rating, reviews, googleMapsUri } = await getGooglePlaceData();
+  const staticTestimonials = getFeaturedTestimonials();
+  const hasGoogleReviews = reviews.length > 0;
 
   return (
     <section
@@ -64,26 +65,43 @@ export async function Testimonials() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <AnimateOnScroll key={testimonial.id} variant="fade-up" delay={index * 100} className="h-full">
-              <TestimonialCard
-                name={testimonial.name}
-                initials={testimonial.initials}
-                location={testimonial.location}
-                rating={testimonial.rating}
-                content={testimonial.content}
-                source={testimonial.source}
-              />
-            </AnimateOnScroll>
-          ))}
-        </div>
+        {hasGoogleReviews ? (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {reviews.map((review, index) => (
+              <AnimateOnScroll key={`google-${index}`} variant="fade-up" delay={index * 100} className="h-full">
+                <TestimonialCard
+                  name={review.authorName}
+                  rating={review.rating}
+                  content={review.text}
+                  source="google"
+                  profilePhotoUrl={review.profilePhotoUrl}
+                  relativeTime={review.relativeTime}
+                />
+              </AnimateOnScroll>
+            ))}
+          </div>
+        ) : (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {staticTestimonials.map((testimonial, index) => (
+              <AnimateOnScroll key={testimonial.id} variant="fade-up" delay={index * 100} className="h-full">
+                <TestimonialCard
+                  name={testimonial.name}
+                  initials={testimonial.initials}
+                  location={testimonial.location}
+                  rating={testimonial.rating}
+                  content={testimonial.content}
+                  source={testimonial.source}
+                />
+              </AnimateOnScroll>
+            ))}
+          </div>
+        )}
 
         <AnimateOnScroll variant="fade-in" delay={200}>
           <div className="mt-12 text-center">
             <Button variant="outline" size="lg" className="group" asChild>
               <a
-                href="https://www.google.com/maps/place/Cl%C3%ADnica+Podol%C3%B3gica+Carrera"
+                href={googleMapsUri}
                 target="_blank"
                 rel="noopener noreferrer"
               >

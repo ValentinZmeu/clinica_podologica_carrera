@@ -4,23 +4,24 @@
 
 ## Planes Activos
 
-| Plan | Descripción | Estado | Fecha Inicio |
-| ---- | ----------- | ------ | ------------ |
-| — | Sin planes activos | — | — |
+| Plan | Descripción           | Estado | Fecha Inicio |
+| ---- | --------------------- | ------ | ------------ |
+| —    | Sin planes pendientes | —      | —            |
 
 ## Planes Archivados
 
-| Plan                                                          | Descripción                                  | Fecha Completado |
-| ------------------------------------------------------------- | -------------------------------------------- | ---------------- |
-| [seo-inicio-sobre-nosotros](_archive/seo-inicio-sobre-nosotros.md) | SEO local, Maps y LLM para Inicio y Sobre Nosotros | 2026-02-15       |
-| [google-places-rating](_archive/google-places-rating.md)        | Rating dinámico desde Google Places API (ISR 24h)  | 2026-02-15       |
-| [seo-servicios-local-llm](_archive/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | 2026-02-15       |
-| [google-analytics](_archive/06-google-analytics.md)            | Integrar GA4 con variables .env              | 2026-02-15       |
-| [mejoras-web-v2](_archive/05-mejoras-web-v2.md)               | Bugs, UX/UI, accesibilidad y SEO             | 2026-02-15       |
-| [docker-cicd](_archive/04-docker-cicd.md)                     | Dockerización y CI/CD (GHCR + VPS SSH)       | 2026-02-14       |
-| [e2e-playwright](_archive/03-e2e-playwright.md)               | Tests E2E con Playwright (202 tests, 2 viewports) | 2026-02-14       |
-| [scroll-animations](_archive/02-scroll-animations.md)         | Animaciones sutiles de scroll (CSS + IntersectionObserver) | 2026-02-14       |
-| [landing-nextjs-seo](_archive/01-landing-nextjs-seo.md)       | Landing Next.js + shadcn + Tailwind + SQLite | 2026-01-06       |
+| Plan | Descripción | Fecha Completado |
+| --- | --- | --- |
+| [google-places-datos-completos](_archive/google-places-datos-completos.md) | Google Places API: horarios, reseñas y datos dinámicos | 2026-02-15 |
+| [seo-inicio-sobre-nosotros](_archive/seo-inicio-sobre-nosotros.md) | SEO local, Maps y LLM para Inicio y Sobre Nosotros | 2026-02-15 |
+| [google-places-rating](_archive/google-places-rating.md) | Rating dinámico desde Google Places API (ISR 24h) | 2026-02-15 |
+| [seo-servicios-local-llm](_archive/seo-servicios-local-llm.md) | SEO local, Maps y LLM para páginas de servicios | 2026-02-15 |
+| [google-analytics](_archive/06-google-analytics.md) | Integrar GA4 con variables .env | 2026-02-15 |
+| [mejoras-web-v2](_archive/05-mejoras-web-v2.md) | Bugs, UX/UI, accesibilidad y SEO | 2026-02-15 |
+| [docker-cicd](_archive/04-docker-cicd.md) | Dockerización y CI/CD (GHCR + VPS SSH) | 2026-02-14 |
+| [e2e-playwright](_archive/03-e2e-playwright.md) | Tests E2E con Playwright (202 tests, 2 viewports) | 2026-02-14 |
+| [scroll-animations](_archive/02-scroll-animations.md) | Animaciones sutiles de scroll (CSS + IntersectionObserver) | 2026-02-14 |
+| [landing-nextjs-seo](_archive/01-landing-nextjs-seo.md) | Landing Next.js + shadcn + Tailwind + SQLite | 2026-01-06 |
 
 ---
 

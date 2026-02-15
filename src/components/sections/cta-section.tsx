@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
 import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { formatWhatsAppUrl } from '@/lib/utils';
+import { getGooglePlaceData } from '@/lib/google-places';
 
 const benefits = [
   'Respuesta en menos de 24 horas',
@@ -14,7 +15,8 @@ const benefits = [
   'Resultados garantizados',
 ];
 
-export function CTASection() {
+export async function CTASection() {
+  const { schedule } = await getGooglePlaceData();
   return (
     <section
       className="relative overflow-hidden py-24 md:py-32"
@@ -106,12 +108,12 @@ export function CTASection() {
             <Clock className="h-4 w-4 text-primary-300" />
             <div className="text-sm">
               <span className="font-semibold">Lunes a Jueves</span>
-              <span className="ml-1.5 text-white/80">{siteConfig.schedule.weekdays}</span>
+              <span className="ml-1.5 text-white/80">{schedule.weekdays}</span>
             </div>
             <span className="hidden sm:inline text-white/30">|</span>
             <div className="text-sm">
               <span className="font-semibold">Viernes</span>
-              <span className="ml-1.5 text-white/80">{siteConfig.schedule.friday}</span>
+              <span className="ml-1.5 text-white/80">{schedule.friday}</span>
             </div>
           </div>
         </div>

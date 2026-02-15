@@ -1,6 +1,29 @@
 {
   "versions": [
     {
+      "version": "0.4.0",
+      "date": "2026-02-15",
+      "title": "Datos completos de Google Places",
+      "changes": [
+        {
+          "type": "added",
+          "description": "Horarios de la clínica actualizados automáticamente desde Google cada 24 horas"
+        },
+        {
+          "type": "added",
+          "description": "Reseñas reales de pacientes de Google en la página de inicio"
+        },
+        {
+          "type": "added",
+          "description": "Número de reseñas dinámico en todas las páginas"
+        },
+        {
+          "type": "changed",
+          "description": "Los horarios en toda la web se actualizan automáticamente si cambian en Google"
+        }
+      ]
+    },
+    {
       "version": "0.3.0",
       "date": "2026-02-15",
       "title": "Rating dinámico de Google",

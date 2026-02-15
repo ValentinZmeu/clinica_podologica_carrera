@@ -4,10 +4,10 @@ import { MapPin, Phone, Mail, Star } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
 import { siteConfig, navLinks } from '@/lib/constants';
-import { getGoogleRating } from '@/lib/google-places';
+import { getGooglePlaceData } from '@/lib/google-places';
 
 export async function Footer() {
-  const { rating } = await getGoogleRating();
+  const { rating, schedule, googleMapsUri } = await getGooglePlaceData();
 
   return (
     <footer
@@ -34,7 +34,7 @@ export async function Footer() {
               salud de tus pies con profesionalidad y cercanía.
             </p>
             <a
-              href="https://www.google.com/maps/place/Clinica+Podol%C3%B3gica+Carrera/@40.3266811,-3.8639111,17z/data=!4m16!1m9!3m8!1s0xd418e81e5d565c3:0x8f1c87dfcd45852b!2sClinica+Podol%C3%B3gica+Carrera!8m2!3d40.326677!4d-3.8613362!9m1!1b1!16s%2Fg%2F11c2j39c56!3m5!1s0xd418e81e5d565c3:0x8f1c87dfcd45852b!8m2!3d40.326677!4d-3.8613362!16s%2Fg%2F11c2j39c56"
+              href={googleMapsUri}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary"
@@ -101,15 +101,15 @@ export async function Footer() {
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <div>
                 <p className="font-medium text-foreground">Lunes a Jueves</p>
-                <p>{siteConfig.schedule.weekdays}</p>
+                <p>{schedule.weekdays}</p>
               </div>
               <div>
                 <p className="font-medium text-foreground">Viernes</p>
-                <p>{siteConfig.schedule.friday}</p>
+                <p>{schedule.friday}</p>
               </div>
               <div>
                 <p className="font-medium text-foreground">Fines de Semana</p>
-                <p>{siteConfig.schedule.weekend}</p>
+                <p>{schedule.weekend}</p>
               </div>
             </div>
           </div>

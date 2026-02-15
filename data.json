@@ -12,17 +12,17 @@
   "maps_url": "https://goo.gl/maps/yB9gMJqHqM6VBGen9",
   "reviews_section_url": "https://www.google.com/maps/place/Cl%C3%ADnica+Podol%C3%B3gica+Carrera/@40.3264923,-3.8614242,17z/data=!3m1!4b1!4m5!3m4!1s0xd4192fb8b4d6c05:0x96dc6799db1f541c!8m2!3d40.3264923!4d-3.8592355?entry=ttu",
   "hours": {
-    "monday": ["09:30-14:00", "17:00-20:00"],
-    "tuesday": ["09:30-14:00", "17:00-20:00"],
-    "wednesday": ["09:30-14:00", "17:00-20:00"],
-    "thursday": ["09:30-14:00", "17:00-20:00"],
+    "monday": ["09:30-14:30", "17:00-19:30"],
+    "tuesday": ["09:30-14:30", "17:00-19:30"],
+    "wednesday": ["09:30-14:30", "17:00-19:30"],
+    "thursday": ["09:30-14:30", "17:00-19:30"],
     "friday": [
-      "09:30-14:00"
+      "09:30-14:30"
     ],
     "saturday": ["Cerrado"],
     "sunday": ["Cerrado"]
   },
-  "rating": 4.8,
+  "rating": 4.7,
   "reviews_top": [
     {
       "author": "María Valcárcel",
