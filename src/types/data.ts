@@ -104,6 +104,13 @@ export interface TeamMember {
   collegiateNum: string | null;
   order: number;
   isActive: boolean;
+  education?: string[];
+  certifications?: string[];
+  yearsOfExperience?: number;
+  memberOf?: string[];
+  sameAs?: string[];
+  image?: string | null;
+  extendedBio?: string;
 }
 
 export interface FAQ {

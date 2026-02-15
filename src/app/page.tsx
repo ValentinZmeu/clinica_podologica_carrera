@@ -1,8 +1,10 @@
+import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Hero } from '@/components/sections/hero';
 import { Benefits } from '@/components/sections/benefits';
 import { siteConfig } from '@/lib/constants';
 import { getGoogleRating } from '@/lib/google-places';
+import { getActiveServices } from '@/lib/data';
 
 // Dynamic imports for below-the-fold components to reduce initial bundle
 const ServicesPreview = dynamic(() => import('@/components/sections/services-preview').then(mod => ({ default: mod.ServicesPreview })));
@@ -12,8 +14,51 @@ const Location = dynamic(() => import('@/components/sections/location').then(mod
 const FAQ = dynamic(() => import('@/components/sections/faq').then(mod => ({ default: mod.FAQ })));
 const CTASection = dynamic(() => import('@/components/sections/cta-section').then(mod => ({ default: mod.CTASection })));
 
+export const metadata: Metadata = {
+  title: 'Clínica Podológica Carrera | Podólogo en Móstoles, Madrid',
+  description:
+    'Clínica podológica en Móstoles con más de 15 años de experiencia. Quiropodia, plantillas personalizadas, estudio biomecánico, pie diabético y podología deportiva. Podólogas colegiadas. Pide cita.',
+  keywords: [
+    'podólogo móstoles',
+    'clínica podológica móstoles',
+    'podología móstoles',
+    'mejor podólogo móstoles',
+    'podóloga móstoles',
+    'quiropodia móstoles',
+    'plantillas ortopédicas móstoles',
+    'podólogo madrid sur',
+    'pie diabético móstoles',
+    'podología deportiva móstoles',
+  ],
+  openGraph: {
+    title: 'Clínica Podológica Carrera | Podólogo en Móstoles',
+    description:
+      'Clínica de podología en Móstoles con más de 15 años de experiencia. Podólogas colegiadas especializadas en quiropodia, plantillas, biomecánica y pie diabético.',
+    url: siteConfig.url,
+    type: 'website',
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: 'Clínica Podológica Carrera - Podólogo en Móstoles',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Clínica Podológica Carrera | Podólogo en Móstoles',
+    description:
+      'Clínica podológica en Móstoles. Podólogas colegiadas con más de 15 años de experiencia.',
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+};
+
 export default async function Home() {
   const { rating, reviewCount } = await getGoogleRating();
+  const services = getActiveServices();
 
   // JSON-LD Schema para LocalBusiness
   const localBusinessSchema = {
@@ -28,6 +73,16 @@ export default async function Home() {
     image: `${siteConfig.url}/images/entrada-clinica.webp`,
     logo: `${siteConfig.url}/images/logo.webp`,
     priceRange: '$$',
+    foundingDate: '2010',
+    founder: {
+      '@type': 'Person',
+      name: 'Isabel Carrera',
+      jobTitle: 'Podóloga Colegiada - Directora',
+    },
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      value: 3,
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address,
@@ -44,15 +99,21 @@ export default async function Home() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
         opens: '09:30',
-        closes: '14:00',
+        closes: '14:30',
       },
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
         opens: '17:00',
-        closes: '20:00',
+        closes: '19:30',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Friday'],
+        opens: '09:30',
+        closes: '14:30',
       },
     ],
     aggregateRating: {
@@ -67,15 +128,67 @@ export default async function Home() {
       { '@type': 'City', name: 'Alcorcón' },
       { '@type': 'City', name: 'Fuenlabrada' },
       { '@type': 'City', name: 'Leganés' },
+      { '@type': 'City', name: 'Villaviciosa de Odón' },
+      { '@type': 'City', name: 'Navalcarnero' },
+      { '@type': 'City', name: 'Arroyomolinos' },
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de Podología',
+      itemListElement: services.map((service) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'MedicalProcedure',
+          name: service.name,
+          description: service.shortDesc,
+          url: `${siteConfig.url}/servicios/${service.slug}`,
+        },
+      })),
+    },
+  };
+
+  // JSON-LD Schema para WebSite
+  const webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteConfig.url}/#website`,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: {
+      '@id': `${siteConfig.url}/#organization`,
+    },
+    inLanguage: 'es',
+  };
+
+  // JSON-LD Schema para BreadcrumbList
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Inicio',
+        item: siteConfig.url,
+      },
     ],
   };
 
   return (
     <>
-      {/* JSON-LD Schema */}
+      {/* JSON-LD Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <Hero />

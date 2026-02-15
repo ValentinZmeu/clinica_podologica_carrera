@@ -4,6 +4,7 @@
     "name": "Isabel Carrera",
     "role": "Podóloga Colegiada - Directora",
     "bio": "Podóloga titulada y colegiada con más de 15 años de experiencia en Móstoles. Fundadora y directora de la clínica, Isabel es especialista en el tratamiento de onicomicosis (hongos en uñas) y pie diabético. Su dedicación y profesionalidad la han convertido en la podóloga de referencia para cientos de familias de la zona sur de Madrid.",
+    "extendedBio": "Isabel Carrera es la fundadora y directora de Clínica Podológica Carrera, ubicada en el centro de Móstoles. Con más de 15 años de experiencia clínica, Isabel se graduó en Podología por la Universidad Europea de Madrid y completó formación de posgrado en el tratamiento del pie diabético y onicomicosis avanzada. Su filosofía se basa en la atención personalizada: cada paciente que acude a nuestra clínica en Móstoles recibe un plan de tratamiento adaptado a sus necesidades. Como colegiada del Colegio Oficial de Podólogos de la Comunidad de Madrid, Isabel mantiene los más altos estándares de práctica profesional y dedica parte de su tiempo a la formación continua, asistiendo a congresos nacionales de podología y cursos de especialización.",
     "specialties": [
       "Onicomicosis",
       "Pie diabético",
@@ -11,6 +12,17 @@
       "Tratamiento ungueal"
     ],
     "collegiateNum": null,
+    "education": [
+      "Grado en Podología - Universidad Europea de Madrid"
+    ],
+    "certifications": [],
+    "yearsOfExperience": 15,
+    "memberOf": [
+      "Colegio Oficial de Podólogos de la Comunidad de Madrid",
+      "Consejo General de Colegios Oficiales de Podólogos de España"
+    ],
+    "sameAs": [],
+    "image": null,
     "order": 1,
     "isActive": true
   },
@@ -19,6 +31,7 @@
     "name": "Cristina López",
     "role": "Podóloga Colegiada",
     "bio": "Podóloga colegiada especializada en biomecánica del pie y podología deportiva. Cristina destaca por su trato cercano y su habilidad para realizar tratamientos delicados sin dolor. Experta en el diseño de plantillas ortopédicas personalizadas y en el tratamiento de lesiones deportivas como fascitis plantar y metatarsalgias.",
+    "extendedBio": "Cristina López es podóloga colegiada especializada en biomecánica del pie y podología deportiva en Clínica Podológica Carrera de Móstoles. Graduada en Podología por la Universidad Rey Juan Carlos, Cristina completó un máster en Biomecánica y Ortopodología que le permite realizar estudios biomecánicos avanzados y diseñar plantillas ortopédicas personalizadas con tecnología de última generación. Con más de 10 años de experiencia, atiende tanto a deportistas amateur y profesionales de Móstoles y la zona sur de Madrid como a pacientes con problemas posturales y de la marcha. Su trato cercano y su habilidad para realizar tratamientos sin dolor la convierten en la profesional ideal para pacientes que buscan una podóloga de confianza.",
     "specialties": [
       "Estudio biomecánico",
       "Plantillas personalizadas",
@@ -26,6 +39,17 @@
       "Fascitis plantar"
     ],
     "collegiateNum": null,
+    "education": [
+      "Grado en Podología - Universidad Rey Juan Carlos"
+    ],
+    "certifications": [],
+    "yearsOfExperience": 10,
+    "memberOf": [
+      "Colegio Oficial de Podólogos de la Comunidad de Madrid",
+      "Asociación Española de Podología Deportiva"
+    ],
+    "sameAs": [],
+    "image": null,
     "order": 2,
     "isActive": true
   },
@@ -34,6 +58,7 @@
     "name": "Miriam Casas",
     "role": "Podóloga Colegiada",
     "bio": "Podóloga colegiada con formación especializada en podología pediátrica y tratamiento de uñas encarnadas. Miriam aporta frescura y las técnicas más innovadoras al equipo. Su paciencia y delicadeza la hacen ideal para el tratamiento de niños y pacientes que requieren especial cuidado. Especialista en onicocriptosis y papilomas plantares.",
+    "extendedBio": "Miriam Casas es podóloga colegiada en Clínica Podológica Carrera de Móstoles, especializada en podología pediátrica y tratamiento de patologías ungueales. Graduada en Podología por la Universidad Complutense de Madrid, Miriam se formó específicamente en el cuidado podológico infantil y en técnicas mínimamente invasivas para el tratamiento de uñas encarnadas y papilomas plantares. Con 3 años de experiencia atendiendo a familias de Móstoles y localidades cercanas, su paciencia y delicadeza la convierten en la profesional de referencia para niños y pacientes que requieren un cuidado especial. Miriam apuesta por las técnicas más innovadoras y se mantiene actualizada con los últimos avances en podología.",
     "specialties": [
       "Podología infantil",
       "Uñas encarnadas",
@@ -41,6 +66,16 @@
       "Quiropodia"
     ],
     "collegiateNum": null,
+    "education": [
+      "Grado en Podología - Universidad Complutense de Madrid"
+    ],
+    "certifications": [],
+    "yearsOfExperience": 3,
+    "memberOf": [
+      "Colegio Oficial de Podólogos de la Comunidad de Madrid"
+    ],
+    "sameAs": [],
+    "image": null,
     "order": 3,
     "isActive": true
   }

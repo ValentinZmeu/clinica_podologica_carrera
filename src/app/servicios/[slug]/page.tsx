@@ -641,139 +641,141 @@ export default async function ServicePage({ params }: ServicePageProps) {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-6 lg:col-span-1">
-              {/* CTA Card */}
-              <AnimateOnScroll variant="fade-right" delay={200}>
-                <Card className="sticky top-24">
-                  <CardContent className="p-6">
-                    <h3 className="mb-4 text-lg font-semibold">
-                      ¿Necesitas este tratamiento?
-                    </h3>
-                    <p className="mb-6 text-sm text-muted-foreground">
-                      Pide tu cita y te atenderemos lo antes posible. Evaluaremos
-                      tu caso y te propondremos el mejor tratamiento.
-                    </p>
-
-                    <div className="space-y-3">
-                      <Button className="w-full" size="lg" asChild>
-                        <a
-                          href={formatWhatsAppUrl(siteConfig.whatsapp, `Hola, me gustaría pedir cita para ${service.name}`)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          data-testid="service-whatsapp-cta"
-                        >
-                          <WhatsAppIcon className="mr-2 h-4 w-4" />
-                          Pedir Cita por WhatsApp
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="w-full" size="lg" asChild>
-                        <a
-                          href={`tel:${siteConfig.phoneLink}`}
-                          data-testid="service-phone-cta"
-                        >
-                          <Phone className="mr-2 h-4 w-4" />
-                          Llamar Ahora
-                        </a>
-                      </Button>
-                    </div>
-
-                    <div className="mt-6 border-t pt-6">
-                      <p className="text-sm text-muted-foreground">
-                        <strong>Dirección:</strong>
-                        <br />
-                        {siteConfig.address}
-                        <br />
-                        {siteConfig.postalCode} {siteConfig.city}
-                      </p>
-                      <p className="mt-3 text-sm text-muted-foreground">
-                        <strong>Horario:</strong>
-                        <br />
-                        L-J: {siteConfig.schedule.weekdays}
-                        <br />
-                        V: {siteConfig.schedule.friday}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
-
-              {/* Info local */}
-              {service.localContext && (
-                <AnimateOnScroll variant="fade-right" delay={300}>
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="mb-4 flex items-center gap-2 text-base font-semibold">
-                        <MapPin className="h-4 w-4 text-primary" />
-                        Zona de servicio
-                      </h3>
-                      {service.localContext.serviceArea && (
-                        <div className="mb-4">
-                          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                            Ciudades
-                          </p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {service.localContext.serviceArea.map((city) => (
-                              <Badge key={city} variant="outline" className="text-xs">
-                                {city}
-                              </Badge>
-                            ))}
+            <div className="lg:col-span-1 lg:flex lg:flex-col lg:justify-end">
+              <div className="space-y-6 lg:sticky lg:bottom-6">
+                {/* Info local */}
+                {service.localContext && (
+                  <AnimateOnScroll variant="fade-right" delay={200}>
+                    <Card>
+                      <CardContent className="p-6">
+                        <h3 className="mb-4 flex items-center gap-2 text-base font-semibold">
+                          <MapPin className="h-4 w-4 text-primary" />
+                          Zona de servicio
+                        </h3>
+                        {service.localContext.serviceArea && (
+                          <div className="mb-4">
+                            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                              Ciudades
+                            </p>
+                            <div className="flex flex-wrap gap-1.5">
+                              {service.localContext.serviceArea.map((city) => (
+                                <Badge key={city} variant="outline" className="text-xs">
+                                  {city}
+                                </Badge>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      )}
-                      {service.localContext.neighborhoods && (
-                        <div>
-                          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                            Barrios de Móstoles
-                          </p>
-                          <div className="flex flex-wrap gap-1.5">
-                            {service.localContext.neighborhoods.map((neighborhood) => (
-                              <Badge
-                                key={neighborhood}
-                                variant="secondary"
-                                className="text-xs"
+                        )}
+                        {service.localContext.neighborhoods && (
+                          <div>
+                            <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                              Barrios de Móstoles
+                            </p>
+                            <div className="flex flex-wrap gap-1.5">
+                              {service.localContext.neighborhoods.map((neighborhood) => (
+                                <Badge
+                                  key={neighborhood}
+                                  variant="secondary"
+                                  className="text-xs"
+                                >
+                                  {neighborhood}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </AnimateOnScroll>
+                )}
+
+                {/* Servicios relacionados */}
+                {relatedServices.length > 0 && (
+                  <AnimateOnScroll variant="fade-right" delay={300}>
+                    <Card>
+                      <CardContent className="p-6">
+                        <h3 className="mb-4 text-base font-semibold">
+                          Servicios relacionados
+                        </h3>
+                        <div className="space-y-3">
+                          {relatedServices.map((rs) => {
+                            const RSIcon = getIconComponent(rs.icon);
+                            return (
+                              <Link
+                                key={rs.id}
+                                href={`/servicios/${rs.slug}`}
+                                className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-muted/50"
                               >
-                                {neighborhood}
-                              </Badge>
-                            ))}
-                          </div>
+                                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                                  <RSIcon className="h-4 w-4 text-primary" />
+                                </div>
+                                <div className="min-w-0">
+                                  <p className="text-sm font-medium truncate">{rs.name}</p>
+                                </div>
+                              </Link>
+                            );
+                          })}
                         </div>
-                      )}
-                    </CardContent>
-                  </Card>
-                </AnimateOnScroll>
-              )}
+                      </CardContent>
+                    </Card>
+                  </AnimateOnScroll>
+                )}
 
-              {/* Servicios relacionados */}
-              {relatedServices.length > 0 && (
+                {/* CTA Card - al final, sticky bottom en desktop */}
                 <AnimateOnScroll variant="fade-right" delay={400}>
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="mb-4 text-base font-semibold">
-                        Servicios relacionados
+                      <h3 className="mb-4 text-lg font-semibold">
+                        ¿Necesitas este tratamiento?
                       </h3>
+                      <p className="mb-6 text-sm text-muted-foreground">
+                        Pide tu cita y te atenderemos lo antes posible. Evaluaremos
+                        tu caso y te propondremos el mejor tratamiento.
+                      </p>
+
                       <div className="space-y-3">
-                        {relatedServices.map((rs) => {
-                          const RSIcon = getIconComponent(rs.icon);
-                          return (
-                            <Link
-                              key={rs.id}
-                              href={`/servicios/${rs.slug}`}
-                              className="flex items-center gap-3 rounded-lg p-2 transition-colors hover:bg-muted/50"
-                            >
-                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                                <RSIcon className="h-4 w-4 text-primary" />
-                              </div>
-                              <div className="min-w-0">
-                                <p className="text-sm font-medium truncate">{rs.name}</p>
-                              </div>
-                            </Link>
-                          );
-                        })}
+                        <Button className="w-full" size="lg" asChild>
+                          <a
+                            href={formatWhatsAppUrl(siteConfig.whatsapp, `Hola, me gustaría pedir cita para ${service.name}`)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-testid="service-whatsapp-cta"
+                          >
+                            <WhatsAppIcon className="mr-2 h-4 w-4" />
+                            Pedir Cita por WhatsApp
+                          </a>
+                        </Button>
+                        <Button variant="outline" className="w-full" size="lg" asChild>
+                          <a
+                            href={`tel:${siteConfig.phoneLink}`}
+                            data-testid="service-phone-cta"
+                          >
+                            <Phone className="mr-2 h-4 w-4" />
+                            Llamar Ahora
+                          </a>
+                        </Button>
+                      </div>
+
+                      <div className="mt-6 border-t pt-6">
+                        <p className="text-sm text-muted-foreground">
+                          <strong>Dirección:</strong>
+                          <br />
+                          {siteConfig.address}
+                          <br />
+                          {siteConfig.postalCode} {siteConfig.city}
+                        </p>
+                        <p className="mt-3 text-sm text-muted-foreground">
+                          <strong>Horario:</strong>
+                          <br />
+                          L-J: {siteConfig.schedule.weekdays}
+                          <br />
+                          V: {siteConfig.schedule.friday}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
                 </AnimateOnScroll>
-              )}
+              </div>
             </div>
           </div>
         </div>
