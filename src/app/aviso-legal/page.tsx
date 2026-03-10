@@ -6,7 +6,7 @@ import { PageHero } from '@/components/layout/page-hero';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Aviso Legal | Clínica Podológica Carrera',
+  title: 'Aviso Legal',
   description:
     'Aviso legal e información sobre el titular del sitio web de Clínica Podológica Carrera.',
   robots: 'noindex, follow',

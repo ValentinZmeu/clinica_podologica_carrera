@@ -1,5 +1,7 @@
 import { Award, Heart, MapPin, Sparkles } from 'lucide-react';
 
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
+
 const benefits = [
   {
     icon: Award,
@@ -41,26 +43,28 @@ export function Benefits() {
       </div>
 
       <div className="container">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-primary-100 px-4 py-1.5 text-sm font-medium text-primary-700">
-            ¿Por qué elegirnos?
-          </span>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Más de 15 años cuidando{' '}
-            <span className="text-primary-500">
-              la salud de tus pies
+        <AnimateOnScroll variant="fade-up">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <span className="mb-4 inline-block rounded-full bg-primary-100 px-4 py-1.5 text-sm font-medium text-primary-700">
+              ¿Por qué elegirnos?
             </span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Somos la clínica de referencia para las familias de Móstoles y
-            alrededores.
-          </p>
-        </div>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+              Más de 15 años cuidando{' '}
+              <span className="text-primary-500">
+                la salud de tus pies
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Somos la clínica de referencia para las familias de Móstoles y
+              alrededores.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit, index) => (
+            <AnimateOnScroll key={index} variant="fade-up" delay={index * 100}>
             <div
-              key={index}
               className="group relative overflow-hidden rounded-2xl border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               data-testid={`benefit-card-${index}`}
             >
@@ -85,6 +89,7 @@ export function Benefits() {
                 className={`absolute -bottom-8 -right-8 h-24 w-24 rounded-full bg-gradient-to-br ${benefit.gradient} opacity-10 transition-transform duration-300 group-hover:scale-150`}
               />
             </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

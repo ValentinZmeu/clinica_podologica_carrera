@@ -1,6 +1,6 @@
 import { Star, Quote } from 'lucide-react';
 
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 interface TestimonialCardProps {
   name: string;
@@ -9,6 +9,8 @@ interface TestimonialCardProps {
   rating: number;
   content: string;
   source?: string | null;
+  profilePhotoUrl?: string | null;
+  relativeTime?: string | null;
 }
 
 export function TestimonialCard({
@@ -18,6 +20,8 @@ export function TestimonialCard({
   rating,
   content,
   source,
+  profilePhotoUrl,
+  relativeTime,
 }: TestimonialCardProps) {
   return (
     <div
@@ -49,6 +53,9 @@ export function TestimonialCard({
       {/* Author */}
       <div className="flex items-center gap-3">
         <Avatar className="h-12 w-12 border-2 border-primary/20">
+          {profilePhotoUrl && (
+            <AvatarImage src={profilePhotoUrl} alt={name} sizes="48px" />
+          )}
           <AvatarFallback className="bg-primary-500 text-white font-semibold">
             {initials || name.slice(0, 2).toUpperCase()}
           </AvatarFallback>
@@ -56,7 +63,7 @@ export function TestimonialCard({
         <div>
           <p className="font-semibold">{name}</p>
           <p className="text-sm text-muted-foreground">
-            {location}
+            {relativeTime || location}
             {source === 'google' && (
               <span className="ml-1 inline-flex items-center">
                 <span className="mx-1">•</span>

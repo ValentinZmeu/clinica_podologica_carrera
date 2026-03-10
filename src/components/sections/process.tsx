@@ -1,5 +1,7 @@
 import { Calendar, Stethoscope, HeartHandshake, ChevronRight } from 'lucide-react';
 
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
+
 const steps = [
   {
     icon: Calendar,
@@ -36,26 +38,28 @@ export function Process() {
       </div>
 
       <div className="container">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-accent-100 px-4 py-1.5 text-sm font-medium text-accent-700">
-            Proceso Simple
-          </span>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            ¿Cómo{' '}
-            <span className="text-primary-500">
-              Funciona?
+        <AnimateOnScroll variant="fade-up">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <span className="mb-4 inline-block rounded-full bg-accent-100 px-4 py-1.5 text-sm font-medium text-accent-700">
+              Proceso Simple
             </span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Tres sencillos pasos para comenzar a cuidar la salud de tus pies.
-          </p>
-        </div>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+              ¿Cómo{' '}
+              <span className="text-primary-500">
+                Funciona?
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Tres sencillos pasos para comenzar a cuidar la salud de tus pies.
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 md:grid-cols-3">
             {steps.map((step, index) => (
+              <AnimateOnScroll key={index} variant="fade-up" delay={index * 150}>
               <div
-                key={index}
                 className="group relative"
                 data-testid={`process-step-${index + 1}`}
               >
@@ -97,6 +101,7 @@ export function Process() {
                   />
                 </div>
               </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>

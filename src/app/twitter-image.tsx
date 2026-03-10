@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
+import { getGoogleRating } from '@/lib/google-places';
 
 export const runtime = 'edge';
-
 export const alt = 'Clínica Podológica Carrera - Podólogo en Móstoles';
 export const size = {
   width: 1200,
@@ -10,6 +10,7 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  const { rating } = await getGoogleRating();
   return new ImageResponse(
     (
       <div
@@ -102,7 +103,7 @@ export default async function Image() {
             }}
           >
             <span style={{ color: '#fbbf24' }}>★★★★★</span>
-            <span>4.8 estrellas</span>
+            <span>{rating} estrellas</span>
           </div>
         </div>
 

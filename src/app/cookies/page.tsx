@@ -6,7 +6,7 @@ import { PageHero } from '@/components/layout/page-hero';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Política de Cookies | Clínica Podológica Carrera',
+  title: 'Política de Cookies',
   description:
     'Política de cookies de Clínica Podológica Carrera. Información sobre las cookies que utilizamos en nuestro sitio web.',
   robots: 'noindex, follow',

@@ -1,6 +1,10 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { usePathname } from 'next/navigation';
 import { Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -13,10 +17,25 @@ const MobileNav = dynamic(
   { ssr: false }
 );
 
+function isActive(pathname: string, href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+}
+
 export function Header() {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b bg-white"
+      className={`sticky top-0 z-50 w-full border-b bg-white transition-shadow ${scrolled ? 'shadow-sm' : ''}`}
       data-testid="header"
     >
       <div className="container flex h-16 items-center justify-between">
@@ -42,14 +61,18 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav
-          className="hidden md:flex md:items-center md:gap-6"
+          className="hidden lg:flex lg:items-center lg:gap-6"
           data-testid="nav-desktop"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className={`text-base font-semibold transition-colors hover:text-primary ${
+                isActive(pathname, link.href)
+                  ? 'text-primary underline underline-offset-4'
+                  : 'text-gray-700'
+              }`}
               data-testid={`nav-${link.label.toLowerCase().replace(' ', '-')}-link`}
             >
               {link.label}
@@ -58,7 +81,7 @@ export function Header() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex md:items-center md:gap-2">
+        <div className="hidden lg:flex lg:items-center lg:gap-2">
           <Button variant="outline" size="sm" asChild>
             <a
               href={`tel:${siteConfig.phoneLink}`}

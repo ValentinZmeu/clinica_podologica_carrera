@@ -47,6 +47,7 @@ Ve a **Settings > Secrets and variables > Actions** y crea los siguientes secret
 | `SERVER_USER` | Usuario SSH del servidor | `clinica_podologica_carrera` |
 | `SERVER_SSH_KEY` | Clave privada SSH (sin passphrase) | `-----BEGIN OPENSSH PRIVATE KEY-----...` |
 | `APP_PATH` | Ruta del proyecto en el servidor | `/home/clinica_podologica_carrera/app` |
+| `CR_PAT` | GitHub PAT con scope `read:packages` | `ghp_xxxxxxxxxxxx` |
 
 ### 2. Generar clave SSH
 
@@ -68,11 +69,23 @@ cat github_deploy.pub
 - **Clave privada** (`github_deploy`) → GitHub Secret: `SERVER_SSH_KEY` (incluye `-----BEGIN` y `-----END`)
 - **Clave pública** (`github_deploy.pub`) → Servidor: `/home/clinica_podologica_carrera/.ssh/authorized_keys`
 
-### 3. Permisos del repositorio
+### 3. Crear Personal Access Token (CR_PAT)
+
+El `GITHUB_TOKEN` de Actions **no funciona desde el servidor remoto** (solo existe dentro del runner de GitHub Actions). Para que el servidor pueda hacer `docker pull` desde GHCR, necesitas un PAT:
+
+1. Ve a **GitHub > Settings > Developer settings > Personal access tokens > Tokens (classic)**
+2. Genera un nuevo token con scope `read:packages`
+3. Copia el token y guárdalo como secret `CR_PAT` en el repositorio
+
+### 4. Permisos del repositorio
 
 El workflow usa `GITHUB_TOKEN` automáticamente para:
-- Publicar imágenes en GitHub Container Registry (ghcr.io)
-- No necesitas configurar tokens adicionales
+
+- Publicar imágenes en GitHub Container Registry (ghcr.io) (solo desde el runner de Actions)
+
+Y usa `CR_PAT` para:
+
+- Hacer `docker pull` desde el servidor remoto vía SSH
 
 ---
 

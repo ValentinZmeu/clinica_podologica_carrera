@@ -6,7 +6,7 @@ import { PageHero } from '@/components/layout/page-hero';
 import { siteConfig } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad | Clínica Podológica Carrera',
+  title: 'Política de Privacidad',
   description:
     'Política de privacidad y protección de datos de Clínica Podológica Carrera. Información sobre el tratamiento de tus datos personales.',
   robots: 'noindex, follow',

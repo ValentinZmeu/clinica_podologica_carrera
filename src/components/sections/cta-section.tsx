@@ -1,8 +1,12 @@
-import { Phone, MessageCircle, Clock, CheckCircle } from 'lucide-react';
+import { Phone, Clock, CheckCircle } from 'lucide-react';
+
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/constants';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { formatWhatsAppUrl } from '@/lib/utils';
+import { getGooglePlaceData } from '@/lib/google-places';
 
 const benefits = [
   'Respuesta en menos de 24 horas',
@@ -11,7 +15,8 @@ const benefits = [
   'Resultados garantizados',
 ];
 
-export function CTASection() {
+export async function CTASection() {
+  const { schedule } = await getGooglePlaceData();
   return (
     <section
       className="relative overflow-hidden py-24 md:py-32"
@@ -25,6 +30,7 @@ export function CTASection() {
       <div className="absolute bottom-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-accent-500/20 blur-3xl" aria-hidden="true" />
 
       <div className="container">
+        <AnimateOnScroll variant="fade-up" duration={800}>
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge */}
           <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
@@ -43,7 +49,7 @@ export function CTASection() {
               de tus pies?
             </span>
           </h2>
-          <p className="mx-auto mb-10 max-w-2xl text-xl text-white/70">
+          <p className="mx-auto mb-10 max-w-2xl text-xl text-white/80">
             Pide tu cita hoy y empieza a disfrutar de unos pies sanos y sin
             molestias. Más de 15 años de experiencia nos avalan.
           </p>
@@ -77,14 +83,14 @@ export function CTASection() {
                 rel="noopener noreferrer"
                 data-testid="cta-whatsapp-button"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <WhatsAppIcon className="mr-2 h-5 w-5" />
                 Pide tu Cita por WhatsApp
               </a>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="h-14 w-full border-white/20 bg-white/5 px-8 text-lg text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:scale-105 sm:w-auto"
+              className="h-14 w-full border-white/20 bg-white/5 px-8 text-lg text-white backdrop-blur-sm transition-all hover:bg-white/85 hover:text-slate-900 hover:scale-105 sm:w-auto"
               asChild
             >
               <a
@@ -92,19 +98,26 @@ export function CTASection() {
                 data-testid="cta-call-button"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                {siteConfig.phone}
+                Llamar al {siteConfig.phone}
               </a>
             </Button>
           </div>
 
           {/* Schedule */}
-          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-2 text-white/60">
-            <Clock className="h-4 w-4" />
-            <span className="text-sm">
-              L-J: {siteConfig.schedule.weekdays} | V: {siteConfig.schedule.friday}
-            </span>
+          <div className="mt-8 inline-flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-white/20 bg-white/10 px-6 py-3 text-white backdrop-blur-sm">
+            <Clock className="h-4 w-4 text-primary-300" />
+            <div className="text-sm">
+              <span className="font-semibold">Lunes a Jueves</span>
+              <span className="ml-1.5 text-white/80">{schedule.weekdays}</span>
+            </div>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <div className="text-sm">
+              <span className="font-semibold">Viernes</span>
+              <span className="ml-1.5 text-white/80">{schedule.friday}</span>
+            </div>
           </div>
         </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

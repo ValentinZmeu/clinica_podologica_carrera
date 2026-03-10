@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Star } from 'lucide-react';
 
 import { Separator } from '@/components/ui/separator';
 import { siteConfig, navLinks } from '@/lib/constants';
+import { getGooglePlaceData } from '@/lib/google-places';
 
-export function Footer() {
+export async function Footer() {
+  const { rating, schedule, googleMapsUri } = await getGooglePlaceData();
+
   return (
     <footer
       className="relative z-50 border-t bg-background"
@@ -30,6 +33,17 @@ export function Footer() {
               Tu clínica de podología de confianza en Móstoles. Cuidamos de la
               salud de tus pies con profesionalidad y cercanía.
             </p>
+            <a
+              href={googleMapsUri}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary"
+              data-testid="footer-reviews-link"
+            >
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span className="font-medium">{rating}</span>
+              <span>en Google Reviews</span>
+            </a>
           </div>
 
           {/* Links */}
@@ -85,26 +99,17 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Horario</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0" />
-                <div>
-                  <p className="font-medium text-foreground">Lunes a Jueves</p>
-                  <p>{siteConfig.schedule.weekdays}</p>
-                </div>
+              <div>
+                <p className="font-medium text-foreground">Lunes a Jueves</p>
+                <p>{schedule.weekdays}</p>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-0" />
-                <div>
-                  <p className="font-medium text-foreground">Viernes</p>
-                  <p>{siteConfig.schedule.friday}</p>
-                </div>
+              <div>
+                <p className="font-medium text-foreground">Viernes</p>
+                <p>{schedule.friday}</p>
               </div>
-              <div className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 opacity-0" />
-                <div>
-                  <p className="font-medium text-foreground">Fines de Semana</p>
-                  <p>{siteConfig.schedule.weekend}</p>
-                </div>
+              <div>
+                <p className="font-medium text-foreground">Fines de Semana</p>
+                <p>{schedule.weekend}</p>
               </div>
             </div>
           </div>
@@ -113,10 +118,23 @@ export function Footer() {
         <Separator className="my-8" />
 
         <div className="flex flex-col items-center justify-between gap-4 text-center text-sm text-muted-foreground md:flex-row">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.name}. Todos los derechos
-            reservados.
-          </p>
+          <div className="flex flex-col items-center gap-1 md:flex-row md:gap-0">
+            <p>
+              Made with <span className="text-red-500">&#10084;</span> by{' '}
+              <a
+                href="https://dev-dim.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="devdim-gradient font-semibold"
+              >
+                DevDim
+              </a>
+            </p>
+            &nbsp;|&nbsp;
+            <p>
+              © {new Date().getFullYear()} {siteConfig.name}.
+            </p>
+          </div>
           <div className="flex gap-4">
             <Link href="/privacidad" className="hover:text-primary">
               Política de Privacidad

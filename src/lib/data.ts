@@ -50,9 +50,13 @@ export const getServiceBySlug = cache((slug: string): Service | undefined => {
  */
 export const getOtherServices = cache(
   (currentSlug: string, limit = 3): Service[] => {
-    return getActiveServices()
-      .filter((s) => s.slug !== currentSlug)
-      .slice(0, limit);
+    const others = getActiveServices().filter((s) => s.slug !== currentSlug);
+    // Shuffle using Fisher-Yates to show different services each build
+    for (let i = others.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [others[i], others[j]] = [others[j], others[i]];
+    }
+    return others.slice(0, limit);
   }
 );
 
@@ -117,3 +121,21 @@ export const getActiveFAQs = cache((): FAQ[] => {
 export const getServiceSlugs = cache((): string[] => {
   return getActiveServices().map((s) => s.slug);
 });
+
+/**
+ * Obtiene testimonios filtrados por servicio
+ */
+export const getTestimonialsByService = cache(
+  (serviceSlug: string): Testimonial[] => {
+    return getActiveTestimonials().filter((t) => t.service === serviceSlug);
+  }
+);
+
+/**
+ * Obtiene un miembro del equipo por ID
+ */
+export const getTeamMemberById = cache(
+  (id: string): TeamMember | undefined => {
+    return getTeamMembers().find((m) => m.id === id);
+  }
+);

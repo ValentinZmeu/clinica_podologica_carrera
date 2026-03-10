@@ -45,6 +45,12 @@ logs/
 # contact messages (user data)
 data/contact-messages.json
 
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
 # IDE
 .idea/
 .vscode/

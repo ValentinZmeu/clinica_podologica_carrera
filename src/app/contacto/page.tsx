@@ -5,18 +5,21 @@ import {
   Mail,
   MapPin,
   Clock,
-  MessageCircle,
   Navigation,
   ExternalLink,
 } from 'lucide-react';
 
+import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
+
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { PageHero } from '@/components/layout/page-hero';
+import { AnimateOnScroll } from '@/components/ui/animate-on-scroll';
 import { siteConfig } from '@/lib/constants';
+import { getGooglePlaceData } from '@/lib/google-places';
 
 export const metadata: Metadata = {
-  title: 'Contacto | Clínica Podológica Carrera - Móstoles',
+  title: 'Contacto - Podólogo en Móstoles',
   description:
     'Contacta con Clínica Podológica Carrera en Móstoles. Pide tu cita por teléfono o WhatsApp. C. de la Carrera, 7, junto al Mercado de la Constitución.',
   keywords: [
@@ -31,6 +34,9 @@ export const metadata: Metadata = {
       'Pide tu cita en Clínica Podológica Carrera. Llámanos o escríbenos por WhatsApp.',
     url: `${siteConfig.url}/contacto`,
     type: 'website',
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/contacto`,
   },
 };
 
@@ -57,7 +63,8 @@ const contactPageSchema = {
   },
 };
 
-export default function ContactoPage() {
+export default async function ContactoPage() {
+  const { schedule } = await getGooglePlaceData();
   return (
     <>
       {/* JSON-LD Schema */}
@@ -80,12 +87,13 @@ export default function ContactoPage() {
         <div className="container">
           <div className="mx-auto max-w-4xl">
             {/* Primary CTA - WhatsApp */}
+            <AnimateOnScroll variant="fade-up">
             <div className="mb-8">
               <Card className="overflow-hidden border-2 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50">
                 <CardContent className="p-0">
                   <div className="flex flex-col items-center gap-6 p-8 md:flex-row md:p-10">
                     <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-lg shadow-green-500/25">
-                      <MessageCircle className="h-10 w-10" />
+                      <WhatsAppIcon className="h-10 w-10" />
                     </div>
                     <div className="flex-1 text-center md:text-left">
                       <p className="text-sm font-medium text-green-600">
@@ -109,7 +117,7 @@ export default function ContactoPage() {
                         rel="noopener noreferrer"
                         data-testid="contact-whatsapp-btn"
                       >
-                        <MessageCircle className="mr-2 h-5 w-5" />
+                        <WhatsAppIcon className="mr-2 h-5 w-5" />
                         Escribir ahora
                       </a>
                     </Button>
@@ -117,10 +125,12 @@ export default function ContactoPage() {
                 </CardContent>
               </Card>
             </div>
+            </AnimateOnScroll>
 
             {/* Secondary Contact Methods */}
             <div className="grid gap-6 md:grid-cols-2">
               {/* Phone */}
+              <AnimateOnScroll variant="fade-up" delay={0}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -149,8 +159,10 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
 
               {/* Email */}
+              <AnimateOnScroll variant="fade-up" delay={100}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -176,11 +188,13 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
             </div>
 
             {/* Location & Schedule */}
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {/* Address */}
+              <AnimateOnScroll variant="fade-up" delay={0}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -215,8 +229,10 @@ export default function ContactoPage() {
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
 
               {/* Schedule */}
+              <AnimateOnScroll variant="fade-up" delay={100}>
               <Card className="group overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -231,24 +247,25 @@ export default function ContactoPage() {
                             Lunes a Jueves:
                           </span>
                         </p>
-                        <p>09:30 - 14:30 y 17:00 - 19:30</p>
+                        <p>{schedule.weekdays}</p>
                         <p className="pt-1">
                           <span className="font-medium text-foreground">
                             Viernes:
                           </span>{' '}
-                          09:30 - 14:30
+                          {schedule.friday}
                         </p>
                         <p>
                           <span className="font-medium text-foreground">
                             Sábado y Domingo:
                           </span>{' '}
-                          Cerrado
+                          {schedule.weekend}
                         </p>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+              </AnimateOnScroll>
             </div>
           </div>
         </div>
@@ -258,6 +275,7 @@ export default function ContactoPage() {
       <section className="pb-16 md:pb-24" data-testid="contact-map">
         <div className="container">
           <div className="mx-auto max-w-4xl">
+            <AnimateOnScroll variant="fade-up">
             <div className="mb-6 text-center">
               <h2 className="text-2xl font-bold md:text-3xl">
                 Encuéntranos en{' '}
@@ -269,6 +287,7 @@ export default function ContactoPage() {
                 En pleno centro, junto al Mercado de la Constitución
               </p>
             </div>
+            </AnimateOnScroll>
 
             {/* Clinic Entrance Image */}
             <div className="mb-6 group relative overflow-hidden rounded-2xl border shadow-lg">
@@ -302,7 +321,7 @@ export default function ContactoPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Ubicación de Clínica Podológica Carrera"
-                className="grayscale transition-all duration-500 hover:grayscale-0"
+                className="transition-all duration-500"
               />
             </div>
           </div>
