@@ -6,7 +6,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: clinica-podologica
+    container_name: clinica_podologica_carrera_v2-web
+    labels:
+      com.project.stack: clinica_podologica_carrera_v2
+      com.project.role: web
     restart: unless-stopped
     network_mode: host
     env_file:
