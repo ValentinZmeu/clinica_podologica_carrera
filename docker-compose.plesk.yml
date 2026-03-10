@@ -11,7 +11,8 @@ services:
       com.project.stack: clinica_podologica_carrera_v2
       com.project.role: web
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - "3000"
     env_file:
       - .env
     environment:
