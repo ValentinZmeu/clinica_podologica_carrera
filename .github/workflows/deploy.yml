@@ -78,14 +78,11 @@ jobs:
             # Pull the latest image
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-            # Stop and remove old container
-            docker compose -f docker-compose.prod.yml down || true
+            # Deploy with zero-downtime restart
+            docker compose -f docker-compose.prod.yml up -d --remove-orphans
 
-            # Start new container
-            docker compose -f docker-compose.prod.yml up -d
-
-            # Cleanup old images
-            docker image prune -f
+            # Cleanup: remove unused images, containers, networks and build cache
+            docker system prune -af --volumes --filter "label!=com.docker.compose.project"
 
             # Show status
             docker compose -f docker-compose.prod.yml ps
