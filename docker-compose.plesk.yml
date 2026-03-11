@@ -1,6 +1,8 @@
 # Plesk deployment - builds locally from source code
 # Usage: docker compose -f docker-compose.plesk.yml up -d --build --remove-orphans && docker system prune -af
 
+name: clinica_podologica_carrera_v2
+
 services:
   web:
     build:

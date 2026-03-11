@@ -1,6 +1,8 @@
 # Production docker-compose - uses pre-built image from GHCR
 # Usage: docker compose -f docker-compose.prod.yml up -d
 
+name: clinica_podologica_carrera_v2
+
 services:
   web:
     image: ghcr.io/${GITHUB_REPOSITORY:-vadimvt/clinica_podologica_carrera_v2}:latest
