@@ -1,10 +1,15 @@
+name: clinica_podologica_carrera_v2
+
 services:
   web:
     build:
       context: .
       dockerfile: Dockerfile
     image: clinica-podologica:latest
-    container_name: clinica-podologica
+    container_name: clinica_podologica_carrera_v2-web
+    labels:
+      com.project.stack: clinica_podologica_carrera_v2
+      com.project.role: web
     restart: unless-stopped
     ports:
       - "127.0.0.1:${PORT:-3000}:3000"

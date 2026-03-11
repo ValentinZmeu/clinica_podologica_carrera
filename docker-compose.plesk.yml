@@ -1,14 +1,20 @@
 # Plesk deployment - builds locally from source code
 # Usage: docker compose -f docker-compose.plesk.yml up -d --build --remove-orphans && docker system prune -af
 
+name: clinica_podologica_carrera_v2
+
 services:
   web:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: clinica-podologica
+    container_name: clinica_podologica_carrera_v2-web
+    labels:
+      com.project.stack: clinica_podologica_carrera_v2
+      com.project.role: web
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - "3000"
     env_file:
       - .env
     environment:
