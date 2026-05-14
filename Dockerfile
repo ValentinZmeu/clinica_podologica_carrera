@@ -12,6 +12,13 @@ RUN npm ci
 
 COPY . .
 
+# NEXT_PUBLIC_* se inlinen en el bundle durante `next build`,
+# por eso tienen que estar disponibles como ENV antes del RUN.
+ARG NEXT_PUBLIC_GA_ID
+ARG NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_GA_ID=$NEXT_PUBLIC_GA_ID
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 RUN npm run build
