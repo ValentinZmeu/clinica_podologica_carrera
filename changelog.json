@@ -1,6 +1,25 @@
 {
   "versions": [
     {
+      "version": "0.4.1",
+      "date": "2026-05-14",
+      "title": "Aclaración de precios y comparativa de plantillas",
+      "changes": [
+        {
+          "type": "changed",
+          "description": "Aclarado que el precio de la quiropodia es cerrado e igual para todos los pacientes, independientemente del estado de los pies"
+        },
+        {
+          "type": "changed",
+          "description": "La comparativa de plantillas ahora habla de plantillas prefabricadas o estándar en lugar de plantillas de farmacia"
+        },
+        {
+          "type": "changed",
+          "description": "Diferenciado el coste del estudio biomecánico del coste de las plantillas, con tres tipos según material y prestaciones"
+        }
+      ]
+    },
+    {
       "version": "0.4.0",
       "date": "2026-02-15",
       "title": "Datos completos de Google Places",

@@ -7,11 +7,11 @@
 | Plan | Descripción | Estado | Fecha Inicio |
 | ---- | ----------- | ------ | ------------ |
 
-
 ## Planes Archivados
 
 | Plan | Descripción | Fecha Completado |
 | --- | --- | --- |
+| [11-feedback-cliente-precios-plantillas](_archive/11-feedback-cliente-precios-plantillas.md) | Ajustes de copy: precios de quiropodia y comparativa de plantillas (feedback cliente 19/04) | 2026-05-14 |
 | [10-google-places-datos-completos](_archive/10-google-places-datos-completos.md) | Google Places API: horarios, reseñas y datos dinámicos | 2026-02-15 |
 | [09-seo-inicio-sobre-nosotros](_archive/09-seo-inicio-sobre-nosotros.md) | SEO local, Maps y LLM para Inicio y Sobre Nosotros | 2026-02-15 |
 | [08-google-places-rating](_archive/08-google-places-rating.md) | Rating dinámico desde Google Places API (ISR 24h) | 2026-02-15 |
