@@ -107,7 +107,13 @@ jobs:
             # Pull de la imagen
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-            # Levantar con la nueva imagen (recrea contenedor si hay cambios)
+            # Limpiar contenedor legacy de deploys antiguos (si existe)
+            docker rm -f clinica-podologica 2>/dev/null || true
+
+            # Bajar stack previo (si lo hay) para liberar puertos antes de subir el nuevo
+            docker compose -f docker-compose.prod.yml down --remove-orphans 2>/dev/null || true
+
+            # Levantar con la nueva imagen
             docker compose -f docker-compose.prod.yml up -d --remove-orphans
 
             # Limpieza de imágenes/contenedores/redes/cache sin uso
