@@ -113,6 +113,19 @@ jobs:
             # Bajar stack previo (si lo hay) para liberar puertos antes de subir el nuevo
             docker compose -f docker-compose.prod.yml down --remove-orphans 2>/dev/null || true
 
+            # Diagnóstico: ¿qué contenedores y procesos están escuchando puertos?
+            echo "--- docker ps -a ---"
+            docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}'
+            echo "--- procesos en puerto 3010 (si hay) ---"
+            (ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null) | grep ':3010' || echo "(nada con ss/netstat)"
+            echo "--- contenedores publicando puerto 3010 ---"
+            for c in $(docker ps -aq); do
+              if docker port "$c" 2>/dev/null | grep -q '3010'; then
+                echo "  $c → $(docker inspect -f '{{.Name}}' "$c")"
+                docker rm -f "$c"
+              fi
+            done
+
             # Levantar con la nueva imagen
             docker compose -f docker-compose.prod.yml up -d --remove-orphans
 
