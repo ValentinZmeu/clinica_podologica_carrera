@@ -9,7 +9,9 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  # Docker exige el nombre de imagen en minúsculas; hardcodeamos para evitar
+  # que ${{ github.repository }} (que conserva mayúsculas) rompa el pull.
+  IMAGE_NAME: valentinzmeu/clinica_podologica_carrera
 
 jobs:
   build:
@@ -73,19 +75,29 @@ jobs:
           timeout: 60s
           command_timeout: 30m
           script: |
-            cd ${{ secrets.APP_PATH }}
+            set -euo pipefail
 
-            # Login to GHCR with Personal Access Token
-            echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            # Cambiar al directorio del proyecto (falla con set -e si APP_PATH no existe)
+            cd "${{ secrets.APP_PATH }}"
 
-            # Pull the latest image
+            # Verificar que docker-compose.prod.yml existe antes de seguir
+            if [ ! -f docker-compose.prod.yml ]; then
+              echo "::error::docker-compose.prod.yml no encontrado en $(pwd)"
+              ls -la
+              exit 1
+            fi
+
+            # Login en GHCR con Personal Access Token (read:packages)
+            echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u valentinzmeu --password-stdin
+
+            # Pull de la imagen
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-            # Deploy with zero-downtime restart
+            # Levantar con la nueva imagen (recrea contenedor si hay cambios)
             docker compose -f docker-compose.prod.yml up -d --remove-orphans
 
-            # Cleanup: remove unused images, containers, networks and build cache
+            # Limpieza de imágenes/contenedores/redes/cache sin uso
             docker system prune -af --volumes --filter "label!=com.docker.compose.project"
 
-            # Show status
+            # Estado final
             docker compose -f docker-compose.prod.yml ps
