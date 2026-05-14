@@ -5,7 +5,7 @@ name: clinica_podologica_carrera_v2
 
 services:
   web:
-    image: ghcr.io/${GITHUB_REPOSITORY:-vadimvt/clinica_podologica_carrera_v2}:latest
+    image: ghcr.io/valentinzmeu/clinica_podologica_carrera:latest
     container_name: clinica_podologica_carrera_v2-web
     labels:
       com.project.stack: clinica_podologica_carrera_v2
