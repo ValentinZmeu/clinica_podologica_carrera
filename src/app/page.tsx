@@ -151,9 +151,9 @@ export default async function Home() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: rating,
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: String(reviewCount || 23),
+      bestRating: 5,
+      worstRating: 1,
+      ratingCount: reviewCount || 23,
     },
     areaServed: [
       { '@type': 'City', name: 'Móstoles' },
