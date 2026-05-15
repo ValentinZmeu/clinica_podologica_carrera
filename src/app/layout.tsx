@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { WhatsAppButton } from '@/components/layout/whatsapp-button';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import { siteConfig } from '@/lib/constants';
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -91,6 +91,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID ?? 'G-WE5THTZQ17';
   return (
     <html lang="es">
       <head>
@@ -99,14 +100,30 @@ export default function RootLayout({
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://wa.me" />
+        {/* LLM-friendly Markdown index (llms.txt spec) */}
+        <link rel="alternate" type="text/markdown" title="llms.txt — índice para LLMs" href="/llms.txt" />
+        <link rel="alternate" type="text/markdown" title="llms-full.txt — contenido completo para LLMs" href="/llms-full.txt" />
       </head>
       <body className={`${plusJakarta.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppButton />
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="lazyOnload"
+            />
+            <Script id="ga-init" strategy="lazyOnload">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaId}');`}
+            </Script>
+          </>
+        )}
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? 'G-WE5THTZQ17'} />
     </html>
   );
 }

@@ -9,27 +9,22 @@ export function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.querySelector('[data-testid="hero-section"]');
-      if (!heroSection) {
-        setIsVisible(true);
-        return;
-      }
+    const heroSection = document.querySelector('[data-testid="hero-section"]');
+    if (!heroSection) {
+      setIsVisible(true);
+      return;
+    }
 
-      const heroRect = heroSection.getBoundingClientRect();
-      const heroHeight = heroRect.height;
-      const heroTop = heroRect.top;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Mostrar el botón cuando el hero ha salido más de la mitad del viewport
+        setIsVisible(entry.intersectionRatio < 0.5);
+      },
+      { threshold: [0, 0.5, 1] },
+    );
 
-      // Show button when scrolled past half of the hero section
-      setIsVisible(heroTop < -(heroHeight / 2));
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    observer.observe(heroSection);
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -40,7 +35,7 @@ export function WhatsAppButton() {
       )}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 shadow-lg transition-all duration-300 ease-out hover:bg-green-600 ${
+      className={`fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#075E54] shadow-lg transition-all duration-300 ease-out hover:bg-[#054640] ${
         isVisible
           ? 'translate-x-0 opacity-100'
           : 'translate-x-20 opacity-0 pointer-events-none'

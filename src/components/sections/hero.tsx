@@ -86,7 +86,7 @@ export async function Hero() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               size="lg"
-              className="group h-14 w-full bg-[#25D366] px-8 text-base font-semibold text-white hover:bg-[#1fb855] sm:w-auto"
+              className="group h-14 w-full bg-[#075E54] px-8 text-base font-semibold text-white hover:bg-[#054640] sm:w-auto"
               asChild
             >
               <a
