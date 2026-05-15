@@ -95,10 +95,7 @@ export default function RootLayout({
     <html lang="es">
       <head>
         {/* Preload critical logo for faster LCP */}
-        <link rel="preload" href="/images/logo.webp" as="image" type="image/webp" />
-        {/* Preconnect to Google Fonts for faster loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="/images/logo-48.webp" as="image" type="image/webp" />
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://wa.me" />

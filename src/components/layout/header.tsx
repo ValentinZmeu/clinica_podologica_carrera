@@ -51,8 +51,8 @@ export function Header() {
             width={48}
             height={48}
             className="h-10 w-10"
+            sizes="48px"
             priority
-            unoptimized
           />
           <span className="text-xl font-bold text-primary-600">
             {siteConfig.name}
