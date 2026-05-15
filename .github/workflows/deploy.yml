@@ -78,15 +78,15 @@ jobs:
           script: |
             set -euo pipefail
 
-            mkdir -p "${{ secrets.APP_PATH }}"
+            mkdir -p "${{ vars.APP_PATH }}"
 
             # Si el usuario puede elevar privilegios, dejamos la ruta a su nombre.
             if command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null; then
-              sudo chown -R "$(id -u):$(id -g)" "${{ secrets.APP_PATH }}" || true
+              sudo chown -R "$(id -u):$(id -g)" "${{ vars.APP_PATH }}" || true
             fi
 
-            chmod u+rwx "${{ secrets.APP_PATH }}" || true
-            test -w "${{ secrets.APP_PATH }}"
+            chmod u+rwx "${{ vars.APP_PATH }}" || true
+            test -w "${{ vars.APP_PATH }}"
 
       - name: Copy docker-compose.prod.yml to server
         uses: appleboy/scp-action@v0.1.7
@@ -96,13 +96,12 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
           source: "docker-compose.prod.yml"
-          target: "${{ secrets.APP_PATH }}"
+          target: "${{ vars.APP_PATH }}"
           overwrite: true
 
       - name: Deploy via SSH
         env:
           REPO_DOCKER_WEB_HOST_PORT: ${{ vars.DOCKER_WEB_HOST_PORT }}
-          SECRET_DOCKER_WEB_HOST_PORT: ${{ secrets.DOCKER_WEB_HOST_PORT }}
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -111,12 +110,12 @@ jobs:
           port: 22
           timeout: 60s
           command_timeout: 30m
-          envs: REPO_DOCKER_WEB_HOST_PORT,SECRET_DOCKER_WEB_HOST_PORT
+          envs: REPO_DOCKER_WEB_HOST_PORT
           script: |
             set -euo pipefail
 
             # Cambiar al directorio del proyecto (falla con set -e si APP_PATH no existe)
-            cd "${{ secrets.APP_PATH }}"
+            cd "${{ vars.APP_PATH }}"
 
             # Verificar que docker-compose.prod.yml existe antes de seguir
             if [ ! -f docker-compose.prod.yml ]; then
@@ -125,13 +124,13 @@ jobs:
               exit 1
             fi
 
-            # Prioridad del puerto: .env (DOCKER_WEB_HOST_PORT) > variable de repositorio > secret > default.
+            # Prioridad del puerto: .env (DOCKER_WEB_HOST_PORT) > variable de repositorio > default.
             if [ -f .env ]; then
               set -a
               . ./.env
               set +a
             fi
-            RESOLVED_DOCKER_WEB_HOST_PORT="${DOCKER_WEB_HOST_PORT:-${REPO_DOCKER_WEB_HOST_PORT:-${SECRET_DOCKER_WEB_HOST_PORT:-32771}}}"
+            RESOLVED_DOCKER_WEB_HOST_PORT="${DOCKER_WEB_HOST_PORT:-${REPO_DOCKER_WEB_HOST_PORT:-32771}}"
             export DOCKER_WEB_HOST_PORT="$RESOLVED_DOCKER_WEB_HOST_PORT"
             echo "Puerto host resuelto para deploy: ${DOCKER_WEB_HOST_PORT}"
 
