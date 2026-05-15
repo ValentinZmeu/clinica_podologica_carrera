@@ -80,6 +80,9 @@ jobs:
           overwrite: true
 
       - name: Deploy via SSH
+        env:
+          REPO_DOCKER_WEB_HOST_PORT: ${{ vars.DOCKER_WEB_HOST_PORT }}
+          SECRET_DOCKER_WEB_HOST_PORT: ${{ secrets.DOCKER_WEB_HOST_PORT }}
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -88,6 +91,7 @@ jobs:
           port: 22
           timeout: 60s
           command_timeout: 30m
+          envs: REPO_DOCKER_WEB_HOST_PORT,SECRET_DOCKER_WEB_HOST_PORT
           script: |
             set -euo pipefail
 
@@ -100,6 +104,16 @@ jobs:
               ls -la
               exit 1
             fi
+
+            # Prioridad del puerto: .env (DOCKER_WEB_HOST_PORT) > variable de repositorio > secret > default.
+            if [ -f .env ]; then
+              set -a
+              . ./.env
+              set +a
+            fi
+            RESOLVED_DOCKER_WEB_HOST_PORT="${DOCKER_WEB_HOST_PORT:-${REPO_DOCKER_WEB_HOST_PORT:-${SECRET_DOCKER_WEB_HOST_PORT:-32771}}}"
+            export DOCKER_WEB_HOST_PORT="$RESOLVED_DOCKER_WEB_HOST_PORT"
+            echo "Puerto host resuelto para deploy: ${DOCKER_WEB_HOST_PORT}"
 
             # Login en GHCR con Personal Access Token (read:packages)
             echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u valentinzmeu --password-stdin
@@ -116,11 +130,11 @@ jobs:
             # Diagnóstico: ¿qué contenedores y procesos están escuchando puertos?
             echo "--- docker ps -a ---"
             docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}'
-            echo "--- procesos en puerto 3010 (si hay) ---"
-            (ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null) | grep ':3010' || echo "(nada con ss/netstat)"
-            echo "--- contenedores publicando puerto 3010 ---"
+            echo "--- procesos en puerto ${DOCKER_WEB_HOST_PORT} (si hay) ---"
+            (ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null) | grep ":${DOCKER_WEB_HOST_PORT}" || echo "(nada con ss/netstat)"
+            echo "--- contenedores publicando puerto ${DOCKER_WEB_HOST_PORT} ---"
             for c in $(docker ps -aq); do
-              if docker port "$c" 2>/dev/null | grep -q '3010'; then
+              if docker port "$c" 2>/dev/null | grep -q "${DOCKER_WEB_HOST_PORT}"; then
                 echo "  $c → $(docker inspect -f '{{.Name}}' "$c")"
                 docker rm -f "$c"
               fi
