@@ -5,14 +5,17 @@ name: clinica_podologica_carrera_v2
 
 services:
   web:
-    image: ghcr.io/${GITHUB_REPOSITORY:-vadimvt/clinica_podologica_carrera_v2}:latest
+    image: ghcr.io/valentinzmeu/clinica_podologica_carrera:latest
     container_name: clinica_podologica_carrera_v2-web
     labels:
       com.project.stack: clinica_podologica_carrera_v2
       com.project.role: web
     restart: unless-stopped
     ports:
-      - "127.0.0.1:${PORT:-3000}:3000"
+      # Bind local-only para evitar exposición externa en 0.0.0.0.
+      # Prioridad de resolución del puerto host: .env (DOCKER_WEB_HOST_PORT) > CI vars/secrets > default.
+      # Ver workflow de deploy para la cadena de fallback en runtime.
+      - "127.0.0.1:${DOCKER_WEB_HOST_PORT:-32771}:3000"
     environment:
       - NODE_ENV=production
     volumes:

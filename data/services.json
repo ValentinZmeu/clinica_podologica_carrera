@@ -74,7 +74,7 @@
     "relatedServices": ["unas-encarnadas", "pie-diabetico", "plantillas-personalizadas"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "Sociedad Española de Podología - Guía de práctica clínica en quiropodia",
       "Consejo General de Colegios Oficiales de Podólogos de España",
@@ -207,7 +207,7 @@
     "relatedServices": ["estudio-biomecanico", "podologia-deportiva", "quiropodia"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "Revista Española de Podología - Eficacia de las ortesis plantares personalizadas",
       "Journal of Foot and Ankle Research - Custom foot orthoses for musculoskeletal conditions",
@@ -338,7 +338,7 @@
     "relatedServices": ["plantillas-personalizadas", "podologia-deportiva", "quiropodia"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "Revista Española de Podología - Protocolos de exploración biomecánica",
       "Journal of Biomechanics - Gait analysis in clinical practice",
@@ -464,7 +464,7 @@
     "relatedServices": ["estudio-biomecanico", "plantillas-personalizadas", "quiropodia"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "British Journal of Sports Medicine - Management of plantar fasciitis",
       "International Journal of Sports Physical Therapy",
@@ -590,7 +590,7 @@
     "relatedServices": ["quiropodia", "hongos-unas", "pie-diabetico"],
     "procedureType": "PercutaneousProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "Journal of the American Podiatric Medical Association - Ingrown toenail management",
       "Sociedad Española de Podología - Protocolo de tratamiento de onicocriptosis",
@@ -728,7 +728,7 @@
     "relatedServices": ["quiropodia", "plantillas-personalizadas", "hongos-unas"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "International Working Group on the Diabetic Foot (IWGDF) - Guidelines on prevention and management",
       "Sociedad Española de Diabetes - Consenso sobre pie diabético",
@@ -859,7 +859,7 @@
     "relatedServices": ["quiropodia", "hongos-unas", "unas-encarnadas"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "British Journal of Dermatology - Treatment of plantar warts",
       "Sociedad Española de Podología - Abordaje de las verrugas plantares",
@@ -985,7 +985,7 @@
     "relatedServices": ["quiropodia", "pie-diabetico", "unas-encarnadas"],
     "procedureType": "NoninvasiveProcedure",
     "author": { "name": "Isabel Carrera", "role": "Podóloga Colegiada - Directora", "teamMemberId": "isabel-carrera" },
-    "lastReviewed": "2026-02-01",
+    "lastReviewed": "2026-05-15",
     "references": [
       "British Journal of Dermatology - Guidelines for the management of onychomycosis",
       "Sociedad Española de Podología - Protocolo de diagnóstico y tratamiento de onicomicosis",

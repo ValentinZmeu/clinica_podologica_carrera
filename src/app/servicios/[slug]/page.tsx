@@ -102,7 +102,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const author = service.author
     ? getTeamMemberById(service.author.teamMemberId)
     : undefined;
-  const { rating, reviewCount, schedule } = await getGooglePlaceData();
+  const { schedule } = await getGooglePlaceData();
 
   // Servicios relacionados
   const allServices = getActiveServices();
@@ -171,12 +171,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
         '@type': 'GeoCoordinates',
         latitude: siteConfig.coordinates.lat,
         longitude: siteConfig.coordinates.lng,
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: rating,
-        bestRating: 5,
-        ratingCount: reviewCount || 23,
       },
       ...(service.localContext?.serviceArea && {
         areaServed: service.localContext.serviceArea.map((city) => ({

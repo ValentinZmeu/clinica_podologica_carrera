@@ -65,7 +65,43 @@ jobs:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare deploy directory on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            set -euo pipefail
+
+            mkdir -p "${{ vars.APP_PATH }}"
+
+            # Si el usuario puede elevar privilegios, dejamos la ruta a su nombre.
+            if command -v sudo >/dev/null 2>&1 && sudo -n true 2>/dev/null; then
+              sudo chown -R "$(id -u):$(id -g)" "${{ vars.APP_PATH }}" || true
+            fi
+
+            chmod u+rwx "${{ vars.APP_PATH }}" || true
+            test -w "${{ vars.APP_PATH }}"
+
+      - name: Copy docker-compose.prod.yml to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          source: "docker-compose.prod.yml"
+          target: "${{ vars.APP_PATH }}"
+          overwrite: true
+
       - name: Deploy via SSH
+        env:
+          REPO_DOCKER_WEB_HOST_PORT: ${{ vars.DOCKER_WEB_HOST_PORT }}
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -74,11 +110,12 @@ jobs:
           port: 22
           timeout: 60s
           command_timeout: 30m
+          envs: REPO_DOCKER_WEB_HOST_PORT
           script: |
             set -euo pipefail
 
             # Cambiar al directorio del proyecto (falla con set -e si APP_PATH no existe)
-            cd "${{ secrets.APP_PATH }}"
+            cd "${{ vars.APP_PATH }}"
 
             # Verificar que docker-compose.prod.yml existe antes de seguir
             if [ ! -f docker-compose.prod.yml ]; then
@@ -87,13 +124,42 @@ jobs:
               exit 1
             fi
 
+            # Prioridad del puerto: .env (DOCKER_WEB_HOST_PORT) > variable de repositorio > default.
+            if [ -f .env ]; then
+              set -a
+              . ./.env
+              set +a
+            fi
+            RESOLVED_DOCKER_WEB_HOST_PORT="${DOCKER_WEB_HOST_PORT:-${REPO_DOCKER_WEB_HOST_PORT:-32771}}"
+            export DOCKER_WEB_HOST_PORT="$RESOLVED_DOCKER_WEB_HOST_PORT"
+            echo "Puerto host resuelto para deploy: ${DOCKER_WEB_HOST_PORT}"
+
             # Login en GHCR con Personal Access Token (read:packages)
             echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u valentinzmeu --password-stdin
 
             # Pull de la imagen
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-            # Levantar con la nueva imagen (recrea contenedor si hay cambios)
+            # Limpiar contenedor legacy de deploys antiguos (si existe)
+            docker rm -f clinica-podologica 2>/dev/null || true
+
+            # Bajar stack previo (si lo hay) para liberar puertos antes de subir el nuevo
+            docker compose -f docker-compose.prod.yml down --remove-orphans 2>/dev/null || true
+
+            # Diagnóstico: ¿qué contenedores y procesos están escuchando puertos?
+            echo "--- docker ps -a ---"
+            docker ps -a --format 'table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}'
+            echo "--- procesos en puerto ${DOCKER_WEB_HOST_PORT} (si hay) ---"
+            (ss -tlnp 2>/dev/null || netstat -tlnp 2>/dev/null) | grep ":${DOCKER_WEB_HOST_PORT}" || echo "(nada con ss/netstat)"
+            echo "--- contenedores publicando puerto ${DOCKER_WEB_HOST_PORT} ---"
+            for c in $(docker ps -aq); do
+              if docker port "$c" 2>/dev/null | grep -q "${DOCKER_WEB_HOST_PORT}"; then
+                echo "  $c → $(docker inspect -f '{{.Name}}' "$c")"
+                docker rm -f "$c"
+              fi
+            done
+
+            # Levantar con la nueva imagen
             docker compose -f docker-compose.prod.yml up -d --remove-orphans
 
             # Limpieza de imágenes/contenedores/redes/cache sin uso

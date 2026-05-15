@@ -1,9 +1,12 @@
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://clinica-podologica-carrera.es";
+
 export const siteConfig = {
   name: "Clínica Podológica Carrera",
   description:
     "Clínica de podología en Móstoles, Madrid. Especialistas en quiropodia, plantillas personalizadas, estudio biomecánico, podología deportiva y tratamiento de uñas encarnadas. Pide tu cita.",
-  url: "https://clinica-podologica-carrera.com",
-  ogImage: "https://clinica-podologica-carrera.com/images/entrada-clinica.webp",
+  url: siteUrl,
+  ogImage: `${siteUrl}/images/entrada-clinica.webp`,
   phone: "+34 912 26 88 58",
   phoneLink: "+34912268858",
   whatsapp: "+34 696 52 64 25",

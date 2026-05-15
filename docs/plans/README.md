@@ -6,6 +6,7 @@
 
 | Plan | Descripción | Estado | Fecha Inicio |
 | ---- | ----------- | ------ | ------------ |
+| [12-fix-puerto-fijo-plesk](pending/12-fix-puerto-fijo-plesk.md) | Fijar puerto host del container a 32771 para evitar desincronización Plesk ↔ Docker tras auto-deploy | EN PROGRESO | 2026-05-15 |
 
 ## Planes Archivados
 

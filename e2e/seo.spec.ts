@@ -98,4 +98,88 @@ test.describe('SEO Elements', () => {
       expect(h1Count, `${pg.path} should have exactly 1 H1`).toBe(1);
     }
   });
+
+  // Tipos donde Google permite `aggregateRating` para review snippets.
+  // Ref: https://developers.google.com/search/docs/appearance/structured-data/review-snippet
+  const RATING_ELIGIBLE_TYPES = new Set([
+    'LocalBusiness',
+    'MedicalBusiness',
+    'Podiatrist',
+    'Organization',
+    'Product',
+    'Recipe',
+    'Movie',
+    'Event',
+    'Book',
+    'Course',
+    'SoftwareApplication',
+    'CreativeWork',
+  ]);
+
+  function findRatingViolations(
+    node: unknown,
+    parent: Record<string, unknown> | null = null,
+  ): string[] {
+    const violations: string[] = [];
+    if (Array.isArray(node)) {
+      node.forEach((n) => violations.push(...findRatingViolations(n, parent)));
+    } else if (node && typeof node === 'object') {
+      const obj = node as Record<string, unknown>;
+      if (obj.aggregateRating && parent) {
+        const parentTypes = ([] as string[]).concat(
+          (parent['@type'] as string | string[]) ?? [],
+        );
+        const eligible = parentTypes.some((t) =>
+          RATING_ELIGIBLE_TYPES.has(t),
+        );
+        if (!eligible) {
+          violations.push(
+            `aggregateRating anidado en tipo no elegible: ${parentTypes.join(
+              ',',
+            ) || '(sin @type)'}`,
+          );
+        }
+      }
+      Object.values(obj).forEach((v) =>
+        violations.push(...findRatingViolations(v, obj)),
+      );
+    }
+    return violations;
+  }
+
+  test('JSON-LD: todos los bloques parsean como JSON válido', async ({
+    page,
+  }) => {
+    for (const pg of pages) {
+      await page.goto(pg.path);
+      const blocks = await page
+        .locator('script[type="application/ld+json"]')
+        .allTextContents();
+      for (const raw of blocks) {
+        expect(
+          () => JSON.parse(raw),
+          `JSON-LD malformado en ${pg.path}`,
+        ).not.toThrow();
+      }
+    }
+  });
+
+  test('JSON-LD: aggregateRating solo en tipos elegibles para review snippets', async ({
+    page,
+  }) => {
+    for (const pg of pages) {
+      await page.goto(pg.path);
+      const blocks = await page
+        .locator('script[type="application/ld+json"]')
+        .allTextContents();
+      for (const raw of blocks) {
+        const data = JSON.parse(raw);
+        const violations = findRatingViolations(data);
+        expect(
+          violations,
+          `${pg.path}: aggregateRating mal anidado → ${violations.join(' | ')}`,
+        ).toEqual([]);
+      }
+    }
+  });
 });

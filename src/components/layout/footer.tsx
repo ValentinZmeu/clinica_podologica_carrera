@@ -25,7 +25,7 @@ export async function Footer() {
                 width={48}
                 height={48}
                 className="h-12 w-12"
-                unoptimized
+                sizes="48px"
               />
               <h3 className="text-lg font-semibold">{siteConfig.name}</h3>
             </div>
