@@ -12,7 +12,9 @@ services:
       com.project.role: web
     restart: unless-stopped
     ports:
-      - "127.0.0.1:${PORT:-3000}:3000"
+      # Puerto host fijado a 32771 para que la Plesk Proxy Rule no se desincronice
+      # al recrear el container. Ver docs/plans/_archive/12-fix-puerto-fijo-plesk.md
+      - "32771:3000"
     environment:
       - NODE_ENV=production
     volumes:
