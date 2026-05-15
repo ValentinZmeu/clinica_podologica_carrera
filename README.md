@@ -90,7 +90,6 @@ scp docker-compose.prod.yml usuario@servidor:/opt/clinica-podologica/
 
 # Crear archivo .env en el servidor
 echo "GITHUB_REPOSITORY=tu-usuario/clinica-podologica-carrera" > /opt/clinica-podologica/.env
-echo "PORT=3000" >> /opt/clinica-podologica/.env
 ```
 
 ### Configuración de Nginx
@@ -299,9 +298,10 @@ docker exec clinica-podologica wget --no-verbose --tries=1 --spider http://local
 
 | Variable | Descripción | Default |
 |----------|-------------|---------|
-| `NODE_ENV` | Entorno de ejecución | `development` |
-| `PORT` | Puerto del servidor | `3000` |
-| `NEXT_PUBLIC_SITE_URL` | URL pública del sitio | `https://podologiacarrera.com` |
+| `NEXT_PUBLIC_SITE_URL` | URL pública del sitio (dominio canónico) | `https://clinica-podologica-carrera.es` |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID | - |
+| `GOOGLE_PLACES_API_KEY` | Server-only, para rating dinámico | - |
+| `GOOGLE_PLACE_ID` | Place ID de Google Maps | - |
 
 ## Licencia
 

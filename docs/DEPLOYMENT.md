@@ -43,7 +43,7 @@ Ve a **Settings > Secrets and variables > Actions** y crea los siguientes secret
 
 | Secret | Descripción | Ejemplo |
 |--------|-------------|---------|
-| `SERVER_HOST` | IP o dominio del servidor | `123.45.67.89` o `clinica-podologica-carrera.com` |
+| `SERVER_HOST` | IP o dominio del servidor | `123.45.67.89` o `clinica-podologica-carrera.es` |
 | `SERVER_USER` | Usuario SSH del servidor | `clinica_podologica_carrera` |
 | `SERVER_SSH_KEY` | Clave privada SSH (sin passphrase) | `-----BEGIN OPENSSH PRIVATE KEY-----...` |
 | `APP_PATH` | Ruta del proyecto en el servidor | `/home/clinica_podologica_carrera/app` |
@@ -152,7 +152,6 @@ EOF
 # Crear archivo .env
 cat > .env << 'EOF'
 GITHUB_REPOSITORY=TU_USUARIO/clinica_podologica_carrera_v2
-PORT=3000
 EOF
 ```
 
@@ -164,23 +163,23 @@ EOF
 sudo apt install nginx certbot python3-certbot-nginx -y
 
 # Crear configuración del sitio
-sudo nano /etc/nginx/sites-available/clinica-podologica-carrera.com
+sudo nano /etc/nginx/sites-available/clinica-podologica-carrera.es
 ```
 
 Contenido:
 
 ```nginx
-# Redirección de .es a .com
-server {
-    listen 80;
-    server_name clinica-podologica-carrera.es www.clinica-podologica-carrera.es;
-    return 301 https://clinica-podologica-carrera.com$request_uri;
-}
-
-# Sitio principal (.com)
+# Redirección de .com a .es (canónico)
 server {
     listen 80;
     server_name clinica-podologica-carrera.com www.clinica-podologica-carrera.com;
+    return 301 https://clinica-podologica-carrera.es$request_uri;
+}
+
+# Sitio principal (.es - canónico)
+server {
+    listen 80;
+    server_name clinica-podologica-carrera.es www.clinica-podologica-carrera.es;
 
     location / {
         proxy_pass http://127.0.0.1:3000;
@@ -198,16 +197,16 @@ server {
 
 ```bash
 # Activar sitio
-sudo ln -s /etc/nginx/sites-available/clinica-podologica-carrera.com /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/clinica-podologica-carrera.es /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 
-# Obtener certificados SSL (incluye ambos dominios .com y .es)
+# Obtener certificados SSL (incluye ambos dominios .es y .com)
 sudo certbot --nginx \
-  -d clinica-podologica-carrera.com \
-  -d www.clinica-podologica-carrera.com \
   -d clinica-podologica-carrera.es \
-  -d www.clinica-podologica-carrera.es
+  -d www.clinica-podologica-carrera.es \
+  -d clinica-podologica-carrera.com \
+  -d www.clinica-podologica-carrera.com
 ```
 
 #### Alternativa: Configuración con Caddy
@@ -229,13 +228,13 @@ sudo nano /etc/caddy/Caddyfile
 Contenido del Caddyfile:
 
 ```caddy
-# Redirección de .es a .com
-clinica-podologica-carrera.es, www.clinica-podologica-carrera.es {
-    redir https://clinica-podologica-carrera.com{uri} permanent
+# Redirección de .com a .es (canónico)
+clinica-podologica-carrera.com, www.clinica-podologica-carrera.com {
+    redir https://clinica-podologica-carrera.es{uri} permanent
 }
 
-# Sitio principal
-clinica-podologica-carrera.com, www.clinica-podologica-carrera.com {
+# Sitio principal (.es - canónico)
+clinica-podologica-carrera.es, www.clinica-podologica-carrera.es {
     reverse_proxy localhost:3000
     encode gzip
 }
@@ -344,7 +343,7 @@ docker image prune -f
 curl http://localhost:3000
 
 # Desde fuera
-curl https://clinica-podologica-carrera.com
+curl https://clinica-podologica-carrera.es
 ```
 
 ---
@@ -434,6 +433,9 @@ sudo systemctl status certbot.timer
 
 | Variable | Descripción | Valor por defecto |
 |----------|-------------|-------------------|
-| `PORT` | Puerto de la aplicación | `3000` |
-| `NODE_ENV` | Entorno de ejecución | `production` |
+| `NEXT_PUBLIC_SITE_URL` | URL pública del sitio (dominio canónico) | `https://clinica-podologica-carrera.es` |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID | - |
+| `GOOGLE_PLACES_API_KEY` | Server-only, para rating dinámico | - |
+| `GOOGLE_PLACE_ID` | Place ID de Google Maps | - |
+| `DOCKER_WEB_HOST_PORT` | Puerto host del container (override en VPS) | `32771` |
 | `GITHUB_REPOSITORY` | Nombre del repo (para pull de imagen) | - |
