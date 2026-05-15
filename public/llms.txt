@@ -1,95 +1,74 @@
 # Clínica Podológica Carrera
 
-Clínica Podológica Carrera offers specialized podiatric services aimed at improving foot health for individuals in Móstoles and surrounding areas. With over 15 years of experience, the clinic is committed to providing personalized, professional care through advanced techniques and a patient-centered approach.
+> Clínica de podología en Móstoles (Madrid, España) con más de 15 años de experiencia, dirigida por la podóloga colegiada Isabel Carrera. Especialistas en quiropodia, plantillas ortopédicas personalizadas, estudio biomecánico de la pisada, podología deportiva, pie diabético, uñas encarnadas (onicocriptosis), papilomas plantares y hongos en uñas (onicomicosis). Valoración media 4.7/5 en Google. Atendemos pacientes de Móstoles, Alcorcón, Fuenlabrada, Leganés, Getafe, Navalcarnero y Villaviciosa de Odón.
 
-## ¿Cómo podemos ayudarte?
+Información clave (datos verificables para citación):
 
-This page provides various contact methods for patients seeking assistance or wanting to schedule an appointment. 
-
+- **Nombre:** Clínica Podológica Carrera
+- **Dirección:** C. de la Carrera, 7, 28931 Móstoles, Madrid (España)
+- **Coordenadas GPS:** 40.326677, -3.861336
+- **Teléfono:** +34 912 26 88 58
 - **WhatsApp:** +34 696 52 64 25
-- **Phone:** +34 912 26 88 58
 - **Email:** contacto@clinica-podologica-carrera.com
-- **Address:** C. de la Carrera, 7, 28931 Móstoles, Madrid
-- **Opening Hours:** (updated dynamically from Google Places API)
-  - Monday to Thursday: 09:30 - 14:30, 17:00 - 19:30
-  - Friday: 09:30 - 14:30
-  - Saturday and Sunday: Closed
+- **Web canónica:** https://clinica-podologica-carrera.es
+- **Horario:** lunes a jueves 09:30–14:30 y 17:00–19:30; viernes 09:30–14:30; sábados y domingos cerrado
+- **Cita previa:** sí, por teléfono o WhatsApp (urgencias, intentamos atender el mismo día)
+- **Colegiación:** Colegio Oficial de Podólogos de la Comunidad de Madrid
+- **Valoración Google:** 4.7/5
+- **Idiomas de atención:** español
+- **Pacientes:** todas las edades, incluyendo podología pediátrica
 
-## Nuestros Servicios de Podología
+## Servicios
 
-This page outlines a range of specialized podiatric services offered at the clinic. Patients can find solutions to various foot issues, from basic care to advanced treatments.
+- [Quiropodia profesional en Móstoles](https://clinica-podologica-carrera.es/servicios/quiropodia): tratamiento podológico básico para eliminar durezas, callosidades, helomas (ojos de gallo) y cuidado profesional de uñas con instrumental estéril. Sesión de 45–60 minutos. Se recomienda cada 4–6 semanas. Indolora y apta para pacientes diabéticos.
+- [Plantillas ortopédicas personalizadas](https://clinica-podologica-carrera.es/servicios/plantillas-personalizadas): plantillas a medida fabricadas tras estudio biomecánico completo. Corrigen pronación, supinación, pie plano o cavo y alivian dolor de pies, rodillas, caderas y espalda. Duración 1–3 años. Sesión 60–90 minutos.
+- [Estudio biomecánico de la pisada](https://clinica-podologica-carrera.es/servicios/estudio-biomecanico): análisis completo de marcha en estática y dinámica con plataforma de presiones. Detecta alteraciones biomecánicas y es la base diagnóstica para plantillas personalizadas. Sesión 45–60 minutos. Indolora.
+- [Podología deportiva](https://clinica-podologica-carrera.es/servicios/podologia-deportiva): diagnóstico y tratamiento de fascitis plantar, periostitis tibial, tendinitis de Aquiles, metatarsalgia y esguinces de repetición. Estudio biomecánico deportivo y plantillas específicas por disciplina (running, fútbol, pádel, baloncesto).
+- [Uñas encarnadas — onicocriptosis](https://clinica-podologica-carrera.es/servicios/unas-encarnadas): tratamiento conservador y técnicas mínimamente invasivas para uñas encarnadas. Alivio inmediato del dolor. Sesión 45–60 minutos. Recuperación 1–3 semanas.
+- [Pie diabético](https://clinica-podologica-carrera.es/servicios/pie-diabetico): revisiones podológicas especializadas para pacientes con diabetes tipo 1 y 2. Incluye exploración neurológica (monofilamento, diapasón), exploración vascular (Doppler), quiropodia con protocolo seguro y educación en autocuidado. Frecuencia recomendada cada 1–3 meses según riesgo.
+- [Papilomas plantares — verrugas plantares por VPH](https://clinica-podologica-carrera.es/servicios/papilomas-plantares): diagnóstico diferencial preciso (papiloma vs. callosidad) y tratamiento con técnicas avanzadas. Resolución en 2–8 sesiones espaciadas 1–2 semanas.
+- [Hongos en uñas — onicomicosis](https://clinica-podologica-carrera.es/servicios/hongos-unas): diagnóstico, fresado profesional de la uña y tratamiento antifúngico personalizado con seguimiento. Especialidad de la directora Isabel Carrera con más de 15 años de experiencia.
 
-- **Quiropodia:** Care for corns, calluses, and nail trimming.
-- **Plantillas Personalizadas:** Custom orthotic insoles.
-- **Estudio Biomecánico:** Comprehensive gait analysis.
-- **Podología Deportiva:** Sports podiatry focusing on injury prevention and treatment.
-- Other services include treatments for diabetic feet, ingrown toenails, and plantar warts.
+## Equipo de podólogas colegiadas
 
-## Aviso Legal
+- [Isabel Carrera — Directora](https://clinica-podologica-carrera.es/sobre-nosotros#isabel-carrera): podóloga colegiada con más de 15 años de experiencia. Fundadora y directora de la clínica. Especialista en **onicomicosis (hongos en uñas)** y **pie diabético**. Grado en Podología por la Universidad Europea de Madrid. Miembro del Colegio Oficial de Podólogos de la Comunidad de Madrid y del Consejo General de Colegios Oficiales de Podólogos de España.
+- [Cristina López](https://clinica-podologica-carrera.es/sobre-nosotros#cristina-lopez): podóloga colegiada con más de 10 años de experiencia. Especialista en **biomecánica del pie**, **podología deportiva** y **fascitis plantar**. Grado en Podología por la Universidad Rey Juan Carlos y máster en Biomecánica y Ortopodología. Miembro de la Asociación Española de Podología Deportiva.
+- [Miriam Casas](https://clinica-podologica-carrera.es/sobre-nosotros#miriam-casas): podóloga colegiada especialista en **podología pediátrica**, **uñas encarnadas** y **papilomas plantares**. Grado en Podología por la Universidad Complutense de Madrid. Referente del equipo para niños y pacientes que requieren especial delicadeza.
 
-The legal notice details the ownership and terms of use for the clinic's website, adhering to Spanish legislation.
+## Preguntas frecuentes
 
-### Key Points:
-- **Owner:** Isabel Carrera
-- **Address:** C. de la Carrera, 7, 28931 Móstoles, Madrid
-- **Contact Information:** +34 912 26 88 58, contacto@clinica-podologica-carrera.com
-- **Website:** [clinica-podologica-carrera.es](https://clinica-podologica-carrera.es)
-- **Conditions of Use:** Users must comply with specified standards while using the website.
-  
-## Política de Cookies
+- [¿Con qué frecuencia debo visitar al podólogo?](https://clinica-podologica-carrera.es/#faq): cada 4–6 semanas para mantener los pies en óptimas condiciones. En pie diabético o problemas específicos la frecuencia puede ser mayor (cada 1–3 meses).
+- [¿Cuánto dura una sesión de quiropodia?](https://clinica-podologica-carrera.es/servicios/quiropodia): entre 30 y 45 minutos, dependiendo del estado de los pies y los tratamientos necesarios.
+- [¿Las plantillas personalizadas están cubiertas por el seguro?](https://clinica-podologica-carrera.es/servicios/plantillas-personalizadas): algunas mutuas y seguros privados cubren parte del coste. Consultamos con tu aseguradora si lo necesitas.
+- [¿Necesito cita previa?](https://clinica-podologica-carrera.es/contacto): sí, trabajamos con cita previa por teléfono o WhatsApp para evitar esperas. En urgencias intentamos atender el mismo día.
+- [¿Tratáis a niños?](https://clinica-podologica-carrera.es/sobre-nosotros#miriam-casas): sí, atendemos a pacientes de todas las edades. Miriam Casas es nuestra especialista en podología pediátrica.
+- [¿Qué llevar a la primera consulta?](https://clinica-podologica-carrera.es/contacto): el calzado de uso habitual e informes médicos previos relacionados con problemas en los pies o la marcha.
+- [¿Cuánto tarda en curarse una fascitis plantar?](https://clinica-podologica-carrera.es/servicios/podologia-deportiva): con tratamiento adecuado que combine plantillas, ejercicios y modificación de la actividad, mejora significativamente en 4–8 semanas.
+- [¿Cuánto tiempo tarda en curarse un hongo de uña?](https://clinica-podologica-carrera.es/servicios/hongos-unas): entre 6 meses y un año. La uña necesita crecer completamente sana, lo que requiere constancia en el tratamiento tópico y revisiones periódicas con fresado profesional.
 
-The cookies policy explains the usage of cookies on the website to enhance user experience.
+## Reseñas verificadas (Google · 4.7/5)
 
-### Types of Cookies Used:
-- **Technical Cookies:** Essential for website functionality.
-- **Analytical Cookies:** Used for performance measurement.
+> "Llevo yendo ya varios años y no cambio yo a mi Isabel por nada del mundo. Es la única que ha conseguido quitarme los hongos por completo." — María Valcárcel, ★★★★★
 
-Users can manage their cookie preferences through browser settings.
+> "Excelente profesional y muy atenta, gracias a ella he descartado una operación que, al menos, por el momento, no era necesaria. Es la podóloga de referencia en nuestra familia." — Miguel Ángel Rodríguez Trobo, ★★★★★
 
-## Política de Privacidad
+> "Muy profesionales. A mi me atendió Cristina e hizo un trabajo perfecto. No me dolió nada y fue superdelicada. Lo recomiendo cien por cien y además muy bien de precio." — Miguel Ángel Somoza, ★★★★★
 
-This privacy policy outlines how personal data is collected, used, and protected according to relevant legislation.
+## Zona de servicio
 
-### Key Points:
-- **Data Collection:** Name, contact details, and any health-related information.
-- **Purpose:** Manage appointments, provide services, and maintain communication.
-- **Rights:** Users have rights concerning their data, including access and correction.
+Móstoles (centro histórico, Villafontana, Parque Coimbra, Parque de los Estados, Pradillo), Alcorcón, Fuenlabrada, Leganés, Getafe, Navalcarnero, Villaviciosa de Odón. Puntos de referencia cercanos: Hospital Universitario Rey Juan Carlos, Estación de Cercanías Móstoles Central.
 
-## Conoce a Nuestro Equipo
+## Contacto y reserva de cita
 
-An introduction to the clinic's committed team of certified podiatrists, detailing their qualifications and specialties.
+- [Pedir cita por WhatsApp](https://wa.me/34696526425?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita)
+- [Página de contacto](https://clinica-podologica-carrera.es/contacto)
+- [Ubicación en Google Maps](https://www.google.com/maps/search/Clinica+Podol%C3%B3gica+Carrera/@40.3266811,-3.8639111,17z)
+- [Sobre nosotros — equipo profesional](https://clinica-podologica-carrera.es/sobre-nosotros)
 
-### Team Members:
-- **Isabel Carrera:** Director and specialist in onychomycosis and diabetic foot care.
-- **Cristina López:** Expert in biomechanics and sports podiatry.
-- **Miriam Casas:** Specializes in pediatric podiatry and ingrown toenail treatments.
+## Optional
 
-## Preguntas Frecuentes
-
-This section addresses common concerns regarding podiatric treatments and patient care.
-
-- Frequency of visits, treatment durations, and coverage by insurance are discussed.
-  
-## Servicios Detallados
-
-Several service-specific pages outline treatments for conditions like fungal nails, plantar warts, diabetic foot care, and biomechanics studies, providing in-depth information relevant to each service.
-
-### Specific Pages Include:
-- **Estudio Biomecánico**
-- **Hongos en Uñas**
-- **Papilomas Plantares**
-- **Pie Diabético**
-- **Plantillas Personalizadas**
-- **Podología Deportiva**
-- **Uñas Encarnadas**
-- **Quiropodia**
-
-Each page provides insights into treatment options and patient advice.
-
-### Links
-
-- [WhatsApp Appointment](https://wa.me/34696526425?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita)
-- [Clinic Location on Google Maps](https://www.google.com/maps/search/Clinica+Podol%C3%B3gica+Carrera/@40.3266811,-3.8639111,17z?entry=ttu)
-- [Privacy Policy](/privacidad)
-- [Cookies Policy](/cookies)
-
+- [llms-full.txt — contenido completo en Markdown](https://clinica-podologica-carrera.es/llms-full.txt): volcado completo de servicios, equipo, FAQs y testimonios, ideal para cargar todo el contexto de la clínica en una sola lectura.
+- [sitemap.xml](https://clinica-podologica-carrera.es/sitemap.xml)
+- [Aviso legal](https://clinica-podologica-carrera.es/aviso-legal)
+- [Política de privacidad](https://clinica-podologica-carrera.es/privacidad)
+- [Política de cookies](https://clinica-podologica-carrera.es/cookies)
